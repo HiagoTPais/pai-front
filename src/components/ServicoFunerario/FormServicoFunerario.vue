@@ -1,0 +1,241 @@
+<template>
+  <div class="form-assistencia">
+    <div class="form-navbar-assistencia">
+      <div class="d-flex">
+        <img
+          class="family-img"
+          :src="require('../../assets/img/funeraria.png')"
+        />
+
+        <div class="d-flex flex-column" style="margin-left: 10px">
+          <p
+            class="form-title"
+            style="width: 140%; margin-bottom: 7px; text-align: left"
+          >
+            SERVIÇO FUNERARIO
+          </p>
+          <img
+            class="beneficiario-icon"
+            :src="require('../../assets/img/beneficiario.png')"
+          />
+        </div>
+
+        <div class="d-flex">
+          <span
+            class="nav-icon"
+            style="margin-right: 5px; padding: 5px; padding-top: 20px"
+            v-for="(tab, index) in tabs"
+            :key="index"
+            @click="currentTabs = index + 1"
+          >
+            {{ tab }}
+          </span>
+        </div>
+      </div>
+    </div>
+    <div class="form-input-assistencia">
+      <form style="height: 35px"></form>
+    </div>
+    <div class="form-input-assistencia">
+      <form>
+        <FormServicoFunerarioStep1
+          :showForm="this.currentTabs"
+          :sendFormNow="this.sendForm"
+          @set-data-form="setDataForm"
+        />
+        <FormServicoFunerarioStep2
+          :showForm="this.currentTabs"
+          :sendFormNow="this.sendForm"
+          @set-data-form="setDataForm"
+        />
+        <FormServicoFunerarioStep3
+          :showForm="this.currentTabs"
+          :sendFormNow="this.sendForm"
+          @set-data-form="setDataForm"
+        />
+        <FormServicoFunerarioStep4
+          :showForm="this.currentTabs"
+          :sendFormNow="this.sendForm"
+          @set-data-form="setDataForm"
+        />
+        <!-- <FormServicoFunerarioStep5
+          :showForm="this.currentTabs"
+          :sendFormNow="this.sendForm"
+          @set-data-form="setDataForm"
+        /> -->
+        <FormServicoFunerarioStep6
+          :showForm="this.currentTabs"
+          :sendFormNow="this.sendForm"
+          @set-data-form="setDataForm"
+        />
+        <FormServicoFunerarioStep7
+          :showForm="this.currentTabs"
+          :sendFormNow="this.sendForm"
+          @set-data-form="setDataForm"
+        />
+        <FormServicoFunerarioStep8
+          :showForm="this.currentTabs"
+          :sendFormNow="this.sendForm"
+          @set-data-form="setDataForm"
+        />
+        <FormServicoFunerarioStep9
+          :showForm="this.currentTabs"
+          :sendFormNow="this.sendForm"
+          @set-data-form="setDataForm"
+        />
+        <FormServicoFunerarioStep10
+          :showForm="this.currentTabs"
+          :sendFormNow="this.sendForm"
+          @set-data-form="setDataForm"
+        />
+
+        <BtnNextTab
+          @click="setNextForm()"
+          :currentTabs="currentTabs"
+          :hideButton="hideButton"
+        />
+      </form>
+    </div>
+  </div>
+</template>
+
+<script>
+import axios from "axios";
+
+import BtnNextTab from "../Btn/BtnNextTab";
+import FormServicoFunerarioStep1 from "./FormServicoFunerarioStep1";
+import FormServicoFunerarioStep2 from "./FormServicoFunerarioStep2";
+import FormServicoFunerarioStep3 from "./FormServicoFunerarioStep3";
+import FormServicoFunerarioStep4 from "./FormServicoFunerarioStep4";
+// import FormServicoFunerarioStep5 from "./FormServicoFunerarioStep5";
+import FormServicoFunerarioStep6 from "./FormServicoFunerarioStep6";
+import FormServicoFunerarioStep7 from "./FormServicoFunerarioStep7";
+import FormServicoFunerarioStep8 from "./FormServicoFunerarioStep8";
+import FormServicoFunerarioStep9 from "./FormServicoFunerarioStep9";
+import FormServicoFunerarioStep10 from "./FormServicoFunerarioStep10";
+
+export default {
+  name: "FormServicoFunerario",
+  props: {
+    showView: String,
+    colaboradorId: Number,
+  },
+  data() {
+    return {
+      currentTabs: 1,
+      sendForm: false,
+      hideButton: false,
+      tabs: [
+        "1. Atendimento",
+        "2. Responsável",
+        "3. Falecido(a)",
+        "4. Cerimonial",
+        "5. Translado",
+        "6. Produtos",
+        "7. Cuidados",
+        "8. Sepultamento",
+        "9. Pagamento",
+      ],
+      contratoData: [],
+      colaboradorLista: [],
+      dependeteLista: [],
+      dataForm: [],
+    };
+  },
+  // beforeMount() {
+  //   if (this.showView == "form-colaboradores-edit") {
+  //     this.getDataForm();
+  //     this.getDependentes();
+  //     this.getContratoColaborador();
+  //   }
+  // },
+  components: {
+    BtnNextTab,
+    FormServicoFunerarioStep1,
+    FormServicoFunerarioStep2,
+    FormServicoFunerarioStep3,
+    FormServicoFunerarioStep4,
+    // FormServicoFunerarioStep5,
+    FormServicoFunerarioStep6,
+    FormServicoFunerarioStep7,
+    FormServicoFunerarioStep8,
+    FormServicoFunerarioStep9,
+    FormServicoFunerarioStep10,
+  },
+  emits: ["sendFormNow"],
+  methods: {
+    setDataForm(formData) {
+      this.dataForm.push(formData);
+
+      let values = [];
+      let keys = [];
+      let obj = {};
+
+      let dependentes = this.dataForm[1];
+
+      // delete this.dataForm[1];
+
+      if (this.dataForm.length == 4) {
+        this.dataForm.forEach((element) => {
+          for (let key in element) {
+            values.push(element[key]);
+            keys.push(key);
+          }
+        });
+
+        for (let i = 0; i < keys.length && i < values.length; i++) {
+          obj[keys[i]] = values[i];
+        }
+
+        obj["dependentes"] = dependentes;
+
+        this.dataForm = obj;
+
+        if (this.showView == "form-colaboradores-edit") {
+          this.updateDateForm(this.dataForm);
+        } else {
+          this.storeDateForm(this.dataForm);
+        }
+      }
+    },
+
+    setNextForm() {
+      this.currentTabs = this.currentTabs + 1;
+
+      if (this.currentTabs > 6) {
+        this.currentTabs = 1;
+      }
+
+      if (this.currentTabs == 5) {
+        this.sendFormNow();
+      }
+    },
+
+    sendFormNow() {
+      this.sendForm = !this.sendForm;
+    },
+
+    storeDateForm(dataForm) {
+      this.showAlert = true;
+
+      axios
+        .post(`${process.env.VUE_APP_API_URL}/colaborador/store`, { dataForm })
+        .then((res) => {
+          this.contractId = res.data.data.id;
+          this.currentTabs = this.currentTabs + 1;
+          this.msgAlert = "O contrato foi gerado com sucesso.";
+          this.typeAlert = "alert-success";
+
+          this.downloadAfterCreate(this.contractId);
+
+          setTimeout(() => {
+            this.showAlert = false;
+          }, 4000);
+        })
+        .catch((res) => {
+          console.error(res);
+        });
+    },
+  },
+};
+</script>
