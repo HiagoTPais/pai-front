@@ -10,7 +10,7 @@
         <div class="d-flex flex-column" style="margin-left: 10px">
           <p
             class="form-title"
-            style="width: 140%; margin-bottom: 7px; text-align: left"
+            style="margin-bottom: 7px; text-align: left"
           >
             SERVIÇO FUNERARIO
           </p>
@@ -20,7 +20,7 @@
           />
         </div>
 
-        <div class="d-flex">
+        <div class="d-flex" style="margin-left: -10%">
           <span
             class="nav-icon"
             style="margin-right: 5px; padding: 5px; padding-top: 20px"

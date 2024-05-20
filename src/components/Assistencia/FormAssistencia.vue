@@ -48,7 +48,11 @@
           />
         </div>
 
-        <div class="d-flex" v-bind:class="getNavClass()">
+        <div
+          class="d-flex"
+          style="margin-left: -6%"
+          v-bind:class="getNavClass()"
+        >
           <span
             class="nav-icon"
             v-for="(tab, index) in tabs"
@@ -417,7 +421,7 @@ export default {
       axios
         .delete(`${process.env.VUE_APP_API_URL}/beneficiary/${id}`)
         .then(() => {
-          this.$emit("setBeneficiariesList");
+          this.$emit("setBeneficiarioList");
 
           this.OpenClose = !this.OpenClose;
         });
@@ -427,7 +431,9 @@ export default {
       this.showAlert = true;
 
       axios
-        .post(`${process.env.VUE_APP_API_URL}/contract/store`, { dataForm })
+        .post(`${process.env.VUE_APP_API_URL}/beneficiario/contrato/store`, {
+          dataForm,
+        })
         .then((res) => {
           this.contractId = res.data.data.id;
           this.currentForm = this.currentForm + 1;
@@ -448,7 +454,7 @@ export default {
     downloadAfterCreate(contract_id) {
       axios
         .get(
-          `${process.env.VUE_APP_API_URL}/contract/download/${contract_id}`,
+          `${process.env.VUE_APP_API_URL}/beneficiario/contrato/download/${contract_id}`,
           {
             responseType: "arraybuffer",
           }
@@ -461,12 +467,15 @@ export default {
     },
 
     download() {
-      const reversedContractData = JSON.parse(JSON.stringify(this.contractData));
+      const reversedContractData = JSON.parse(
+        JSON.stringify(this.contractData)
+      );
 
       var beneficiarie_id = reversedContractData.data[0].beneficiarie_id;
 
       axios
-        .get(`${process.env.VUE_APP_API_URL}/contract/download/${beneficiarie_id}`,
+        .get(
+          `${process.env.VUE_APP_API_URL}/beneficiario/contrato/download/${beneficiarie_id}`,
           {
             responseType: "arraybuffer",
           }
@@ -502,18 +511,18 @@ export default {
     getDataForm() {
       axios
         .get(
-          `${process.env.VUE_APP_API_URL}/get-beneficiary/${this.beneficiaryId}`
+          `${process.env.VUE_APP_API_URL}/beneficiario/${this.beneficiaryId}`
         )
         .then((res) => {
           this.beneficiaryList = res;
-          this.beneficiaryStatus = res.data.data[0].status;
+          this.beneficiaryStatus = res.data[0].status;
         });
     },
 
     getDependentBeneficiaries() {
       axios
         .get(
-          `${process.env.VUE_APP_API_URL}/get-dependent/${this.beneficiaryId}`
+          `${process.env.VUE_APP_API_URL}/beneficiario/dependentes/${this.beneficiaryId}`
         )
         .then((res) => {
           this.dependentList = res;
@@ -522,9 +531,11 @@ export default {
 
     getDataContract() {
       axios
-        .get(`${process.env.VUE_APP_API_URL}/get-contract/${this.beneficiaryId}`)
+        .get(
+          `${process.env.VUE_APP_API_URL}/beneficiario/contrato/${this.beneficiaryId}`
+        )
         .then((res) => {
-          console.log('contractData');
+          console.log("contractData");
           console.log(res);
           this.contractData = res;
         });

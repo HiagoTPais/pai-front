@@ -57,7 +57,7 @@ export default {
       axios
         .delete(`${process.env.VUE_APP_API_URL}/beneficiary/${id}`)
         .then(() => {
-          this.$emit("setBeneficiariesList");
+          this.$emit("setBeneficiarioList");
 
           this.OpenClose = !this.OpenClose;
         });

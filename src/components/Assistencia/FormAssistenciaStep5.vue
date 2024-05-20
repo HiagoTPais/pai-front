@@ -166,7 +166,7 @@ export default {
     },
     download() {
       axios
-        .get(`${process.env.VUE_APP_API_URL}/contract/download/${this.contractId}`, {
+        .get(`${process.env.VUE_APP_API_URL}/beneficiario/contrato/download/${this.contractId}`, {
           headers: { "Content-Type": "application/x-www-form-urlencoded" },
           responseType: "arraybuffer",
         })

@@ -19,7 +19,7 @@
           />
         </div>
 
-        <div class="d-flex">
+        <div class="d-flex" style="margin-left: -18%;">
           <span
             class="nav-icon"
             v-for="(tab, index) in tabs"

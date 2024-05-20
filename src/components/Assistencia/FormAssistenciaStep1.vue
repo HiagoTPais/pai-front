@@ -473,45 +473,36 @@ export default {
         const reversedbeneficiaryList = JSON.parse(
           JSON.stringify(this.beneficiaryList)
         );
-        this.form1.protocolo_id =
-          reversedbeneficiaryList.data.data[0].protocolo_id;
-        this.form1.nome_completo =
-          reversedbeneficiaryList.data.data[0].nome_completo;
-        this.form1.data_nascimento =
-          reversedbeneficiaryList.data.data[0].data_nascimento;
-        this.form1.nacionalidade =
-          reversedbeneficiaryList.data.data[0].nacionalidade;
-        this.form1.rg = reversedbeneficiaryList.data.data[0].rg;
-        this.form1.orgao_expedicao =
-          reversedbeneficiaryList.data.data[0].orgao_expedicao;
-        this.form1.data_expedicao =
-          reversedbeneficiaryList.data.data[0].data_expedicao;
-        this.form1.cpf = reversedbeneficiaryList.data.data[0].cpf;
-        this.form1.estado_civil =
-          reversedbeneficiaryList.data.data[0].estado_civil;
-        this.form1.grau_escolaridade =
-          reversedbeneficiaryList.data.data[0].grau_escolaridade;
-        this.form1.ocupaçao = reversedbeneficiaryList.data.data[0].ocupaçao;
-        this.form1.religiao = reversedbeneficiaryList.data.data[0].religiao;
-        this.form1.apelido = reversedbeneficiaryList.data.data[0].apelido;
-        this.form1.rua = reversedbeneficiaryList.data.data[0].rua;
-        this.form1.numero = reversedbeneficiaryList.data.data[0].numero;
-        this.form1.bairro = reversedbeneficiaryList.data.data[0].bairro;
-        this.form1.cep = reversedbeneficiaryList.data.data[0].cep;
-        this.form1.cidade = reversedbeneficiaryList.data.data[0].cidade;
-        this.form1.uf = reversedbeneficiaryList.data.data[0].uf;
-        this.form1.complemento =
-          reversedbeneficiaryList.data.data[0].complemento;
-        this.form1.ponto_referencia =
-          reversedbeneficiaryList.data.data[0].ponto_referencia;
-        this.form1.zona = reversedbeneficiaryList.data.data[0].zona;
-        this.form1.whatsapp_1_num =
-          reversedbeneficiaryList.data.data[0].whatsapp_1_num;
-        this.form1.whatsapp_1 = reversedbeneficiaryList.data.data[0].whatsapp_1;
-        this.form1.whatsapp_2_num =
-          reversedbeneficiaryList.data.data[0].whatsapp_2_num;
-        this.form1.whatsapp_2 = reversedbeneficiaryList.data.data[0].whatsapp_2;
-        this.form1.status = reversedbeneficiaryList.data.data[0].status;
+        // console.log('reversedbeneficiaryList');
+        // console.log(reversedbeneficiaryList);
+        // console.log(this.beneficiaryList);
+        this.form1.protocolo_id = reversedbeneficiaryList.data[0].protocolo_id;
+        this.form1.nome_completo = reversedbeneficiaryList.data[0].nome_completo;
+        this.form1.data_nascimento = reversedbeneficiaryList.data[0].data_nascimento;
+        this.form1.nacionalidade = reversedbeneficiaryList.data[0].nacionalidade;
+        this.form1.rg = reversedbeneficiaryList.data[0].rg;
+        this.form1.orgao_expedicao = reversedbeneficiaryList.data[0].orgao_expedicao;
+        this.form1.data_expedicao = reversedbeneficiaryList.data[0].data_expedicao;
+        this.form1.cpf = reversedbeneficiaryList.data[0].cpf;
+        this.form1.estado_civil = reversedbeneficiaryList.data[0].estado_civil;
+        this.form1.grau_escolaridade = reversedbeneficiaryList.data[0].grau_escolaridade;
+        this.form1.ocupaçao = reversedbeneficiaryList.data[0].ocupaçao;
+        this.form1.religiao = reversedbeneficiaryList.data[0].religiao;
+        this.form1.apelido = reversedbeneficiaryList.data[0].apelido;
+        this.form1.rua = reversedbeneficiaryList.data[0].rua;
+        this.form1.numero = reversedbeneficiaryList.data[0].numero;
+        this.form1.bairro = reversedbeneficiaryList.data[0].bairro;
+        this.form1.cep = reversedbeneficiaryList.data[0].cep;
+        this.form1.cidade = reversedbeneficiaryList.data[0].cidade;
+        this.form1.uf = reversedbeneficiaryList.data[0].uf;
+        this.form1.complemento = reversedbeneficiaryList.data[0].complemento;
+        this.form1.ponto_referencia = reversedbeneficiaryList.data[0].ponto_referencia;
+        this.form1.zona = reversedbeneficiaryList.data[0].zona;
+        this.form1.whatsapp_1_num = reversedbeneficiaryList.data[0].whatsapp_1_num;
+        this.form1.whatsapp_1 = reversedbeneficiaryList.data[0].whatsapp_1;
+        this.form1.whatsapp_2_num = reversedbeneficiaryList.data[0].whatsapp_2_num;
+        this.form1.whatsapp_2 = reversedbeneficiaryList.data[0].whatsapp_2;
+        this.form1.status = reversedbeneficiaryList.data[0].status;
       }
     },
   },

@@ -278,7 +278,7 @@ export default {
 
     downloadAfterCreate(id) {
       axios
-        .get(`${process.env.VUE_APP_API_URL}/contract/download/${id}`, {
+        .get(`${process.env.VUE_APP_API_URL}/beneficiario/contrato/download/${id}`, {
           headers: { "Content-Type": "application/x-www-form-urlencoded" },
           responseType: "arraybuffer",
         })
@@ -300,7 +300,7 @@ export default {
         JSON.stringify(this.beneficiaryList)
       );
 
-      this.form.beneficiary_id = reversedbeneficiaryList.data.data[0].id;
+      this.form.beneficiary_id = reversedbeneficiaryList.data[0].id;
     },
   },
 };

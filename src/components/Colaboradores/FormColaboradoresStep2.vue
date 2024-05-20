@@ -198,20 +198,15 @@ export default {
         this.count = reversedDependentList.data.data.length;
 
         reversedDependentList.data.data.forEach((item, key) => {
-          this.values["nome_completo_dependente_" + key] =
-            item["nome_completo_dependente"];
+          this.values["nome_completo_dependente_" + key] = item["nome_completo_dependente"];
           this.values["sexo_dependente_" + key] = item["sexo_dependente"];
-          this.values["nascimento_dependente_" + key] =
-            item["nascimento_dependente"];
-          this.values["parentesco_dependente_" + key] =
-            item["parentesco_dependente"];
+          this.values["nascimento_dependente_" + key] = item["nascimento_dependente"];
+          this.values["parentesco_dependente_" + key] = item["parentesco_dependente"];
           this.values["cpf_dependente_" + key] = item["cpf_dependente"];
-          this.values["whatsapp_dependente_" + key] =
-            item["whatsapp_dependente"];
+          this.values["whatsapp_dependente_" + key] = item["whatsapp_dependente"];
           this.values["seguro_dependente_" + key] = item["seguro_dependente"];
           this.values["extra_" + key] = item["extra"];
-          this.values["telefone_dependente_" + key] =
-            item["telefone_dependente"];
+          this.values["telefone_dependente_" + key] = item["telefone_dependente"];
         });
       }
     },

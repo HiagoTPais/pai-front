@@ -122,7 +122,7 @@ export default {
   methods: {
     getHistoricoBeneficiario(id) {
       axios
-        .get(`${process.env.VUE_APP_API_URL}/get-historico-beneficiario/${id}`)
+        .get(`${process.env.VUE_APP_API_URL}/beneficiario/historico/${id}`)
         .then((res) => {
           this.itens = res.data;
         });

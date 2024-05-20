@@ -204,7 +204,7 @@ export default {
   methods: {
     searchBeneficiaries() {
       axios
-        .get(`${process.env.VUE_APP_API_URL}/beneficiaries`, {
+        .get(`${process.env.VUE_APP_API_URL}/beneficiario`, {
           params: {
             search: this.search,
           },

@@ -5,7 +5,7 @@
         :visible="this.visibleModal"
         :idBeneficiary="this.idBeneficiary"
         :nameBeneficiary="this.nameBeneficiary"
-        @set-beneficiaries-list="setBeneficiariesList"
+        @set-beneficiaries-list="setBeneficiarioList"
       />
 
       <div class="d-flex justify-content-between">
@@ -57,7 +57,7 @@
           </thead>
           <tbody>
             <tr
-              v-for="item in beneficiariesList.value"
+              v-for="item in beneficiarioList.value"
               :key="item.id"
               class="view-tr"
               :style="
@@ -174,7 +174,7 @@
         <div class="d-flex flex-row-reverse" style="margin-right: 18px">
           <paginate
             :page-count="Math.ceil(this.totalItens / 10)"
-            :click-handler="setBeneficiariesList"
+            :click-handler="setBeneficiarioList"
             :prev-text="'Prev'"
             :next-text="'Next'"
             :container-class="'pagination'"
@@ -235,7 +235,7 @@ export default {
   name: "ViewAssistencia",
   data() {
     return {
-      beneficiariesList: ref([]),
+      beneficiarioList: ref([]),
       visibleModal: false,
       actionsBtn: false,
       idBeneficiary: null,
@@ -259,7 +259,7 @@ export default {
   emits: ["setShowForm"],
 
   beforeMount() {
-    this.setBeneficiariesList();
+    this.setBeneficiarioList();
   },
 
   methods: {
@@ -290,11 +290,11 @@ export default {
       this.setNextView();
     },
 
-    setBeneficiariesList(page = 1) {
+    setBeneficiarioList(page = 1) {
       axios
-        .get(`${process.env.VUE_APP_API_URL}/beneficiaries?page=${page}`)
+        .get(`${process.env.VUE_APP_API_URL}/beneficiario?page=${page}`)
         .then((res) => {
-          this.beneficiariesList.value = res.data.data;
+          this.beneficiarioList.value = res.data.data;
           this.totalItens = res.data.total;
         })
         .catch((error) => {
@@ -304,13 +304,13 @@ export default {
 
     searchBeneficiaries() {
       axios
-        .get(`${process.env.VUE_APP_API_URL}/beneficiaries`, {
+        .get(`${process.env.VUE_APP_API_URL}/beneficiario`, {
           params: {
             search: this.search,
           },
         })
         .then((res) => {
-          this.beneficiariesList.value = res.data.data;
+          this.beneficiarioList.value = res.data.data;
           this.totalItens = res.data.meta.total;
         })
         .catch((error) => {
