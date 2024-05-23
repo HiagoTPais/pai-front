@@ -195,9 +195,9 @@ export default {
           JSON.stringify(this.dependentList)
         );
 
-        this.count = reversedDependentList.data.data.length;
+        this.count = reversedDependentList.data.length;
 
-        reversedDependentList.data.data.forEach((item, key) => {
+        reversedDependentList.data.forEach((item, key) => {
           this.values["nome_completo_dependente_" + key] = item["nome_completo_dependente"];
           this.values["sexo_dependente_" + key] = item["sexo_dependente"];
           this.values["nascimento_dependente_" + key] = item["nascimento_dependente"];

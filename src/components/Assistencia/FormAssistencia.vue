@@ -50,7 +50,7 @@
 
         <div
           class="d-flex"
-          style="margin-left: -6%"
+          :style="showView == 'form-assistencia-edit' ? { marginLeft: '-15%' } : { marginLeft: '-6%' }"
           v-bind:class="getNavClass()"
         >
           <span

@@ -57,7 +57,7 @@
           <span class="title-input-blue">Parentesco*</span>
           <select
             @blur="setForm3()"
-            v-model="values['parentesco_dependente-' + (key - 1)]"
+            v-model="values['parentesco_dependente_' + (key - 1)]"
             name="parentesco_dependente"
             class="select-resp"
             style="margin-top: 8px"
@@ -77,7 +77,7 @@
           <span class="title-input-blue">CPF</span>
           <input
             @blur="setForm3()"
-            v-model="values['cpf_dependente-' + (key - 1)]"
+            v-model="values['cpf_dependente_' + (key - 1)]"
             name="cpf_dependente"
             type="text"
             class="input-resp"
@@ -89,7 +89,7 @@
           <span class="title-input-blue">Telefone</span>
           <input
             @blur="setForm3()"
-            v-model="values['telefone_dependente-' + (key - 1)]"
+            v-model="values['telefone_dependente_' + (key - 1)]"
             name="telefone_dependente"
             type="text"
             class="input-resp"
@@ -101,7 +101,7 @@
           <span class="title-input-blue">WhatsApp?</span>
           <select
             @blur="setForm3()"
-            v-model="values['whatsapp_dependente-' + (key - 1)]"
+            v-model="values['whatsapp_dependente_' + (key - 1)]"
             name="whatsapp_dependente"
             class="select-resp"
             style="margin-top: 8px"
@@ -115,7 +115,7 @@
           <span class="title-input-blue">Seguro?</span>
           <select
             @blur="setForm3()"
-            v-model="values['seguro_dependente-' + (key - 1)]"
+            v-model="values['seguro_dependente_' + (key - 1)]"
             name="seguro_dependente"
             class="select-resp"
             style="margin-top: 8px"
@@ -129,7 +129,7 @@
           <span class="title-input-blue">Extra?</span>
           <select
             @blur="setForm3()"
-            v-model="values['extra-' + (key - 1)]"
+            v-model="values['extra_' + (key - 1)]"
             name="extra"
             class="select-resp"
             style="margin-top: 8px"
@@ -192,22 +192,24 @@ export default {
     },
     dependentList: function () {
       if (this.showCurrentView == "form-assistencia-edit") {
-        const reversedDependentList = JSON.parse(
-          JSON.stringify(this.dependentList)
-        );
+        const reversedDependentList = JSON.parse(JSON.stringify(this.dependentList));
 
-        this.count = reversedDependentList.data.data.length;
+        // console.log('teste reversedDependentList');
+        // console.log(reversedDependentList);
 
-        reversedDependentList.data.data.forEach((item, key) => {
-          this.values["nome_completo_dependente_" + key] = item["nome_completo_dependente"];
-          this.values["sexo_dependente_" + key] = item["sexo_dependente"];
-          this.values["nascimento_dependente_" + key] = item["nascimento_dependente"];
-          this.values["parentesco_dependente_" + key] = item["parentesco_dependente"];
-          this.values["cpf_dependente_" + key] = item["cpf_dependente"];
-          this.values["whatsapp_dependente_" + key] = item["whatsapp_dependente"];
-          this.values["seguro_dependente_" + key] = item["seguro_dependente"];
-          this.values["extra_" + key] = item["extra"];
-          this.values["telefone_dependente_" + key] = item["telefone_dependente"];
+        this.count = reversedDependentList.data.length;
+
+        reversedDependentList.data.forEach((item, key) => {
+          // console.log(item.id, key);
+          this.values["nome_completo_dependente_" + key] = item.nome_completo_dependente;
+          this.values["sexo_dependente_" + key] = item.sexo_dependente;
+          this.values["nascimento_dependente_" + key] = item.nascimento_dependente;
+          this.values["parentesco_dependente_" + key] = item.parentesco_dependente;
+          this.values["cpf_dependente_" + key] = item.cpf_dependente;
+          this.values["whatsapp_dependente_" + key] = item.whatsapp_dependente;
+          this.values["seguro_dependente_" + key] = item.seguro_dependente;
+          this.values["extra_" + key] = item.extra;
+          this.values["telefone_dependente_" + key] = item.telefone_dependente;
         });
       }
     },
