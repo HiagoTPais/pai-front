@@ -185,14 +185,14 @@
 }
 
 .plus {
-    width: 45px;
+    width: 40px;
     height: 40px;
     cursor: pointer;
 }
 
 .less {
-    width: 45px;
-    height: 43px;
+    width: 40px;
+    height: 40px;
     cursor: pointer;
 }
 
@@ -481,7 +481,6 @@ tr {
     font-weight: bold;
     text-align: left;
     font-size: 16px;
-    margin-left: 8px;
 }
 
 .form-assistencia {
@@ -615,8 +614,6 @@ tr {
     background-color: rgb(33, 80, 159);
     border-radius: 6px;
     cursor: pointer;
-    margin-left: 8px;
-    margin-top: -6px;
 }
 
 .foto {

@@ -442,7 +442,7 @@ export default {
       this.showAlert = true;
 
       axios
-        .post(`${process.env.VUE_APP_API_URL}/plans/store`, { data: this.form })
+        .post(`${process.env.VUE_APP_API_URL}/planos/store`, { data: this.form })
         .then((response) => {
           console.log(response);
           this.msgAlert = "O plano foi cadastrado com sucesso.";
@@ -458,7 +458,7 @@ export default {
       this.showAlert = true;
 
       axios
-        .put(`${process.env.VUE_APP_API_URL}/plans/update/${this.plan_id}`, {
+        .put(`${process.env.VUE_APP_API_URL}/planos/update/${this.plan_id}`, {
           data: this.form,
         })
         .then((res) => {
@@ -474,7 +474,7 @@ export default {
 
     setPlanList(page = 1) {
       axios
-        .get(`${process.env.VUE_APP_API_URL}/plans?page=${page}`)
+        .get(`${process.env.VUE_APP_API_URL}/planos?page=${page}`)
         .then((res) => {
           this.planList.value = res.data.data;
           this.totalItens = res.data.meta.total;
@@ -486,7 +486,7 @@ export default {
 
     getPlan(id_plan) {
       axios
-        .get(`${process.env.VUE_APP_API_URL}/plans/get-plan/${id_plan}`)
+        .get(`${process.env.VUE_APP_API_URL}/planos/get-plan/${id_plan}`)
         .then((res) => {
           this.form.plan_title = res.data.data.plan_title;
           this.form.plan_type = res.data.data.plan_type;
@@ -508,7 +508,7 @@ export default {
     getAdditionalBenefits(id_plan) {
       axios
         .get(
-          `${process.env.VUE_APP_API_URL}/plans/get-additional-benefits/${id_plan}`
+          `${process.env.VUE_APP_API_URL}/planos/get-additional-benefits/${id_plan}`
         )
         .then((res) => {
           this.count = res.data.data.length;

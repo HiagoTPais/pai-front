@@ -15,7 +15,7 @@
           />
         </div>
 
-        <div style="margin-left: 43%" class="d-flex nav-form">
+        <div class="d-flex nav-form">
           <input
             v-model="search"
             class="search-input"
@@ -67,7 +67,7 @@
                 <img
                   class="eye-table"
                   :src="require('../../assets/img/eye.png')"
-                  @click="setFirstModule(true, item.id)"
+                  @click="setFirstModule(item.id)"
                 />
               </td>
             </tr>
@@ -285,7 +285,7 @@
 
             <div class="d-flex" v-for="key in count" :key="key">
               <select
-                v-model="values[key].beneficio_adicional"
+                v-model="values"
                 name="beneficio_adicional"
                 @blur="setBeneficiosAdicionais()"
                 class="select-resp"
@@ -302,7 +302,7 @@
               <input
                 type="text"
                 style="width: 40%"
-                v-model="values[key].valor"
+                v-model="values"
                 :id="key"
                 class="input-resp"
                 placeholder="R$ Valor"
@@ -327,15 +327,25 @@
               <div class="col">
                 <label class="form-title"> Faixa Etaria </label>
               </div>
+              
               <div class="col">
                 <label class="form-title"> Carência </label>
               </div>
+
               <div class="col">
                 <label class="form-title"> Assistência </label>
               </div>
+
+              <div class="col">
+                <label class="form-title"> </label>
+              </div>
             </div>
 
-            <div class="row align-items-center">
+            <div
+              class="row align-items-center"
+              v-for="key in faixaCount"
+              :key="key"
+            >
               <div class="col">
                 <input
                   type="text"
@@ -358,6 +368,19 @@
                   v-model="valor_carencia['assistencia-' + key]"
                   :id="key"
                   class="input-resp"
+                />
+              </div>
+
+              <div class="col">
+                <img
+                  class="plus"
+                  :src="require('../../assets/img/plus.png')"
+                  @click="addFaixa()"
+                />
+                <img
+                  class="less"
+                  :src="require('../../assets/img/less.png')"
+                  @click="removeFaixa()"
                 />
               </div>
             </div>
@@ -403,6 +426,7 @@ export default {
       search: "",
       currentModule: 1,
       count: 1,
+      faixaCount: 1,
       totalItens: null,
       planList: ref({ data: [] }),
       showAlert: false,
@@ -454,16 +478,28 @@ export default {
       }
     },
 
+    addFaixa() {
+      if (this.faixaCount < 5) {
+        this.faixaCount++;
+      }
+    },
+
+    removeFaixa() {
+      if (this.faixaCount != 1) {
+        this.faixaCount--;
+      }
+    },
+
     changeModule(moduleId) {
       this.currentModule = moduleId;
     },
 
-    setFirstModule($edition = false, id_plan) {
+    setFirstModule(id_plan = null) {
       if (this.currentModule == 1) {
         this.currentModule = 2;
         this.titleModule = "CRIAR PLANO ASSISTENCIAL";
 
-        if ($edition) {
+        if (id_plan) {
           this.plan_id = id_plan;
 
           this.titleModule = "EDITAR PLANO ASSISTENCIAL";
@@ -481,7 +517,7 @@ export default {
       this.showAlert = true;
 
       axios
-        .post(`${process.env.VUE_APP_API_URL}/plans/store`, { data: this.form })
+        .post(`${process.env.VUE_APP_API_URL}/planos/store`, { data: this.form })
         .then((response) => {
           console.log(response);
           this.msgAlert = "O plano foi cadastrado com sucesso.";
@@ -497,7 +533,7 @@ export default {
       this.showAlert = true;
 
       axios
-        .put(`${process.env.VUE_APP_API_URL}/plans/update/${this.plan_id}`, {
+        .put(`${process.env.VUE_APP_API_URL}/planos/update/${this.plan_id}`, {
           data: this.form,
         })
         .then((res) => {
@@ -513,7 +549,7 @@ export default {
 
     setPlanList(page = 1) {
       axios
-        .get(`${process.env.VUE_APP_API_URL}/plans?page=${page}`)
+        .get(`${process.env.VUE_APP_API_URL}/planos?page=${page}`)
         .then((res) => {
           this.planList.value = res.data.data;
           this.totalItens = res.data.meta.total;
@@ -525,7 +561,7 @@ export default {
 
     getPlan(id_plan) {
       axios
-        .get(`${process.env.VUE_APP_API_URL}/plans/get-plan/${id_plan}`)
+        .get(`${process.env.VUE_APP_API_URL}/planos/get-plan/${id_plan}`)
         .then((res) => {
           this.form.nome = res.data[0].nome;
           this.form.tipo = res.data[0].tipo;
@@ -546,7 +582,9 @@ export default {
 
     getAdditionalBenefits(id_plan) {
       axios
-        .get(`${process.env.VUE_APP_API_URL}/plans/get-additional-benefits/${id_plan}`)
+        .get(
+          `${process.env.VUE_APP_API_URL}/planos/get-additional-benefits/${id_plan}`
+        )
         .then((res) => {
           console.log(res);
           this.values = res.data;

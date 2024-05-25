@@ -215,7 +215,7 @@ export default {
     },
     fillSelectedPlan(plan_id) {
       axios
-        .get(`${process.env.VUE_APP_API_URL}/plans/get-plan/${plan_id}`)
+        .get(`${process.env.VUE_APP_API_URL}/planos/get-plan/${plan_id}`)
         .then((res) => {
           this.form2.n_max = res.data[0].n_max;
           this.form2.n_min = res.data[0].n_min;
@@ -233,7 +233,7 @@ export default {
         });
 
       axios
-        .get(`${process.env.VUE_APP_API_URL}/plans/get-additional-benefits/${plan_id}`)
+        .get(`${process.env.VUE_APP_API_URL}/planos/get-additional-benefits/${plan_id}`)
         .then((res) => {
           console.log("get additional benefits");
           console.log(res);
@@ -266,7 +266,7 @@ export default {
     },
     setPlansList() {
       axios
-        .get(`${process.env.VUE_APP_API_URL}/plans/get-all`)
+        .get(`${process.env.VUE_APP_API_URL}/planos/get-all`)
         .then((res) => {
           // console.log('setPlansList');
           // console.log(res.data);
