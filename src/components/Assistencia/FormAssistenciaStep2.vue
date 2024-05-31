@@ -112,43 +112,45 @@
           Benefícios Adicionais
         </label>
 
-        <div class="d-flex" v-for="key in count" :key="key">
-          <select
-            v-model="values['beneficio_adicional-' + (key - 1)]"
-            name="beneficio_adicional"
-            @blur="setBeneficiosAdicionais()"
-            class="select-resp"
-          >
-            <option>Transporte Adicional</option>
-            <option>Materiais P/ Convalescência</option>
-            <option>Clube de Vantagens</option>
-            <option>Salão de Homenagens 24Hrs</option>
-            <option>Somatoconservação</option>
-            <option>Traslado Nacional</option>
-            <option>Seguro Titular</option>
-          </select>
+        <div class="scrollbar-ben">
+          <div class="d-flex" v-for="key in count" :key="key">
+            <select
+              v-model="values['beneficio_adicional-' + (key - 1)]"
+              name="beneficio_adicional"
+              @blur="setBeneficiosAdicionais()"
+              class="select-resp"
+            >
+              <option>Transporte Adicional</option>
+              <option>Materiais P/ Convalescência</option>
+              <option>Clube de Vantagens</option>
+              <option>Salão de Homenagens 24Hrs</option>
+              <option>Somatoconservação</option>
+              <option>Traslado Nacional</option>
+              <option>Seguro Titular</option>
+            </select>
 
-          <input
-            disabled
-            type="text"
-            style="width: 40%"
-            v-model="values['valor-' + (key - 1)]"
-            :id="key"
-            class="input-resp"
-            placeholder="R$ Valor"
-            v-money="money"
-            @blur="setValoresAdicionais(key)"
-          />
-          <img
-            style="width: 45px; height: 40px; cursor: pointer"
-            :src="require('../../assets/img/plus.png')"
-            @click="addInput()"
-          />
-          <img
-            style="width: 45px; height: 43px; cursor: pointer"
-            :src="require('../../assets/img/less.png')"
-            @click="removeInput()"
-          />
+            <input
+              disabled
+              type="text"
+              style="width: 40%"
+              v-model="values['valor-' + (key - 1)]"
+              :id="key"
+              class="input-resp"
+              placeholder="R$ Valor"
+              v-money="money"
+              @blur="setValoresAdicionais(key)"
+            />
+            <img
+              style="width: 45px; height: 40px; cursor: pointer"
+              :src="require('../../assets/img/plus.png')"
+              @click="addInput()"
+            />
+            <img
+              style="width: 45px; height: 43px; cursor: pointer"
+              :src="require('../../assets/img/less.png')"
+              @click="removeInput()"
+            />
+          </div>
         </div>
       </div>
 
@@ -233,7 +235,9 @@ export default {
         });
 
       axios
-        .get(`${process.env.VUE_APP_API_URL}/planos/get-additional-benefits/${plan_id}`)
+        .get(
+          `${process.env.VUE_APP_API_URL}/planos/get-additional-benefits/${plan_id}`
+        )
         .then((res) => {
           console.log("get additional benefits");
           console.log(res);
@@ -252,9 +256,7 @@ export default {
         });
     },
     addInput() {
-      if (this.count < 5) {
-        this.count++;
-      }
+      this.count++;
     },
     removeInput() {
       if (this.count != 1) {
@@ -290,7 +292,6 @@ export default {
     contractData: function () {
       if (this.showCurrentView == "form-assistencia-edit") {
         // const reversedContractData = JSON.parse(JSON.stringify(this.contractData));
-
         // this.fillSelectedPlan(reversedContractData.data[0].selecione_plano);
       }
     },

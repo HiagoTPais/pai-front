@@ -7,21 +7,19 @@
       <div class="d-flex">
         <img
           class="family"
-          style="height: 40px; width: 40px; margin: 10px; cursor: pointer"
           :src="require('../../assets/img/person.png')"
           @click="addInput()"
         />
         <img
           class="family"
-          style="height: 40px; width: 40px; margin: 10px; cursor: pointer"
           :src="require('../../assets/img/delete.png')"
           @click="removeInput()"
         />
       </div>
     </div>
-    <div>
+    <div class="scrollbar-y">
       <div class="row" v-for="key in count" :key="key">
-        <div class="col" style="margin-top: 5px;">
+        <div class="col">
           <span class="title-input-blue">Nome Completo</span>
           <input
             @blur="setForm3()"
@@ -35,14 +33,18 @@
         <div class="col">
           <div class="m5">
             <span class="title-input-blue">Sexo</span>
-            <select v-model="values['sexo_dependente_' + (key - 1)]" name="sexo" class="select-resp">
+            <select
+              v-model="values['sexo_dependente_' + (key - 1)]"
+              name="sexo"
+              class="select-resp"
+            >
               <option>Masculino</option>
               <option>Feminino</option>
             </select>
           </div>
         </div>
 
-        <div class="col" style="margin-top: 5px;">
+        <div class="col" style="margin-top: 5px">
           <span class="title-input-blue">Nascimento</span>
           <input
             @blur="setForm3()"
@@ -73,7 +75,7 @@
           </select>
         </div>
 
-        <div class="col" style="margin-top: 5px;">
+        <div class="col" style="margin-top: 5px">
           <span class="title-input-blue">CPF</span>
           <input
             @blur="setForm3()"
@@ -85,7 +87,7 @@
           />
         </div>
 
-        <div class="col" style="margin-top: 5px;">
+        <div class="col" style="margin-top: 5px">
           <span class="title-input-blue">Telefone</span>
           <input
             @blur="setForm3()"
@@ -145,6 +147,7 @@
   
 <script>
 import { mask } from "vue-the-mask";
+// import { PerfectScrollbar } from "vue3-perfect-scrollbar";
 
 export default {
   name: "FormAssistenciaStep3",
@@ -174,7 +177,6 @@ export default {
   },
   methods: {
     addInput() {
-      console.log(this.count);
       this.count++;
     },
     removeInput() {
@@ -194,13 +196,9 @@ export default {
       if (this.showCurrentView == "form-assistencia-edit") {
         const reversedDependentList = JSON.parse(JSON.stringify(this.dependentList));
 
-        // console.log('teste reversedDependentList');
-        // console.log(reversedDependentList);
-
         this.count = reversedDependentList.data.length;
 
         reversedDependentList.data.forEach((item, key) => {
-          // console.log(item.id, key);
           this.values["nome_completo_dependente_" + key] = item.nome_completo_dependente;
           this.values["sexo_dependente_" + key] = item.sexo_dependente;
           this.values["nascimento_dependente_" + key] = item.nascimento_dependente;
@@ -213,6 +211,9 @@ export default {
         });
       }
     },
+  },
+  components: {
+    // PerfectScrollbar,
   },
 };
 </script>

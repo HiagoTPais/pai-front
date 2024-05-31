@@ -34,7 +34,7 @@
           <img
             v-if="currentModule == '1'"
             class="icon-back icon-mar"
-            style="margin-top: 34px; margin-left: 24px;"
+            style="margin-top: 34px; margin-left: 24px"
             @click="setFirstModule()"
             :src="require('../../assets/img/new.png')"
           />
@@ -282,43 +282,44 @@
             <label class="form-title" style="margin-bottom: 5%">
               Benefícios Adicionais
             </label>
+            <div class="scrollbar-ben">
+              <div class="d-flex" v-for="key in count" :key="key">
+                <select
+                  v-model="values['beneficio_adicional-' + key]"
+                  name="beneficio_adicional"
+                  @blur="setBeneficiosAdicionais()"
+                  class="select-resp"
+                >
+                  <option>Transporte Adicional</option>
+                  <option>Materiais P/ Convalescência</option>
+                  <option>Clube de Vantagens</option>
+                  <option>Salão de Homenagens 24Hrs</option>
+                  <option>Somatoconservação</option>
+                  <option>Traslado Nacional</option>
+                  <option>Seguro Titular</option>
+                </select>
 
-            <div class="d-flex" v-for="key in count" :key="key">
-              <select
-                v-model="values['beneficio_adicional-' + key]"
-                name="beneficio_adicional"
-                @blur="setBeneficiosAdicionais()"
-                class="select-resp"
-              >
-                <option>Transporte Adicional</option>
-                <option>Materiais P/ Convalescência</option>
-                <option>Clube de Vantagens</option>
-                <option>Salão de Homenagens 24Hrs</option>
-                <option>Somatoconservação</option>
-                <option>Traslado Nacional</option>
-                <option>Seguro Titular</option>
-              </select>
+                <input
+                  type="text"
+                  style="width: 40%"
+                  v-model="values['valor-' + key]"
+                  :id="key"
+                  class="input-resp"
+                  placeholder="R$ Valor"
+                  v-money="money"
+                />
 
-              <input
-                type="text"
-                style="width: 40%"
-                v-model="values['valor-' + key]"
-                :id="key"
-                class="input-resp"
-                placeholder="R$ Valor"
-                v-money="money"
-              />
-
-              <img
-                class="plus"
-                :src="require('../../assets/img/plus.png')"
-                @click="addInput()"
-              />
-              <img
-                class="less"
-                :src="require('../../assets/img/less.png')"
-                @click="removeInput()"
-              />
+                <img
+                  class="plus"
+                  :src="require('../../assets/img/plus.png')"
+                  @click="addInput()"
+                />
+                <img
+                  class="less"
+                  :src="require('../../assets/img/less.png')"
+                  @click="removeInput()"
+                />
+              </div>
             </div>
           </div>
           <div class="col">
@@ -404,9 +405,7 @@ export default {
   emits: ["setShowForm"],
   methods: {
     addInput() {
-      if (this.count < 5) {
-        this.count++;
-      }
+      this.count++;
     },
 
     removeInput() {
@@ -442,7 +441,9 @@ export default {
       this.showAlert = true;
 
       axios
-        .post(`${process.env.VUE_APP_API_URL}/planos/store`, { data: this.form })
+        .post(`${process.env.VUE_APP_API_URL}/planos/store`, {
+          data: this.form,
+        })
         .then((response) => {
           console.log(response);
           this.msgAlert = "O plano foi cadastrado com sucesso.";
@@ -514,8 +515,8 @@ export default {
           this.count = res.data.data.length;
 
           res.data.data.forEach((item, key) => {
-
-            this.values["beneficio_adicional-" + key] = item["beneficio_adicional"];
+            this.values["beneficio_adicional-" + key] =
+              item["beneficio_adicional"];
             this.values["valor-" + key] = item["valor"];
           });
 

@@ -19,8 +19,8 @@
     </div>
     <div class="card-nav" @click="showLinks('assistencia')" 
       :style="{ backgroundColor: cardBackgroundColor['assistencia'], color: cardColor['assistencia'] }">
-      <img class="family" v-if="!showCardLinks['assistencia']" :src="require('../assets/img/family.png')" />
-      <img class="family" v-else :src="require('../assets/img/family-white.png')" />
+      <img v-if="!showCardLinks['assistencia']" :src="require('../assets/img/family.png')" />
+      <img v-else :src="require('../assets/img/family-white.png')" />
       <p class="card-nav-title">Beneficiarios</p>
     </div>
   </div>
@@ -45,8 +45,8 @@
     </div>
     <div class="card-nav" @click="showLinks('colaboradores')" 
       :style="{ backgroundColor: cardBackgroundColor['colaboradores'], color: cardColor['colaboradores'] }">
-      <img class="family" v-if="!showCardLinks['colaboradores']" :src="require('../assets/img/colaboradores.png')" />
-      <img class="family" v-else :src="require('../assets/img/colaboradores-white.png')" />
+      <img v-if="!showCardLinks['colaboradores']" :src="require('../assets/img/colaboradores.png')" />
+      <img v-else :src="require('../assets/img/colaboradores-white.png')" />
       <p class="card-nav-title">Colaboradores</p>
     </div>
   </div>
@@ -71,8 +71,8 @@
     </div>
     <div class="card-nav" @click="showLinks('funeraria')" 
       :style="{ backgroundColor: cardBackgroundColor['funeraria'], color: cardColor['funeraria'] }">
-      <img class="family" v-if="!showCardLinks['funeraria']" :src="require('../assets/img/funeraria.png')" />
-      <img class="family" v-else :src="require('../assets/img/funeraria-white.png')" />
+      <img v-if="!showCardLinks['funeraria']" :src="require('../assets/img/funeraria.png')" />
+      <img v-else :src="require('../assets/img/funeraria-white.png')" />
       <p class="card-nav-title">Serviço Funerario</p>
     </div>
   </div>

@@ -161,14 +161,14 @@
 .nav-icon {
     color: #21509f;
     background-color: #ffffff;
-    margin-left: 9px;
+    margin-left: 18px;
     border-radius: 15px 15px 0px 0px;
     text-align: center;
     font-size: 15px;
-    height: 57px;
+    height: 50px;
     padding: 15px;
     width: auto;
-    margin-top: 23px;
+    margin-top: 30px;
     cursor: pointer;
 }
 
@@ -305,6 +305,10 @@
 }
 
 .family {
+    height: 40px;
+    width: 40px;
+    margin: 10px;
+    cursor: pointer;
     display: block;
 }
 
@@ -628,4 +632,16 @@ tr {
     border-radius: 15px;
     width: 100%;
     padding: 15px;
+}
+
+.scrollbar-y {
+    max-height: 600px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.scrollbar-ben {
+    max-height: 210px;
+    overflow-y: scroll;
+    overflow-x: hidden;
 }

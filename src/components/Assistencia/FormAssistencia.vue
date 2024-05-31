@@ -115,7 +115,6 @@
                         <slot name="header">
                           <img
                             class="family"
-                            style="height: 40px; width: 40px; margin: 10px"
                             :src="require('../../assets/img/delete.png')"
                           />
                         </slot>
@@ -176,7 +175,6 @@
                       <slot name="header">
                         <img
                           class="family"
-                          style="height: 40px; width: 40px; margin: 10px"
                           :src="require('../../assets/img/delete.png')"
                         />
                       </slot>
