@@ -278,51 +278,8 @@
         <br />
 
         <div class="d-flex justify-content-between">
-          <div class="col">
-            <label class="form-title" style="margin-bottom: 5%">
-              Benefícios Adicionais
-            </label>
+          <BeneficiosAdicionais />
 
-            <div class="scrollbar-ben">
-              <div class="d-flex" v-for="key in count" :key="key">
-                <select
-                  v-model="values['beneficio_adicional-' + key]"
-                  name="beneficio_adicional"
-                  @blur="setBeneficiosAdicionais()"
-                  class="select-resp"
-                >
-                  <option>Transporte Adicional</option>
-                  <option>Materiais P/ Convalescência</option>
-                  <option>Clube de Vantagens</option>
-                  <option>Salão de Homenagens 24Hrs</option>
-                  <option>Somatoconservação</option>
-                  <option>Traslado Nacional</option>
-                  <option>Seguro Titular</option>
-                </select>
-
-                <input
-                  type="text"
-                  style="width: 40%"
-                  v-model="values['valor-' + key]"
-                  :id="key"
-                  class="input-resp"
-                  placeholder="R$ Valor"
-                  v-money="money"
-                />
-
-                <img
-                  class="plus"
-                  :src="require('../../assets/img/plus.png')"
-                  @click="addInput()"
-                />
-                <img
-                  class="less"
-                  :src="require('../../assets/img/less.png')"
-                  @click="removeInput()"
-                />
-              </div>
-            </div>
-          </div>
           <div class="col">
             <div class="d-flex flex-row-reverse" style="margin-top: 33%">
               <button
@@ -355,6 +312,7 @@
 <script>
 import Paginate from "vuejs-paginate-next";
 import AlertForm from "../AlertForm.vue";
+import BeneficiosAdicionais from "../BeneficiosAdicionais";
 import axios from "axios";
 import { ref } from "vue";
 import { VMoney } from "v-money";
@@ -402,6 +360,7 @@ export default {
   components: {
     Paginate,
     AlertForm,
+    BeneficiosAdicionais
   },
   emits: ["setShowForm"],
   methods: {

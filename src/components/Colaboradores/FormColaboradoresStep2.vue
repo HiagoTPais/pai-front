@@ -72,6 +72,8 @@
             <option value="pais">Pais</option>
             <option value="avós">Avós</option>
             <option value="bisavós">Bisavós</option>
+            <option value="esposa">Esposa</option>
+            <option value="marido">Marido</option>
           </select>
         </div>
 

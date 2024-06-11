@@ -228,29 +228,41 @@ export default {
     },
     contractData: function () {
       if (this.showCurrentView == "form-assistencia-edit") {
+        console.log("this.contractData");
+        console.log(this.contractData);
 
-console.log('this.contractData');
-console.log(this.contractData);
-
-        const reversedContractData = JSON.parse(JSON.stringify(this.contractData));
+        const reversedContractData = JSON.parse(
+          JSON.stringify(this.contractData)
+        );
 
         // console.log('reversedContractData');
         // console.log(reversedContractData);
 
-        this.form4.valor_base_plano = reversedContractData.data.data[0].valor_base_plano;
+        this.form4.valor_base_plano =
+          reversedContractData.data.data[0].valor_base_plano;
         this.form4.periodo = reversedContractData.data.data[0].periodo;
-        this.form4.renovacao_automatica = reversedContractData.data.data[0].renovacao_automatica;
-        this.form4.forma_pagamento = reversedContractData.data.data[0].forma_pagamento;
-        this.form4.endereco_cobranca = reversedContractData.data.data[0].endereco_cobranca;
-        this.form4.rua_cobranca = reversedContractData.data.data[0].rua_cobranca;
+        this.form4.renovacao_automatica =
+          reversedContractData.data.data[0].renovacao_automatica;
+        this.form4.forma_pagamento =
+          reversedContractData.data.data[0].forma_pagamento;
+        this.form4.endereco_cobranca =
+          reversedContractData.data.data[0].endereco_cobranca;
+        this.form4.rua_cobranca =
+          reversedContractData.data.data[0].rua_cobranca;
         this.form4.n_cobranca = reversedContractData.data.data[0].n_cobranca;
-        this.form4.bairro_cobranca = reversedContractData.data.data[0].bairro_cobranca;
-        this.form4.cep_cobranca = reversedContractData.data.data[0].cep_cobranca;
-        this.form4.cidade_cobranca = reversedContractData.data.data[0].cidade_cobranca;
+        this.form4.bairro_cobranca =
+          reversedContractData.data.data[0].bairro_cobranca;
+        this.form4.cep_cobranca =
+          reversedContractData.data.data[0].cep_cobranca;
+        this.form4.cidade_cobranca =
+          reversedContractData.data.data[0].cidade_cobranca;
         this.form4.uf_cobranca = reversedContractData.data.data[0].uf_cobranca;
-        this.form4.complemento_cobranca = reversedContractData.data.data[0].complemento_cobranca;
-        this.form4.zona_cobranca = reversedContractData.data.data[0].zona_cobranca;
-        this.form4.ponto_referencia = reversedContractData.data.data[0].ponto_referencia;
+        this.form4.complemento_cobranca =
+          reversedContractData.data.data[0].complemento_cobranca;
+        this.form4.zona_cobranca =
+          reversedContractData.data.data[0].zona_cobranca;
+        this.form4.ponto_referencia =
+          reversedContractData.data.data[0].ponto_referencia;
       }
     },
   },

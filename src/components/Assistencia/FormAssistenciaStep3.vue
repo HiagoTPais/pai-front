@@ -72,6 +72,8 @@
             <option value="pais">Pais</option>
             <option value="avós">Avós</option>
             <option value="bisavós">Bisavós</option>
+            <option value="esposa">Esposa</option>
+            <option value="marido">Marido</option>
           </select>
         </div>
 
@@ -194,7 +196,9 @@ export default {
     },
     dependentList: function () {
       if (this.showCurrentView == "form-assistencia-edit") {
-        const reversedDependentList = JSON.parse(JSON.stringify(this.dependentList));
+        const reversedDependentList = JSON.parse(
+          JSON.stringify(this.dependentList)
+        );
 
         this.count = reversedDependentList.data.length;
 
@@ -211,9 +215,6 @@ export default {
         });
       }
     },
-  },
-  components: {
-    // PerfectScrollbar,
   },
 };
 </script>

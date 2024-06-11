@@ -278,51 +278,12 @@
         <br />
 
         <div class="d-flex justify-content-between">
-          <div class="col">
-            <label class="form-title" style="margin-bottom: 5%">
-              Benefícios Adicionais
-            </label>
-
-            <div class="scrollbar-ben">
-              <div class="d-flex" v-for="key in count" :key="key">
-                <select
-                  v-model="values"
-                  name="beneficio_adicional"
-                  @blur="setBeneficiosAdicionais()"
-                  class="select-resp"
-                >
-                  <option>Transporte Adicional</option>
-                  <option>Materiais P/ Convalescência</option>
-                  <option>Clube de Vantagens</option>
-                  <option>Salão de Homenagens 24Hrs</option>
-                  <option>Somatoconservação</option>
-                  <option>Traslado Nacional</option>
-                  <option>Seguro Titular</option>
-                </select>
-
-                <input
-                  type="text"
-                  style="width: 40%"
-                  v-model="values"
-                  :id="key"
-                  class="input-resp"
-                  placeholder="R$ Valor"
-                  v-money="money"
-                />
-
-                <img
-                  class="plus"
-                  :src="require('../../assets/img/plus.png')"
-                  @click="addInput()"
-                />
-                <img
-                  class="less"
-                  :src="require('../../assets/img/less.png')"
-                  @click="removeInput()"
-                />
-              </div>
-            </div>
-          </div>
+          <BeneficiosAdicionais
+            :sendForm="sendForm"
+            :valuesBen="valuesBen"
+            :countBen="countBen"
+            @set-beneficios-adicionais="setBeneficiosAdicionais"
+          />
 
           <div class="col">
             <div class="row align-items-start">
@@ -420,6 +381,7 @@ import axios from "axios";
 import { ref } from "vue";
 import { VMoney } from "v-money";
 import { mask } from "vue-the-mask";
+import BeneficiosAdicionais from "../BeneficiosAdicionais";
 
 export default {
   name: "HeartAssistencia",
@@ -436,6 +398,7 @@ export default {
       typeAlert: "alert-info",
       titleModule: "PLANOS ASSISTENCIAIS",
       plan_id: null,
+      sendForm: false,
       form: {
         nome: "",
         tipo: "",
@@ -447,9 +410,11 @@ export default {
         n_max: "",
         beneficiarios: "",
         descricao: "",
-        beneficio_adicional: "",
+        beneficio_adicional: {},
       },
       values: [],
+      valuesBen: [],
+      countBen: 0,
       valor_carencia: {},
       money: {
         decimal: ",",
@@ -465,6 +430,7 @@ export default {
   components: {
     Paginate,
     AlertForm,
+    BeneficiosAdicionais,
   },
   emits: ["setShowForm"],
   methods: {
@@ -516,6 +482,18 @@ export default {
     sendNewPlan() {
       this.showAlert = true;
 
+      this.sendForm = true;
+
+      setTimeout(() => {
+        this.showAlert = false;
+      }, 4000);
+    },
+
+    setBeneficiosAdicionais(values) {
+      this.values = values;
+
+      this.form.beneficio_adicional = this.values;
+
       axios
         .post(`${process.env.VUE_APP_API_URL}/planos/store`, {
           data: this.form,
@@ -525,10 +503,6 @@ export default {
           this.msgAlert = "O plano foi cadastrado com sucesso.";
           this.typeAlert = "alert-success";
         });
-
-      setTimeout(() => {
-        this.showAlert = false;
-      }, 4000);
     },
 
     sendUpdatePlan() {
@@ -575,7 +549,6 @@ export default {
           this.form.n_max = res.data[0].n_max;
           this.form.beneficiarios = res.data[0].beneficiarios;
           this.form.descricao = res.data[0].descricao;
-          this.form.beneficio_adicional = res.data[0].beneficio_adicional;
         })
         .catch((error) => {
           console.log(error);
@@ -588,19 +561,20 @@ export default {
           `${process.env.VUE_APP_API_URL}/planos/get-additional-benefits/${id_plan}`
         )
         .then((res) => {
-          console.log(res);
-          this.values = res.data;
-          // res.data.forEach((item, key) => {
-          //   this.values["beneficio_adicional-" + key] = item.beneficio_adicional;
-          //   this.values["valor-" + key] = item.valor;
-          // });
+          res.data.forEach((item, key) => {
+            this.values["beneficio_adicional-" + key] = item.beneficio_adicional;
+            this.values["valor-" + key] = item.valor;
+          });
+
+          // this.count = res.data.length;
+
+          this.countBen = res.data.length;
+
+          this.valuesBen = this.values;
         })
         .catch((error) => {
           console.log(error);
         });
-
-      console.log(this.values);
-      this.count = this.values.length;
     },
 
     searchPlan() {
@@ -617,10 +591,6 @@ export default {
         .catch((error) => {
           console.log(error);
         });
-    },
-
-    setBeneficiosAdicionais() {
-      this.form.beneficio_adicional = this.values;
     },
   },
 

@@ -107,52 +107,7 @@
     </div>
 
     <div class="row m-3">
-      <div class="col">
-        <label class="form-title" style="margin-bottom: 5%">
-          Benefícios Adicionais
-        </label>
-
-        <div class="scrollbar-ben">
-          <div class="d-flex" v-for="key in count" :key="key">
-            <select
-              v-model="values['beneficio_adicional-' + (key - 1)]"
-              name="beneficio_adicional"
-              @blur="setBeneficiosAdicionais()"
-              class="select-resp"
-            >
-              <option>Transporte Adicional</option>
-              <option>Materiais P/ Convalescência</option>
-              <option>Clube de Vantagens</option>
-              <option>Salão de Homenagens 24Hrs</option>
-              <option>Somatoconservação</option>
-              <option>Traslado Nacional</option>
-              <option>Seguro Titular</option>
-            </select>
-
-            <input
-              disabled
-              type="text"
-              style="width: 40%"
-              v-model="values['valor-' + (key - 1)]"
-              :id="key"
-              class="input-resp"
-              placeholder="R$ Valor"
-              v-money="money"
-              @blur="setValoresAdicionais(key)"
-            />
-            <img
-              style="width: 45px; height: 40px; cursor: pointer"
-              :src="require('../../assets/img/plus.png')"
-              @click="addInput()"
-            />
-            <img
-              style="width: 45px; height: 43px; cursor: pointer"
-              :src="require('../../assets/img/less.png')"
-              @click="removeInput()"
-            />
-          </div>
-        </div>
-      </div>
+      <BeneficiosAdicionais />
 
       <div class="col">
         <label class="form-title" style="margin-bottom: 5%">Observações</label>
@@ -201,6 +156,7 @@ import { mask } from "vue-the-mask";
 import { VMoney } from "v-money";
 import axios from "axios";
 import { ref } from "vue";
+import BeneficiosAdicionais from "../BeneficiosAdicionais";
 
 export default {
   name: "FormAssistenciaStep2",
@@ -210,11 +166,10 @@ export default {
     showCurrentView: String,
     contractData: Object,
   },
+  components: {
+    BeneficiosAdicionais,
+  },
   methods: {
-    setValoresAdicionais() {
-      console.log(this.values);
-      // this.$emit("set-valores-adicionais", this.values['valor-' + key]);
-    },
     fillSelectedPlan(plan_id) {
       axios
         .get(`${process.env.VUE_APP_API_URL}/planos/get-plan/${plan_id}`)
@@ -255,17 +210,11 @@ export default {
           console.log(error);
         });
     },
-    addInput() {
-      this.count++;
-    },
-    removeInput() {
-      if (this.count != 1) {
-        this.count--;
-      }
-    },
+    
     sendNMax() {
       this.$emit("send-n-max", this.form2.n_max);
     },
+
     setPlansList() {
       axios
         .get(`${process.env.VUE_APP_API_URL}/planos/get-all`)
@@ -277,9 +226,6 @@ export default {
         .catch((error) => {
           console.log(error);
         });
-    },
-    setBeneficiosAdicionais() {
-      this.form2.beneficio_adicional = this.values;
     },
   },
   beforeMount() {
@@ -312,7 +258,6 @@ export default {
         empresa: "",
       },
       count: 1,
-      values: {},
       plansList: ref([]),
       money: {
         decimal: ",",

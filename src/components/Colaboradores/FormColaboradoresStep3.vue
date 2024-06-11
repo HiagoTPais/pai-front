@@ -3,15 +3,27 @@
     <label class="form-title m-3"> Dados Contratação </label>
 
     <div class="d-flex justify-content-between">
-      <div>
-        <div class="foto" style="margin: 5%">
-          <div class="d-flex justify-content-center align-content-center">
-            <img
-              :src="require('../../assets/img/images-icon.png')"
-              style="width: 100px; height: 100px; margin-top: 25%"
-            />
-          </div>
-        </div>
+      <div class="foto">
+        <PictureInput
+          ref="pictureInput"
+      
+          height="216"
+          
+          accept="image/jpeg,image/png"
+          size="10"
+          button-class="btn"
+          :custom-strings="{
+            upload: '',
+            drag: '',
+          }"
+          @change="onChangeImg"
+        ></PictureInput>
+        <!-- <div class="d-flex justify-content-center align-content-center">
+          <img
+            :src="require('../../assets/img/images-icon.png')"
+            style="width: 100px; height: 100px; margin-top: 25%"
+          />
+        </div> -->
       </div>
 
       <div style="margin-left: 1%">
@@ -388,6 +400,7 @@
 <script>
 import { VMoney } from "v-money";
 import { mask } from "vue-the-mask";
+import PictureInput from "vue-picture-input";
 
 export default {
   name: "FormColaboradoresStep3",
@@ -395,6 +408,9 @@ export default {
     sendFormNow: Boolean,
     showForm: Number,
     contratoData: Object,
+  },
+  components: {
+    PictureInput,
   },
   data() {
     return {
@@ -437,6 +453,13 @@ export default {
     };
   },
   methods: {
+    onChangeImg(image) {
+      if (image) {
+        this.image = image;
+      } else {
+        console.log("FileReader API not supported: use the <form>, Luke!");
+      }
+    },
     formatarCampo() {
       if (this.form3.cpf_cnpj.length <= 11) {
         this.form3.cpf_cnpj = this.form3.cpf_cnpj.replace(
@@ -463,9 +486,6 @@ export default {
         JSON.stringify(this.contratoData)
       );
 
-      console.log("PPPPPPPPPPPPPPPPPP");
-      console.log(reversedContratoData.data[0].data_pagamento);
-
       this.forma_contratacao = reversedContratoData.data[0].forma_contratacao;
       this.tipo_contrato = reversedContratoData.data[0].tipo_contrato;
       this.entidade_pessoa = reversedContratoData.data[0].entidade_pessoa;
@@ -478,14 +498,18 @@ export default {
       this.funcao = reversedContratoData.data[0].funcao;
       this.cargo = reversedContratoData.data[0].cargo;
       this.carga_horaria = reversedContratoData.data[0].carga_horaria;
-      this.data_pagamento = reversedContratoData.data[0].data_pagamento.replace("-", "");
+      this.data_pagamento = reversedContratoData.data[0].data_pagamento.replace(
+        "-",
+        ""
+      );
       this.salario_base = reversedContratoData.data[0].salario_base;
       this.salario_familia = reversedContratoData.data[0].salario_familia;
       this.periculosidade = reversedContratoData.data[0].periculosidade;
       this.insalubridade = reversedContratoData.data[0].insalubridade;
       this.adicional_noturno = reversedContratoData.data[0].adicional_noturno;
       this.auxilio_transporte = reversedContratoData.data[0].auxilio_transporte;
-      this.auxilio_alimentacao = reversedContratoData.data[0].auxilio_alimentacao;
+      this.auxilio_alimentacao =
+        reversedContratoData.data[0].auxilio_alimentacao;
       this.auxilio_moradia = reversedContratoData.data[0].auxilio_moradia;
       this.comissao = reversedContratoData.data[0].comissao;
       this.remuneracao = reversedContratoData.data[0].remuneracao;
