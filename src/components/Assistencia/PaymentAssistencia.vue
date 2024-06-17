@@ -39,8 +39,12 @@
             type="text"
           />
 
+          <div style="position: absolute;" v-for="(item, i) in beneficiariosLista" :key="i">
+            <p>{{ item.nome_completo }}</p>
+          </div>
+
           <img
-            @click="searchBeneficiariesPayments()"
+            @click="searchNomeBeneficiario()"
             class="search-icon"
             style="margin-top: 2px"
             :src="require('../../assets/img/search.png')"
@@ -210,6 +214,7 @@ export default {
       visibleGerarPagamento: false,
       protocoloLista: [],
       deleteMode: false,
+      beneficiariosLista: ref([]),
       pagamentoLista: ref([]),
       input: ref(""),
     };
@@ -227,8 +232,8 @@ export default {
       // this.protocoloLista += event.target.value;
       // console.log(this.pagamentoLista);
     },
+
     searchBeneficiariesPayments() {
-      // Ruan Igor
       axios
         .get(`${process.env.VUE_APP_API_URL}/pagamento`, {
           params: {
@@ -242,6 +247,23 @@ export default {
           console.log(error);
         });
     },
+
+    searchNomeBeneficiario() {
+      // console.log(this.search);
+      axios
+        .get(`${process.env.VUE_APP_API_URL}/beneficiario`, {
+          params: {
+            search: this.search,
+          },
+        })
+        .then((res) => {
+          this.beneficiariosLista = res.data.data;
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    },
+
     showGerarPagamentoModal() {
       this.visibleGerarPagamento = !this.visibleGerarPagamento;
     },

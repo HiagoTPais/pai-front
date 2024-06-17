@@ -59,6 +59,10 @@
     cursor: pointer;
 }
 
+.mb2 {
+    margin-bottom: 2%;
+}
+
 .icon-page {
     background-color: #ffffff;
     border-radius: 15px 15px 0px 0px;
@@ -644,4 +648,8 @@ tr {
     max-height: 210px;
     overflow-y: scroll;
     overflow-x: hidden;
+}
+
+.icon-mar {
+    margin: 5px;
 }

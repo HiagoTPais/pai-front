@@ -492,10 +492,7 @@ export default {
       this.showAlert = true;
 
       axios
-        .put(
-          `${process.env.VUE_APP_API_URL}/contract/update/${this.beneficiaryId}`,
-          { dataForm }
-        )
+        .put(`${process.env.VUE_APP_API_URL}/beneficiario/contrato/update/${this.beneficiaryId}`, { dataForm })
         .then(() => {
           this.msgAlert = "O contrato foi atualizado com sucesso.";
           this.typeAlert = "alert-success";

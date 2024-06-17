@@ -5,9 +5,9 @@
     </label>
 
     <div class="row">
-      <div class="col">
+      <div class="col-3">
         <div class="m5">
-          <span class="title-input-blue">Nome Completo do Contratante*</span>
+          <span class="title-input-blue">Nome Completo Contratante*</span>
 
           <input
             type="text"
@@ -470,12 +470,8 @@ export default {
 
     beneficiaryList: function () {
       if (this.showCurrentView == "form-assistencia-edit") {
-        const reversedbeneficiaryList = JSON.parse(
-          JSON.stringify(this.beneficiaryList)
-        );
-        // console.log('reversedbeneficiaryList');
-        // console.log(reversedbeneficiaryList);
-        // console.log(this.beneficiaryList);
+        const reversedbeneficiaryList = JSON.parse(JSON.stringify(this.beneficiaryList));
+
         this.form1.protocolo_id = reversedbeneficiaryList.data[0].protocolo_id;
         this.form1.nome_completo = reversedbeneficiaryList.data[0].nome_completo;
         this.form1.data_nascimento = reversedbeneficiaryList.data[0].data_nascimento;

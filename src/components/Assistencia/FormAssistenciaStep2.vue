@@ -169,80 +169,7 @@ export default {
   components: {
     BeneficiosAdicionais,
   },
-  methods: {
-    fillSelectedPlan(plan_id) {
-      axios
-        .get(`${process.env.VUE_APP_API_URL}/planos/get-plan/${plan_id}`)
-        .then((res) => {
-          this.form2.n_max = res.data[0].n_max;
-          this.form2.n_min = res.data[0].n_min;
-          this.form2.plano_valor = res.data[0].valor_plano_mes;
-          this.form2.taxa_adesao = res.data[0].taxa_adesao;
-          this.form2.usuario = res.data[0].usuario;
-          this.form2.observacoes = res.data[0].descricao;
-          this.form2.portabilidade = res.data[0].portabilidade;
-          this.form2.empresa = res.data[0].empresa;
-
-          this.$emit("set-valor-base-plano", this.form2.plano_valor);
-        })
-        .catch((error) => {
-          console.log(error);
-        });
-
-      axios
-        .get(
-          `${process.env.VUE_APP_API_URL}/planos/get-additional-benefits/${plan_id}`
-        )
-        .then((res) => {
-          console.log("get additional benefits");
-          console.log(res);
-
-          // this.count = res.data.data.length;
-
-          // this.values = {};
-
-          // res.data.data.forEach((item, key) => {
-          //   this.values["beneficio_adicional-" + key] = item["beneficio_adicional"];
-          //   this.values["valor-" + key] = item["valor"];
-          // });
-        })
-        .catch((error) => {
-          console.log(error);
-        });
-    },
-    
-    sendNMax() {
-      this.$emit("send-n-max", this.form2.n_max);
-    },
-
-    setPlansList() {
-      axios
-        .get(`${process.env.VUE_APP_API_URL}/planos/get-all`)
-        .then((res) => {
-          // console.log('setPlansList');
-          // console.log(res.data);
-          this.plansList.value = res.data;
-        })
-        .catch((error) => {
-          console.log(error);
-        });
-    },
-  },
-  beforeMount() {
-    this.setPlansList();
-  },
-  watch: {
-    sendFormNow: function () {
-      this.$emit("set-data-form", this.form2);
-    },
-    contractData: function () {
-      if (this.showCurrentView == "form-assistencia-edit") {
-        // const reversedContractData = JSON.parse(JSON.stringify(this.contractData));
-        // this.fillSelectedPlan(reversedContractData.data[0].selecione_plano);
-      }
-    },
-  },
-  data() {
+    data() {
     return {
       form2: {
         selecione_plano: "",
@@ -268,6 +195,77 @@ export default {
         masked: false,
       },
     };
+  },
+  methods: {
+    fillSelectedPlan(plan_id) {
+      axios
+        .get(`${process.env.VUE_APP_API_URL}/planos/get-plan/${plan_id}`)
+        .then((res) => {
+          this.form2.n_max = res.data[0].n_max;
+          this.form2.n_min = res.data[0].n_min;
+          this.form2.plano_valor = res.data[0].valor_plano_mes;
+          this.form2.taxa_adesao = res.data[0].taxa_adesao;
+          this.form2.usuario = res.data[0].usuario;
+          this.form2.observacoes = res.data[0].descricao;
+          this.form2.portabilidade = res.data[0].portabilidade;
+          this.form2.empresa = res.data[0].empresa;
+
+          this.$emit("set-valor-base-plano", this.form2.plano_valor);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+
+      axios
+        .get(`${process.env.VUE_APP_API_URL}/planos/get-additional-benefits/${plan_id}`)
+        .then((res) => {
+          this.count = res.data.data.length;
+
+          this.values = {};
+
+          res.data.data.forEach((item, key) => {
+            this.values["beneficio_adicional-" + key] = item["beneficio_adicional"];
+            this.values["valor-" + key] = item["valor"];
+          });
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    },
+    
+    sendNMax() {
+      this.$emit("send-n-max", this.form2.n_max);
+    },
+
+    setPlansList() {
+      axios
+        .get(`${process.env.VUE_APP_API_URL}/planos/get-all`)
+        .then((res) => {
+          // console.log('setPlansList');
+          // console.log(res.data);
+          this.plansList.value = res.data;
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    },
+  },
+  beforeMount() {
+    this.setPlansList();
+    // this.fillSelectedPlan(this.)
+  },
+  watch: {
+    sendFormNow: function () {
+      this.$emit("set-data-form", this.form2);
+    },
+    contractData: function () {
+      if (this.showCurrentView == "form-assistencia-edit") {
+        console.log("this.contractData");
+        console.log(this.contractData);
+        // const reversedContractData = JSON.parse(JSON.stringify(this.contractData));
+        // this.fillSelectedPlan(reversedContractData.data[0].selecione_plano);
+      }
+    },
   },
   directives: { mask, money: VMoney },
 };
