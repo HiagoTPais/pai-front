@@ -465,9 +465,7 @@ export default {
     },
 
     download() {
-      const reversedContractData = JSON.parse(
-        JSON.stringify(this.contractData)
-      );
+      const reversedContractData = JSON.parse(JSON.stringify(this.contractData));
 
       var beneficiarie_id = reversedContractData.data[0].beneficiarie_id;
 
@@ -530,8 +528,8 @@ export default {
           `${process.env.VUE_APP_API_URL}/beneficiario/contrato/${this.beneficiaryId}`
         )
         .then((res) => {
-          console.log("contractData");
-          console.log(res);
+          // console.log("contractData");
+          // console.log(res);
           this.contractData = res;
         });
     },

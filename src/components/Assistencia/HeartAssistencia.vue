@@ -6,9 +6,15 @@
       <div class="d-flex">
         <img class="family-img" :src="require('../../assets/img/family.png')" />
         <div class="d-flex flex-column">
-          <p class="form-title">{{ titleModule }}</p>
+          <p
+            class="form-title"
+            style="margin-left: 12px; margin-top: 2px; width: 100%"
+          >
+            {{ titleModule }}
+          </p>
 
           <img
+            style="margin-left: 12px; margin-top: -11px"
             class="icon-back"
             :src="require('../../assets/img/heart.png')"
             @click="setFirstModule()"
@@ -562,7 +568,8 @@ export default {
         )
         .then((res) => {
           res.data.forEach((item, key) => {
-            this.values["beneficio_adicional-" + key] = item.beneficio_adicional;
+            this.values["beneficio_adicional-" + key] =
+              item.beneficio_adicional;
             this.values["valor-" + key] = item.valor;
           });
 

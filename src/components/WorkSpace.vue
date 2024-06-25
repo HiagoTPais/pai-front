@@ -74,10 +74,19 @@
     @set-show-form="updateShowForm"
     v-if="showForm == 'dashboard-servico-funerario'"
   />
+
+
+  <FormTanatorio
+   v-if="showForm == 'form-tanatorio'"
+  />
+  <ViewTanatorio
+   v-if="showForm == 'view-tanatorio'"
+  />
 </template>
 
 <script>
 import CardNav from "./CardNav.vue";
+
 import FormAssistencia from "./Assistencia/FormAssistencia.vue";
 import ViewAssistencia from "./Assistencia/ViewAssistencia.vue";
 import PaymentAssistencia from "./Assistencia/PaymentAssistencia.vue";
@@ -95,6 +104,9 @@ import ViewServicoFunerario from "./ServicoFunerario/ViewServicoFunerario.vue"
 import PaymentServicoFunerario from "./ServicoFunerario/PaymentServicoFunerario.vue"
 import HeartServicoFunerario from "./ServicoFunerario/HeartServicoFunerario.vue"
 import DashboardServicoFunerario from "./ServicoFunerario/DashboardServicoFunerario.vue"
+
+import FormTanatorio from "./Tanatorio/FormTanatorio.vue"
+import ViewTanatorio from "./Tanatorio/ViewTanatorio.vue"
 
 export default {
   name: "WorkSpace",
@@ -115,6 +127,8 @@ export default {
     PaymentServicoFunerario,
     HeartServicoFunerario,
     DashboardServicoFunerario,
+    FormTanatorio,
+    ViewTanatorio,
   },
   data() {
     return {

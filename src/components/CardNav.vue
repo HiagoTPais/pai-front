@@ -76,6 +76,23 @@
       <p class="card-nav-title">Serviço Funerario</p>
     </div>
   </div>
+
+  <div class="card-container">
+    <div class="card-links" v-if="showCardLinks['tanatorio']">
+      <div class="square-link" @click="$emit('setShowForm', 'form-tanatorio')">
+        <img class="beneficiario" :src="require('../assets/img/beneficiario.png')" />
+      </div>
+      <div class="square-link" @click="$emit('setShowForm', 'view-tanatorio')">
+        <img class="beneficiario" :src="require('../assets/img/eye.png')" />
+      </div>
+    </div>
+    <div class="card-nav" @click="showLinks('tanatorio')" 
+      :style="{ backgroundColor: cardBackgroundColor['tanatorio'], color: cardColor['tanatorio'] }">
+      <img v-if="!showCardLinks['tanatorio']" :src="require('../assets/img/tanatorio.png')" />
+      <img v-else :src="require('../assets/img/tanatorio-white.png')" />
+      <p class="card-nav-title">Tanatório Tanatopraxia</p>
+    </div>
+  </div>
 </template>
 
 <script>
@@ -87,16 +104,19 @@ export default {
         "assistencia": false,
         "colaboradores": false,
         "funeraria": false,
+        "tanatorio": false
       },
       cardBackgroundColor: {
         "assistencia": "#ffffff",
         "colaboradores": "#ffffff",
         "funeraria": "#ffffff",
+        "tanatorio": "#ffffff"
       },
       cardColor: {
         "assistencia": "#17369c",
         "colaboradores": "#17369c",
         "funeraria": "#17369c",
+        "tanatorio": "#17369c"
       },
     };
   },

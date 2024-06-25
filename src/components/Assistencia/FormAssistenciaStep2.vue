@@ -107,7 +107,7 @@
     </div>
 
     <div class="row m-3">
-      <BeneficiosAdicionais />
+      <BeneficiosAdicionais :valuesBen="form2.beneficio_adicional" />
 
       <div class="col">
         <label class="form-title" style="margin-bottom: 5%">Observações</label>
@@ -169,7 +169,7 @@ export default {
   components: {
     BeneficiosAdicionais,
   },
-    data() {
+  data() {
     return {
       form2: {
         selecione_plano: "",
@@ -184,7 +184,7 @@ export default {
         portabilidade: "",
         empresa: "",
       },
-      count: 1,
+      plano_atual: "",
       plansList: ref([]),
       money: {
         decimal: ",",
@@ -201,6 +201,7 @@ export default {
       axios
         .get(`${process.env.VUE_APP_API_URL}/planos/get-plan/${plan_id}`)
         .then((res) => {
+          this.form2.selecione_plano = res.data[0].nome;
           this.form2.n_max = res.data[0].n_max;
           this.form2.n_min = res.data[0].n_min;
           this.form2.plano_valor = res.data[0].valor_plano_mes;
@@ -216,23 +217,15 @@ export default {
           console.log(error);
         });
 
-      axios
-        .get(`${process.env.VUE_APP_API_URL}/planos/get-additional-benefits/${plan_id}`)
+      axios.get(`${process.env.VUE_APP_API_URL}/planos/get-additional-benefits/${plan_id}`)
         .then((res) => {
-          this.count = res.data.data.length;
-
-          this.values = {};
-
-          res.data.data.forEach((item, key) => {
-            this.values["beneficio_adicional-" + key] = item["beneficio_adicional"];
-            this.values["valor-" + key] = item["valor"];
-          });
+          this.form2.beneficio_adicional = res.data;
         })
         .catch((error) => {
           console.log(error);
         });
     },
-    
+
     sendNMax() {
       this.$emit("send-n-max", this.form2.n_max);
     },
@@ -241,8 +234,6 @@ export default {
       axios
         .get(`${process.env.VUE_APP_API_URL}/planos/get-all`)
         .then((res) => {
-          // console.log('setPlansList');
-          // console.log(res.data);
           this.plansList.value = res.data;
         })
         .catch((error) => {
@@ -250,20 +241,21 @@ export default {
         });
     },
   },
+
   beforeMount() {
     this.setPlansList();
-    // this.fillSelectedPlan(this.)
   },
+
   watch: {
     sendFormNow: function () {
       this.$emit("set-data-form", this.form2);
     },
+
     contractData: function () {
       if (this.showCurrentView == "form-assistencia-edit") {
-        console.log("this.contractData");
-        console.log(this.contractData);
-        // const reversedContractData = JSON.parse(JSON.stringify(this.contractData));
-        // this.fillSelectedPlan(reversedContractData.data[0].selecione_plano);
+        this.plano_atual = JSON.parse(JSON.stringify(this.contractData.data.data[0].selecione_plano));
+
+        this.fillSelectedPlan(this.plano_atual);
       }
     },
   },

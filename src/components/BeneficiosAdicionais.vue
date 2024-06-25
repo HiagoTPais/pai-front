@@ -69,8 +69,7 @@ export default {
 
   props: {
     sendForm: Boolean,
-    valuesBen: Object,
-    countBen: Number
+    valuesBen: Array,
   },
 
   methods: {
@@ -88,7 +87,7 @@ export default {
       console.log(key);
     },
   },
-  
+
   directives: { mask, money: VMoney },
 
   watch: {
@@ -96,14 +95,14 @@ export default {
       this.$emit("set-beneficios-adicionais", this.values);
     },
 
-    valuesBen: function(item) {
-      this.values = item
-    },
+    valuesBen: function (item) {
+      this.count = item.length;
 
-    countBen: function(item) {
-      console.log(item);
-      this.count = item
-    }
+      item.forEach((item, key) => {
+        this.values["beneficio_adicional-" + key] = item["beneficio_adicional"];
+        this.values["valor-" + key] = item["valor"];
+      });
+    },
   },
 };
 </script>
