@@ -198,8 +198,3 @@ export default {
   },
 };
 </script>
-<style>
-.app-layout {
-  height: 1094px;
-}
-</style>

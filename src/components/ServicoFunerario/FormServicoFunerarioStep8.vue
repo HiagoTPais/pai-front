@@ -1,17 +1,15 @@
 <template>
   <div v-if="showForm == 7">
-    <label class="form-title m-3"
-      >Dados Civis do Colaborador Titular {{
-    }}</label>
+    <label class="form-title m-3">Dados de Somatoconservação</label>
 
     <div class="row">
       <div class="col">
         <div class="m5">
-          <span class="title-input-blue">Nome Completo</span>
+          <span class="title-input-blue">Nome do Falecido</span>
 
           <input
             type="text"
-            v-model="form1.nome_completo"
+            v-model="form8.nome_completo"
             class="input-resp"
             name="nome_completo"
           />
@@ -20,112 +18,94 @@
 
       <div class="col">
         <div class="m5">
-          <span class="title-input-blue">Data de Nascimento</span>
+          <span class="title-input-blue">Causa morte</span>
 
           <input
-            type="date"
-            v-model="form1.data_nascimento"
+            type="text"
+            v-model="form8.causa_morte"
             class="input-resp"
-            name="data_nascimento"
+            name="causa_morte"
           />
         </div>
       </div>
 
       <div class="col">
         <div class="m5">
-          <span class="title-input-blue">Nacionalidade</span>
+          <span class="title-input-blue">Peso</span>
 
           <input
             type="text"
-            v-model="form1.nacionalidade"
+            v-model="form8.peso"
             class="input-resp"
-            name="nacionalidade"
+            name="peso"
           />
         </div>
       </div>
 
       <div class="col">
         <div class="m5">
-          <span class="title-input-blue">RG</span>
+          <span class="title-input-blue">Altura</span>
 
           <input
             type="text"
-            v-model="form1.rg"
+            v-model="form8.altura"
             class="input-resp"
-            name="rg"
-            v-mask="['##.###.###-##']"
+            name="altura"
           />
         </div>
-      </div>
-
-      <div class="col">
-        <OrgaoExpedicao />
       </div>
     </div>
+
     <div class="row">
       <div class="col">
         <div class="m5">
-          <span class="title-input-blue">Data de Expedição</span>
-
-          <input
-            type="date"
-            v-model="form1.data_expedicao"
-            class="input-resp"
-            name="data_expedicao"
-          />
-        </div>
-      </div>
-
-      <div class="col">
-        <div class="m5">
-          <span class="title-input-blue">CPF</span>
+          <span class="title-input-blue">Agenda Funeraria</span>
 
           <input
             type="text"
-            v-model="form1.cpf"
+            v-model="form8.agenda_funeraria"
             class="input-resp"
-            name="cpf"
-            v-mask="['###.###.###-##']"
+            name="agenda_funeraria"
           />
         </div>
       </div>
 
       <div class="col">
         <div class="m5">
-          <span class="title-input-blue">Estado Civil</span>
+          <span class="title-input-blue">Auxiliar de Agencia Funeraria</span>
 
-          <select
-            class="select-resp"
-            v-model="form1.estado_civil"
-            name="estado_civil"
-          >
-            <option>Solteiro</option>
-            <option>Casado</option>
-            <option>Divorciado</option>
-            <option>Viúvo</option>
-            <option>Separado judicialmente</option>
-          </select>
+          <input
+            type="text"
+            v-model="form8.auxiliar_agencia_funeraria"
+            class="input-resp"
+            name="auxiliar_agencia_funeraria"
+          />
         </div>
       </div>
 
       <div class="col">
         <div class="m5">
-          <span class="title-input-blue">Grau de Escolaridade</span>
+          <span class="title-input-blue">Hora e data de Inicio</span>
 
-          <select
-            class="select-resp"
-            v-model="form1.grau_escolaridade"
-            name="grau_escolaridade"
-          >
-            <option>Educação infantil</option>
-            <option>Fundamental</option>
-            <option>Médio</option>
-            <option>Superior</option>
-            <option>Pós-graduação</option>
-            <option>Mestrado</option>
-            <option>Doutorado</option>
-            <option>Escola</option>
-          </select>
+          <input
+            type="datetime-local"
+            v-model="form8.hora_data_inicio"
+            class="input-resp"
+            name="hora_data_inicio"
+          />
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="m5">
+          <span class="title-input-blue">Hora e Data de Termino</span>
+
+          <input
+            type="datetime-local"
+            v-model="form8.hora_data_termino"
+            class="input-resp"
+            name="hora_data_termino"
+          />
         </div>
       </div>
 
@@ -135,7 +115,7 @@
 
           <input
             type="text"
-            v-model="form1.ocupacao"
+            v-model="form8.ocupacao"
             class="input-resp"
             name="ocupacao"
           />
@@ -148,7 +128,7 @@
 
           <input
             type="text"
-            v-model="form1.religiao"
+            v-model="form8.religiao"
             class="input-resp"
             name="religiao"
           />
@@ -156,177 +136,556 @@
       </div>
     </div>
 
-    <label class="form-title m-3">Endereço</label>
+    <br />
 
     <div class="row">
       <div class="col">
-        <div class="m5">
-          <span class="title-input-blue">CEP*</span>
+        <div class="checkbox-wrapper-13">
           <input
-            type="text"
-            class="input-resp"
-            v-model="form1.cep"
-            name="cep"
-            @blur="buscarCep()"
-            v-mask="['#####-###']"
+            class="c1-13"
+            type="checkbox"
+            v-model="form8.havera_somatoconservacao_avancada"
+            name="havera_somatoconservacao_avancada"
           />
+          <label class="form-title">Haverá Somatoconservação Avançada?</label>
         </div>
       </div>
 
       <div class="col">
-        <div class="m5">
-          <span class="title-input-blue">Rua*</span>
+        <div class="checkbox-wrapper-13">
           <input
-            type="text"
-            v-model="form1.rua"
-            class="input-resp"
-            name="rua"
+            class="c1-13"
+            type="checkbox"
+            v-model="form8.corpo_necropsiado"
+            name="particular"
           />
+          <label class="form-title">Corpo Necropsiado?</label>
+        </div>
+      </div>
+    </div>
+
+    <br />
+
+    <div class="row">
+      <div class="col card-tanato">
+        <label class="form-title m-3">Pontos de Injeção Arterial</label>
+
+        <div class="checkbox-wrapper-13">
+          <label class="form-title">Tronco Braquiocefalico: </label>
+          <input
+            class="c1-13"
+            v-model="form8.tronco_braquiocefalico"
+            type="checkbox"
+            name="particular"
+          />
+        </div>
+
+        <div class="checkbox-wrapper-13">
+          <label class="form-title">Aorta abdominal: </label>
+          <input
+            class="c1-13"
+            v-model="form8.aorta_abdominal"
+            type="checkbox"
+            name="aorta_abdominal"
+          />
+        </div>
+
+        <div class="checkbox-wrapper-13">
+          <div class="d-flex">
+            <label class="form-title">Carotica Comum:</label>
+            <div>
+              <input
+                class="c1-13"
+                v-model="form8.carotica_comum_esquerda"
+                type="checkbox"
+                name="carotica_comum_esquerda"
+              />
+              <label class="form-title">Esquerda</label>
+            </div>
+            <div>
+              <input
+                class="c1-13"
+                v-model="form8.carotica_comum_direita"
+                type="checkbox"
+                name="carotica_comum_direita"
+              />
+              <label class="form-title">Direita</label>
+            </div>
+          </div>
+        </div>
+
+        <div class="checkbox-wrapper-13">
+          <div class="d-flex">
+            <label class="form-title">Subclavia: </label>
+            <div>
+              <input
+                class="c1-13"
+                type="checkbox"
+                v-model="form8.subclavia_esquerda"
+                name="subclavia_esquerda"
+              />
+              <label class="form-title">Esquerda</label>
+            </div>
+            <div>
+              <input
+                class="c1-13"
+                type="checkbox"
+                v-model="form8.subclavia_direita"
+                name="subclavia_direita"
+              />
+              <label class="form-title">Direita</label>
+            </div>
+          </div>
+        </div>
+
+        <div class="checkbox-wrapper-13">
+          <div class="d-flex">
+            <label class="form-title">Braquial: </label>
+            <div>
+              <input
+                class="c1-13"
+                type="checkbox"
+                v-model="form8.braquial_esquerda"
+                name="braquial_esquerda"
+              />
+              <label class="form-title">Esquerda</label>
+            </div>
+            <div>
+              <input
+                class="c1-13"
+                type="checkbox"
+                v-model="form8.braquial_direita"
+                name="braquial_direita"
+              />
+              <label class="form-title">Direita</label>
+            </div>
+          </div>
+        </div>
+
+        <div class="checkbox-wrapper-13">
+          <div class="d-flex">
+            <label class="form-title">Iliaca Comum: </label>
+            <div>
+              <input
+                class="c1-13"
+                type="checkbox"
+                v-model="form8.iliaca_comum_esquerda"
+                name="iliaca_comum_esquerda"
+              />
+              <label class="form-title">Esquerda</label>
+            </div>
+            <div>
+              <input
+                class="c1-13"
+                type="checkbox"
+                v-model="form8.iliaca_comum_direita"
+                name="iliaca_comum_direita"
+              />
+              <label class="form-title">Direita</label>
+            </div>
+          </div>
+        </div>
+
+        <div class="checkbox-wrapper-13">
+          <div class="d-flex">
+            <label class="form-title">Femoral: </label>
+            <div>
+              <input
+                class="c1-13"
+                type="checkbox"
+                v-model="form8.femoral_esquerda"
+                name="femoral_esquerda"
+              />
+              <label class="form-title">Esquerda</label>
+            </div>
+            <div>
+              <input
+                class="c1-13"
+                type="checkbox"
+                v-model="form8.femoral_direita"
+                name="femoral_direita"
+              />
+              <label class="form-title">Direita</label>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <div class="m5">
+              <span class="title-input-blue">Tanatofluido Arterial</span>
+              <input
+                type="text"
+                class="input-resp"
+                v-model="form8.tanatofluido_arterial"
+                name="tanatofluido_arterial"
+              />
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="m5">
+              <span class="title-input-blue">Representante</span>
+              <input
+                type="text"
+                class="input-resp"
+                v-model="form8.representante"
+                name="representante"
+              />
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col">
+            <div class="m5">
+              <span class="title-input-blue">Volume</span>
+              <input
+                type="text"
+                class="input-resp"
+                v-model="form8.volume"
+                name="volume"
+              />
+            </div>
+          </div>
+          <div class="col">
+            <div class="m5">
+              <span class="title-input-blue">Injeções</span>
+              <input
+                type="text"
+                class="input-resp"
+                v-model="form8.injecoes"
+                name="injecoes"
+              />
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col">
+            <div class="m5">
+              <span class="title-input-blue">Outros</span>
+              <input
+                type="text"
+                class="input-resp"
+                v-model="form8.outros"
+                name="outros"
+              />
+            </div>
+          </div>
         </div>
       </div>
 
-      <div class="col">
-        <div class="m5">
-          <span class="title-input-blue">Nº*</span>
+      <div class="col card-tanato">
+        <label class="form-title m-3">Tratamentos das Cavidades</label>
+
+        <div class="checkbox-wrapper-13">
+          <label class="form-title">Aspiração Tóraco Abdominal: </label>
           <input
-            type="text"
-            v-model="form1.numero"
-            class="input-resp"
-            name="numero"
+            class="c1-13"
+            type="checkbox"
+            v-model="form8.aspiracao_toraco_abdominal"
+            name="aspiracao_toraco_abdominal"
           />
         </div>
-      </div>
 
-      <div class="col">
-        <div class="m5">
-          <span class="title-input-blue">Bairro*</span>
+        <div class="checkbox-wrapper-13">
+          <label class="form-title">Evisceração e Embalagem:</label>
           <input
-            type="text"
-            v-model="form1.bairro"
-            class="input-resp"
-            name="bairro"
+            class="c1-13"
+            type="checkbox"
+            v-model="form8.evisceracao_embalagem"
+            name="evisceracao_embalagem"
           />
         </div>
-      </div>
 
-      <div class="col">
-        <div class="m5">
-          <span class="title-input-blue">Cidade*</span>
-          <input
-            type="text"
-            v-model="form1.cidade"
-            class="input-resp"
-            name="cidade"
-          />
+        <div class="row">
+          <div class="col">
+            <div class="m5">
+              <span class="title-input-blue">Tanatofluido Arterial</span>
+              <input
+                type="text"
+                class="input-resp"
+                v-model="form8.tanatofluido_arterial_cavidades"
+                name="tanatofluido_arterial_cavidades"
+              />
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="m5">
+              <span class="title-input-blue">Representante</span>
+              <input
+                type="text"
+                class="input-resp"
+                v-model="form8.representante_cavidades"
+                name="representante_cavidades"
+              />
+            </div>
+          </div>
         </div>
-      </div>
 
-      <div class="col">
-        <div class="m5">
-          <span class="title-input-blue">UF*</span>
-          <input
-            type="text"
-            class="input-resp"
-            v-model="form1.uf"
-            name="uf"
-            maxlength="uf"
-          />
+        <div class="row">
+          <div class="col">
+            <div class="m5">
+              <span class="title-input-blue">Volume</span>
+              <input
+                type="text"
+                class="input-resp"
+                v-model="form8.volume_cavidades"
+                name="volume_cavidades"
+              />
+            </div>
+          </div>
+          <div class="col">
+            <div class="m5">
+              <span class="title-input-blue">Injeções</span>
+              <input
+                type="text"
+                class="input-resp"
+                v-model="form8.injecoes_cavidades"
+                name="injecoes_cavidades"
+              />
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col">
+            <div class="m5">
+              <span class="title-input-blue">Outros</span>
+              <input
+                type="text"
+                class="input-resp"
+                v-model="form8.outros_cavidades"
+                name="outros_cavidades"
+              />
+            </div>
+          </div>
         </div>
       </div>
     </div>
 
     <div class="row">
-      <div class="col">
-        <div class="m5">
-          <span class="title-input-blue">Complemento</span>
-          <input
-            type="text"
-            class="input-resp"
-            v-model="form1.complemento"
-            name="complemento"
-          />
+      <div class="col card-tanato">
+        <label class="form-title m-3">Estetica</label>
+
+        <div class="checkbox-wrapper-13">
+          <div class="d-flex">
+            <label class="form-title">Injeção de Fluído Intradérmico:</label>
+            <div>
+              <input
+                class="c1-13"
+                type="checkbox"
+                v-model="form8.injecao_fluido_intradermico"
+                name="injecao_fluido_intradermico"
+              />
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col">
+            <div class="m5">
+              <span class="title-input-blue">Locais</span>
+              <input
+                type="text"
+                class="input-resp"
+                v-model="form8.locais_injecao_fluido_intradermico"
+                name="locais_injecao_fluido_intradermico"
+              />
+            </div>
+          </div>
+        </div>
+
+        <div class="checkbox-wrapper-13">
+          <div class="d-flex">
+            <label class="form-title">Restauração:</label>
+            <div>
+              <input
+                class="c1-13"
+                type="checkbox"
+                v-model="form8.restauracao"
+                name="restauracao"
+              />
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col">
+            <div class="m5">
+              <span class="title-input-blue">Locais</span>
+              <input
+                type="text"
+                class="input-resp"
+                v-model="form8.locais_restauracao"
+                name="locais_restauracao"
+              />
+            </div>
+          </div>
+        </div>
+
+        <div class="checkbox-wrapper-13">
+          <div class="d-flex">
+            <label class="form-title">Cosméticos:</label>
+            <div>
+              <input
+                class="c1-13"
+                type="checkbox"
+                v-model="form8.cosmeticos"
+                name="cosmeticos"
+              />
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col">
+            <div class="m5">
+              <span class="title-input-blue">Locais</span>
+              <input
+                type="text"
+                class="input-resp"
+                v-model="form8.locais_cosmeticos"
+                name="locais_cosmeticos"
+              />
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col">
+            <div class="m5">
+              <span class="title-input-blue">Cosméticos Utilizados</span>
+              <input
+                type="text"
+                class="input-resp"
+                v-model="form8.cosmeticos_utilizados"
+                name="nome_completo"
+              />
+            </div>
+          </div>
         </div>
       </div>
 
-      <div class="col">
-        <div class="m5">
-          <span class="title-input-blue">Ponto de Referência</span>
-          <input
-            type="text"
-            class="input-resp"
-            v-model="form1.ponto_referencia"
-            name="ponto_referencia"
-          />
+      <div class="col card-tanato">
+        <label class="form-title m-3">Informações Complementares</label>
+
+        <div class="checkbox-wrapper-13">
+          <div class="d-flex">
+            <label class="form-title">Translado:</label>
+            <div>
+              <input
+                class="c1-13"
+                type="checkbox"
+                v-model="form8.translado"
+                name="translado"
+              />
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col">
+            <div class="m5">
+              <span class="title-input-blue">Km</span>
+              <input
+                type="text"
+                class="input-resp"
+                v-model="form8.km"
+                name="km"
+              />
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col">
+            <div class="m5">
+              <span class="title-input-blue">Local</span>
+              <input
+                type="text"
+                class="input-resp"
+                v-model="form8.local_final"
+                name="local_final"
+              />
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="m5">
+              <span class="title-input-blue">Para</span>
+              <input
+                type="text"
+                class="input-resp"
+                v-model="form8.para"
+                name="para"
+              />
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col">
+            <div class="m5">
+              <span class="title-input-blue">Velório</span>
+              <input
+                type="text"
+                class="input-resp"
+                v-model="form8.velorio"
+                name="velorio"
+              />
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="m5">
+              <span class="title-input-blue">Hrs. Dia</span>
+              <input
+                type="datetime-local"
+                class="input-resp"
+                v-model="form8.hora_dia_velorio"
+                name="hora_dia_velorio"
+              />
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col">
+            <div class="m5">
+              <span class="title-input-blue">Sepultamento</span>
+              <input
+                type="text"
+                class="input-resp"
+                v-model="form8.sepultamento"
+                name="sepultamento"
+              />
+            </div>
+          </div>
+          <div class="col">
+            <div class="m5">
+              <span class="title-input-blue">Hrs. Dia</span>
+              <input
+                type="datetime-local"
+                class="input-resp"
+                v-model="form8.hora_dia_sepultamento"
+                name="hora_dia_sepultamento"
+              />
+            </div>
+          </div>
         </div>
       </div>
 
-      <div class="col">
-        <div class="m5">
-          <span class="title-input-blue">Zona</span>
-
-          <select v-model="form1.zona" name="zona" class="select-resp">
-            <option>Urbana</option>
-            <option>Rural</option>
-          </select>
-        </div>
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="col">
-        <div class="m5">
-          <span class="title-input-blue">Telefone 1</span>
-          <input
-            type="text"
-            class="input-resp"
-            v-model="form1.whatsapp_1_num"
-            name="whatsapp_1_num"
-            placeholder="(00) 00000-0000"
-            v-mask="['(##) #####-####']"
-          />
-        </div>
-      </div>
-
-      <div class="col">
-        <div class="m5">
-          <span class="title-input-blue">WhatsApp?</span>
-          <select
-            v-model="form1.whatsapp_1"
-            name="whatsapp_1"
-            class="select-resp"
-          >
-            <option>Sim</option>
-            <option>Não</option>
-          </select>
-        </div>
-      </div>
-
-      <div class="col">
-        <div class="m5">
-          <span class="title-input-blue">Telefone 2</span>
-          <input
-            type="text"
-            class="input-resp"
-            v-model="form1.whatsapp_2_num"
-            name="whatsapp_2_num"
-            placeholder="(00) 00000-0000"
-            v-mask="['(##) #####-####']"
-          />
-        </div>
-      </div>
-
-      <div class="col">
-        <div class="m5">
-          <span class="title-input-blue">WhatsApp?</span>
-
-          <select
-            v-model="form1.whatsapp_2"
-            name="whatsapp_2"
-            class="select-resp"
-          >
-            <option>Sim</option>
-            <option>Não</option>
-          </select>
+      <div class="row">
+        <div class="col">
+          <span class="title-input-blue">Observação</span>
+          <textarea
+            class="textarea-resp"
+            cols="65"
+            rows="5"
+            v-model="form8.observacao"
+          ></textarea>
         </div>
       </div>
     </div>
@@ -334,9 +693,8 @@
 </template>
 
 <script>
-import axios from "axios";
+// import axios from "axios";
 import { mask } from "vue-the-mask";
-import OrgaoExpedicao from "../OrgaoExpedicao";
 
 export default {
   name: "FormColaboradoresStep8",
@@ -346,56 +704,70 @@ export default {
     showView: String,
     colaboradorLista: Object,
   },
-  methods: {
-    buscarCep() {
-      axios
-        .get("https://viacep.com.br/ws/" + this.form1.cep + "/json/")
-        .then((res) => {
-          this.form1.uf = res.data.uf;
-          this.form1.cidade = res.data.localidade;
-        })
-        .catch((error) => {
-          console.log(error);
-        });
-    },
-  },
-  components: {
-    OrgaoExpedicao,
-  },
+  methods: {},
+
   data() {
     return {
-      form1: {
+      form8: {
         nome_completo: "",
-        data_nascimento: "",
-        nacionalidade: "Brasileiro",
-        rg: "",
-        orgao_expedicao: "SSP – Secretaria de Segurança Pública",
-        data_expedicao: "",
-        cpf: "",
-        estado_civil: "",
-        grau_escolaridade: "",
+        causa_morte: "",
+        peso: "",
+        altura: "",
+        agenda_funeraria: "",
+        auxiliar_agencia_funeraria: "",
+        hora_data_inicio: "",
+        hora_data_termino: "",
         ocupacao: "",
         religiao: "",
-        cep: "",
-        rua: "",
-        numero: "",
-        bairro: "",
-        cidade: "",
-        uf: "",
-        complemento: "",
-        ponto_referencia: "",
-        zona: "",
-        whatsapp_1_num: "",
-        whatsapp_1: "",
-        whatsapp_2_num: "",
-        whatsapp_2: "",
+        havera_somatoconservacao_avancada: "",
+        corpo_necropsiado: "",
+        tronco_braquiocefalico: "",
+        aorta_abdominal: "",
+        carotica_comum_esquerda: "",
+        carotica_comum_direita: "",
+        subclavia_esquerda: "",
+        subclavia_direita: "",
+        braquial_esquerda: "",
+        braquial_direita: "",
+        iliaca_comum_esquerda: "",
+        iliaca_comum_direita: "",
+        femoral_esquerda: "",
+        femoral_direita: "",
+        tanatofluido_arterial: "",
+        representante: "",
+        volume: "",
+        injecoes: "",
+        outros: "",
+        aspiracao_toraco_abdominal: "",
+        evisceracao_embalagem: "",
+        tanatofluido_arterial_cavidades: "",
+        representante_cavidades: "",
+        volume_cavidades: "",
+        injecoes_cavidades: "",
+        outros_cavidades: "",
+        injecao_fluido_intradermico: "",
+        locais_injecao_fluido_intradermico: "",
+        restauracao: "",
+        locais_restauracao: "",
+        cosmeticos: "",
+        locais_cosmeticos: "",
+        cosmeticos_utilizados: "",
+        translado: "",
+        km: "",
+        local_final: "",
+        para: "",
+        velorio: "",
+        hora_dia_velorio: "",
+        sepultamento: "",
+        hora_dia_sepultamento: "",
+        observacao: "",
       },
     };
   },
   directives: { mask },
   watch: {
     sendFormNow: function () {
-      this.$emit("set-data-form", this.form1);
+      this.$emit("set-data-form", this.form8);
     },
   },
 };

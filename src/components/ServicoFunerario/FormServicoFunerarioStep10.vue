@@ -2,63 +2,83 @@
   <div v-if="showForm == 9">
     <label class="form-title m-3">Pagamento</label>
 
-    <div class="d-flex">
-      <div style="width: 100%; margin: 1%">
+    <div class="row">
+      <div class="checkbox-wrapper-13">
+        <input
+          class="c1-13"
+          type="checkbox"
+          v-model="form10.parcelamento"
+          name="parcelamento"
+        />
+        <span class="form-title">Parcelamento?</span>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col">
         <div>
           <span class="title-input-blue">Forma de Pagamento</span>
 
-          <select v-model="form10" name="zona" class="select-resp">
-            <option>Urbana</option>
-            <option>Rural</option>
+          <select
+            v-model="form10.forma_pagamento"
+            name="forma_pagamento"
+            class="select-resp"
+          >
+            <option>Dinheiro</option>
+            <option>Cartão de Crédito</option>
+            <option>Cartão de Débito</option>
+            <option>PIX</option>
+            <option>Boleto Bancário</option>
           </select>
         </div>
       </div>
 
-      <div style="width: 100%; margin: 1%">
+      <div class="col">
         <div>
           <span class="title-input-blue">Bandeira do Cartão</span>
 
-          <select v-model="form10" name="zona" class="select-resp">
-            <option>Urbana</option>
-            <option>Rural</option>
+          <select
+            v-model="form10.bandeira_cartao"
+            name="bandeira_cartao"
+            class="select-resp"
+          >
+            <option>Mastercard</option>
+            <option>Visa</option>
+            <option>Elo</option>
+            <option>American Express</option>
+            <option>Hipercard</option>
           </select>
         </div>
       </div>
-    </div>
-
-    <div class="d-flex m1">
-      <div>
-        <input type="checkbox" v-model="form10" name="particular" />
-        <span class="title-input-blue">Parcelamento?</span>
-      </div>
-    </div>
-
-    <div class="d-flex">
-      <div style="width: 100%; margin: 1%">
+      <div class="col">
         <div>
           <span class="title-input-blue">N Parcelas</span>
 
-          <select v-model="form10" name="zona" class="select-resp">
-            <option>Urbana</option>
-            <option>Rural</option>
-          </select>
+          <input
+            type="number"
+            v-model="form10.n_parcelas"
+            class="input-resp"
+            name="n_parcelas"
+          />
         </div>
       </div>
 
-      <div style="width: 100%; margin: 1%">
+      <div class="col">
         <div>
           <span class="title-input-blue">Valor das Parcelas</span>
 
           <input
             type="text"
-            v-model="form10.teste1"
+            v-model="form10.valor_parcelas"
             class="input-resp"
-            name="data_expedicao"
+            name="valor_parcelas"
           />
         </div>
       </div>
     </div>
+     <br /><br /><br /><br /><br /><br /><br /><br /><br />
   </div>
+ 
 </template>
 
 <script>
@@ -77,7 +97,11 @@ export default {
   data() {
     return {
       form10: {
-        teste1: "",
+        parcelamento: "",
+        forma_pagamento: "",
+        bandeira_cartao: "",
+        n_parcelas: "",
+        valor_parcelas: "",
       },
     };
   },

@@ -74,14 +74,12 @@ export default {
     };
   },
   watch: {
-    visible: function (newVal, oldVal) {
+    visible: function (newVal) {
       this.OpenClose = newVal;
-      console.log("new " + newVal + " " + oldVal);
     },
-    beneficiaryList: function (newVal, oldVal) {
+    beneficiaryList: function (newVal) {
       this.beneficiaryInfo = newVal;
       console.log(this.beneficiaryInfo);
-      console.log("new " + newVal + " " + oldVal);
     },
   },
 };

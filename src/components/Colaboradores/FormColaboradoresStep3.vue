@@ -498,18 +498,14 @@ export default {
       this.funcao = reversedContratoData.data[0].funcao;
       this.cargo = reversedContratoData.data[0].cargo;
       this.carga_horaria = reversedContratoData.data[0].carga_horaria;
-      this.data_pagamento = reversedContratoData.data[0].data_pagamento.replace(
-        "-",
-        ""
-      );
+      this.data_pagamento = reversedContratoData.data[0].data_pagamento.replace("-", "");
       this.salario_base = reversedContratoData.data[0].salario_base;
       this.salario_familia = reversedContratoData.data[0].salario_familia;
       this.periculosidade = reversedContratoData.data[0].periculosidade;
       this.insalubridade = reversedContratoData.data[0].insalubridade;
       this.adicional_noturno = reversedContratoData.data[0].adicional_noturno;
       this.auxilio_transporte = reversedContratoData.data[0].auxilio_transporte;
-      this.auxilio_alimentacao =
-        reversedContratoData.data[0].auxilio_alimentacao;
+      this.auxilio_alimentacao = reversedContratoData.data[0].auxilio_alimentacao;
       this.auxilio_moradia = reversedContratoData.data[0].auxilio_moradia;
       this.comissao = reversedContratoData.data[0].comissao;
       this.remuneracao = reversedContratoData.data[0].remuneracao;

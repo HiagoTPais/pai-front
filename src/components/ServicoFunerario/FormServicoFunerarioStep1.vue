@@ -3,48 +3,52 @@
     <label class="form-title m-3">Tipo de atendimento</label>
 
     <div class="d-flex justify-content-between m1">
-      <div>
-        <input type="checkbox" v-model="form1.particular" name="particular" />
-        <span class="title-input-blue">Particular</span>
+      <div class="checkbox-wrapper-13">
+        <input
+          id="c1-13"
+          type="checkbox"
+          @change="showFilterForm('tem_particular')"
+          name="particular"
+        />
+        <label for="c1-13">Particular</label>
       </div>
 
-      <div>
-        <input type="checkbox" v-model="form1.seguradora" name="seguradora" />
-        <span class="title-input-blue">Seguradora</span>
+      <div class="checkbox-wrapper-13">
+        <input
+          id="c1-13"
+          type="checkbox"
+          @change="showFilterForm('tem_seguradora')"
+          name="seguradora"
+        />
+        <label for="c1-13">Seguradora</label>
       </div>
-      <div>
-        <input type="checkbox" v-model="form1.prefeitura" name="prefeitura" />
-        <span class="title-input-blue">Prefeitura</span>
+
+      <div class="checkbox-wrapper-13">
+        <input
+          id="c1-13"
+          type="checkbox"
+          @change="showFilterForm('tem_pefeitura')"
+          name="prefeitura"
+        />
+        <label for="c1-13">Prefeitura</label>
       </div>
-      <div>
-        <input type="checkbox" v-model="form1.plano" name="plano" />
-        <span class="title-input-blue">Plano</span>
+
+      <div class="checkbox-wrapper-13">
+        <input id="c1-13" type="checkbox" v-model="plano" name="plano" />
+        <label for="c1-13">Plano</label>
       </div>
     </div>
 
-    <div class="row">
+    <div class="row" v-if="tem_particular">
       <div class="col">
         <div class="m5">
-          <span class="title-input-blue">Número do Contrato</span>
+          <span class="title-input-blue">Nome Completo</span>
 
           <input
             type="text"
-            v-model="form1.numero_contrato"
+            v-model="form1.nome_completo"
             class="input-resp"
             name="nome_completo"
-          />
-        </div>
-      </div>
-
-      <div class="col">
-        <div class="m5">
-          <span class="title-input-blue">Nome do Contratante</span>
-
-          <input
-            type="date"
-            v-model="form1.nome_contratante"
-            class="input-resp"
-            name="data_nascimento"
           />
         </div>
       </div>
@@ -57,21 +61,166 @@
             type="text"
             v-model="form1.cpf"
             class="input-resp"
-            name="nacionalidade"
+            name="cpf"
           />
         </div>
       </div>
+    </div>
+
+    <div class="row" v-if="tem_seguradora || tem_pefeitura">
       <div class="col">
-        <button type="button" class="btn btn-primary" style="margin-top: 20px;">
-          <img class="btn-search" :src="require('../../assets/img/search-white.png')" />
+        <div class="m5">
+          <span class="title-input-blue">Seguradora</span>
+
+          <input
+            type="text"
+            v-model="form1.seguradora"
+            class="input-resp"
+            name="seguradora"
+          />
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="m5">
+          <span class="title-input-blue">CNPJ</span>
+
+          <input
+            type="text"
+            v-model="form1.cnpj"
+            class="input-resp"
+            name="cnpj"
+          />
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="m5">
+          <span class="title-input-blue">Telefone</span>
+
+          <input
+            type="text"
+            v-model="form1.telefone"
+            class="input-resp"
+            name="telefone"
+          />
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="m5">
+          <span class="title-input-blue">Email</span>
+
+          <input
+            type="text"
+            v-model="form1.email"
+            class="input-resp"
+            name="email"
+          />
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="m5">
+          <span class="title-input-blue">Solicitante</span>
+
+          <input
+            type="text"
+            v-model="form1.solicitante"
+            class="input-resp"
+            name="solicitante"
+          />
+        </div>
+      </div>
+    </div>
+
+    <div class="row" v-if="tem_seguradora || tem_pefeitura || tem_particular">
+      <div class="col">
+        <button
+          type="button"
+          @click="searchBeneficiarios()"
+          class="btn btn-blue"
+        >
+          Buscar
         </button>
+      </div>
+    </div>
+
+    <br />
+    <br />
+    <br />
+
+    <div class="row">
+      <div class="col">
+        <div class="form-input-assistencia">
+          <p class="form-title">Responsável</p>
+          <div class="m-3" style="height: 300px">
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Nome</th>
+                  <th>CPF</th>
+                  <th>Selecionar</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr
+                  v-for="(item, index) in lista_beneficiarios"
+                  :key="index"
+                  :id="`main-row-${index}`"
+                  class="view-tr"
+                >
+                  <td>{{ index + 1 }}</td>
+                  <td>{{ item.nome_completo }}</td>
+                  <td>{{ item.cpf }}</td>
+                  <td>
+                    <input type="radio" @click="selectResponsavel(item)" />
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="form-input-assistencia">
+          <p class="form-title">Falecido(a)</p>
+          <div class="m-3" style="height: 300px">
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Nome</th>
+                  <th>CPF</th>
+                  <th>Selecionar</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr
+                  v-for="(item, index) in lista_beneficiarios"
+                  :key="index"
+                  :id="`main-row-${index}`"
+                  class="view-tr"
+                >
+                  <td>{{ index + 1 }}</td>
+                  <td>{{ item.nome_completo }}</td>
+                  <td>{{ item.cpf }}</td>
+                  <td>
+                    <input type="radio" @click="selectFalecido(item)" />
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-// import axios from "axios";
+import axios from "axios";
 import { mask } from "vue-the-mask";
 
 export default {
@@ -83,17 +232,74 @@ export default {
     colaboradorLista: Object,
   },
   methods: {
+    searchBeneficiarios() {
+      axios
+        .get(`${process.env.VUE_APP_API_URL}/beneficiarios/search`, {
+          params: {
+            nome_completo: this.form1.nome_completo,
+            cpf: this.form1.cpf,
+            seguradora: this.form1.seguradora,
+            cnpj: this.form1.cnpj,
+            telefone: this.form1.telefone,
+            email: this.form1.email,
+            solicitante: this.form1.solicitante,
+          },
+        })
+        .then((res) => {
+          this.lista_beneficiarios = res.data;
+
+          // this.lista_beneficiarios.forEach((item, index) => {
+          //   console.log(index);
+          //   var elem = document.getElementById("main-row-" + index);
+
+          //   item.beneficiarios_dependentes.forEach((i) => {
+          //     console.log(i);
+          //     console.log(elem);
+          //   });
+
+          // });
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    },
+
+    selectResponsavel(item) {
+      this.$emit("select-responsavel", item);
+    },
+
+    selectFalecido(item) {
+      this.$emit("select-falecido", item);
+    },
+
+    showFilterForm(filter) {
+      if (filter == "tem_particular") {
+        this.tem_particular = !this.tem_particular;
+      }
+
+      if (filter == "tem_seguradora") {
+        this.tem_seguradora = !this.tem_seguradora;
+      }
+
+      if (filter == "tem_pefeitura") {
+        this.tem_pefeitura = !this.tem_pefeitura;
+      }
+    },
   },
   data() {
     return {
+      lista_beneficiarios: [],
+      tem_particular: false,
+      tem_seguradora: false,
+      tem_pefeitura: false,
       form1: {
-        particular: "",
-        seguradora: "",
-        prefeitura: "",
-        plano: "",
-        numero_contrato: "",
-        nome_contratante: "",
+        nome_completo: "Josefa Maria dos Montes Fernandes",
         cpf: "",
+        seguradora: "",
+        cnpj: "",
+        telefone: "",
+        email: "",
+        solicitante: "",
       },
     };
   },
@@ -104,4 +310,6 @@ export default {
     },
   },
 };
+
+// Josefa Maria dos Montes Fernandes
 </script>

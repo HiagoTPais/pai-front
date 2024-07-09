@@ -1,17 +1,5 @@
 <template>
   <div v-if="showForm == 3">
-    <div class="d-flex m1">
-      <div>
-        <input type="checkbox" v-model="form3.particular" name="particular" />
-        <span class="title-input-blue">Contratante</span>
-      </div>
-
-      <div>
-        <input type="checkbox" v-model="form3.plano" name="plano" />
-        <span class="title-input-blue">Dependente</span>
-      </div>
-    </div>
-
     <label class="form-title m-3">Dados do Falecido</label>
 
     <div class="row">
@@ -89,15 +77,6 @@
     </div>
 
     <div class="row">
-      <div class="col">
-        <div class="m5">
-          <span class="title-input-blue">Sexo</span>
-          <select v-model="form3.sexo" name="sexo" class="select-resp">
-            <option>Masculino</option>
-            <option>Feminino</option>
-          </select>
-        </div>
-      </div>
       <div class="col">
         <OrgaoExpedicao />
       </div>
@@ -211,27 +190,13 @@
     <div class="row">
       <div class="col">
         <div class="m5">
-          <span class="title-input-blue">Data de Falecimento</span>
+          <span class="title-input-blue">Data e Hora do Falecimento</span>
 
           <input
-            type="text"
-            v-model="form3.nome_completo"
+            type="datetime-local"
+            v-model="form3.data_hora_falecimento"
             class="input-resp"
-            name="nome_completo"
-          />
-        </div>
-      </div>
-
-      <div class="col">
-        <div class="m5">
-          <span class="title-input-blue">Hora do Falecimento</span>
-
-          <input
-            type="text"
-            v-model="form3.cpf"
-            class="input-resp"
-            name="cpf"
-            v-mask="['###.###.###-##']"
+            name="data_hora_falecimento"
           />
         </div>
       </div>
@@ -242,10 +207,9 @@
 
           <input
             type="text"
-            v-model="form3.rg"
+            v-model="form3.local_falecimento"
             class="input-resp"
-            name="rg"
-            v-mask="['##.###.###-##']"
+            name="local_falecimento"
           />
         </div>
       </div>
@@ -256,9 +220,22 @@
 
           <input
             type="text"
-            v-model="form3.nome_completo"
+            v-model="form3.n_decraracao_obito"
             class="input-resp"
-            name="nome_completo"
+            name="n_decraracao_obito"
+          />
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="m5">
+          <span class="title-input-blue">Medico Responsável</span>
+
+          <input
+            type="text"
+            v-model="form3.medico_responsavel"
+            class="input-resp"
+            name="medico_responsavel"
           />
         </div>
       </div>
@@ -267,27 +244,13 @@
     <div class="row">
       <div class="col">
         <div class="m5">
-          <span class="title-input-blue">Medico Responsável</span>
-
-          <input
-            type="text"
-            v-model="form3.nome_completo"
-            class="input-resp"
-            name="nome_completo"
-          />
-        </div>
-      </div>
-
-      <div class="col">
-        <div class="m5">
           <span class="title-input-blue">Situação do Falecimento</span>
 
           <input
             type="text"
-            v-model="form3.cpf"
+            v-model="form3.situacao_falecimento"
             class="input-resp"
-            name="cpf"
-            v-mask="['###.###.###-##']"
+            name="situacao_falecimento"
           />
         </div>
       </div>
@@ -298,25 +261,9 @@
 
           <input
             type="text"
-            v-model="form3.rg"
+            v-model="form3.causas_falecimento"
             class="input-resp"
-            name="rg"
-            v-mask="['##.###.###-##']"
-          />
-        </div>
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="col">
-        <div class="m5">
-          <span class="title-input-blue">Sexo</span>
-
-          <input
-            type="text"
-            v-model="form3.nome_completo"
-            class="input-resp"
-            name="nome_completo"
+            name="causas_falecimento"
           />
         </div>
       </div>
@@ -326,39 +273,38 @@
           <span class="title-input-blue">Idade</span>
 
           <input
-            type="text"
-            v-model="form3.cpf"
+            type="number"
+            v-model="form3.idade"
             class="input-resp"
-            name="cpf"
-            v-mask="['###.###.###-##']"
+            name="idade"
           />
         </div>
       </div>
+    </div>
 
+    <div class="row">
       <div class="col">
         <div class="m5">
           <span class="title-input-blue">Etnia</span>
 
           <input
             type="text"
-            v-model="form3.rg"
+            v-model="form3.etnia"
             class="input-resp"
-            name="rg"
-            v-mask="['##.###.###-##']"
+            name="etnia"
           />
         </div>
       </div>
-    </div>
-        <div class="row">
+
       <div class="col">
         <div class="m5">
           <span class="title-input-blue">Altura</span>
 
           <input
-            type="text"
-            v-model="form3.nome_completo"
+            type="number"
+            v-model="form3.altura"
             class="input-resp"
-            name="nome_completo"
+            name="altura"
           />
         </div>
       </div>
@@ -368,11 +314,10 @@
           <span class="title-input-blue">Peso</span>
 
           <input
-            type="text"
-            v-model="form3.cpf"
+            type="number"
+            v-model="form3.peso"
             class="input-resp"
-            name="cpf"
-            v-mask="['###.###.###-##']"
+            name="peso"
           />
         </div>
       </div>
@@ -383,10 +328,9 @@
 
           <input
             type="text"
-            v-model="form3.rg"
+            v-model="form3.naturalidade"
             class="input-resp"
-            name="rg"
-            v-mask="['##.###.###-##']"
+            name="naturalidade"
           />
         </div>
       </div>
@@ -397,15 +341,15 @@
 <script>
 import axios from "axios";
 import { mask } from "vue-the-mask";
-import OrgaoExpedicao from "../OrgaoExpedicao"
+import OrgaoExpedicao from "../OrgaoExpedicao";
 
 export default {
   name: "FormColaboradoresStep3",
   props: {
     showForm: Number,
-    sendFormNow: Boolean,
     showView: String,
     colaboradorLista: Object,
+    selectedFalecido: Object,
   },
   methods: {
     buscarCep() {
@@ -422,7 +366,32 @@ export default {
   },
   data() {
     return {
-      form3: {},
+      form3: {
+        nome_completo: "",
+        data_nascimento: "",
+        nacionalidade: "",
+        rg: "",
+        status: "",
+        sexo: "",
+        data_expedicao: "",
+        cpf: "",
+        estado_civil: "",
+        grau_escolaridade: "",
+        ocupaçao: "",
+        religiao: "",
+        apelido: "",
+        data_hora_falecimento: "",
+        local_falecimento: "",
+        n_decraracao_obito: "",
+        medico_responsavel: "",
+        situacao_falecimento: "",
+        causas_falecimento: "",
+        idade: "",
+        etnia: "",
+        altura: "",
+        peso: "",
+        naturalidade: "",
+      },
     };
   },
   components: {
@@ -430,8 +399,35 @@ export default {
   },
   directives: { mask },
   watch: {
-    sendFormNow: function () {
-      this.$emit("set-data-form", this.form3);
+    selectedFalecido: function (item) {
+      console.log("AAAAAAAAAAAAA");
+      console.log(item);
+      const reversedItem = JSON.parse(JSON.stringify(item));
+
+      this.form3.nome_completo = reversedItem.nome_completo;
+      this.form3.data_nascimento = reversedItem.data_nascimento;
+      this.form3.nacionalidade = reversedItem.nacionalidade;
+      this.form3.rg = reversedItem.rg;
+      this.form3.status = reversedItem.status;
+      this.form3.sexo = reversedItem.sexo;
+      this.form3.data_expedicao = reversedItem.data_expedicao;
+      this.form3.cpf = reversedItem.cpf;
+      this.form3.estado_civil = reversedItem.estado_civil;
+      this.form3.grau_escolaridade = reversedItem.grau_escolaridade;
+      this.form3.ocupaçao = reversedItem.ocupaçao;
+      this.form3.religiao = reversedItem.religiao;
+      this.form3.apelido = reversedItem.apelido;
+      this.form3.data_hora_falecimento = reversedItem.data_hora_falecimento;
+      this.form3.local_falecimento = reversedItem.local_falecimento;
+      this.form3.n_decraracao_obito = reversedItem.n_decraracao_obito;
+      this.form3.medico_responsavel = reversedItem.medico_responsavel;
+      this.form3.situacao_falecimento = reversedItem.situacao_falecimento;
+      this.form3.causas_falecimento = reversedItem.causas_falecimento;
+      this.form3.idade = reversedItem.idade;
+      this.form3.etnia = reversedItem.etnia;
+      this.form3.altura = reversedItem.altura;
+      this.form3.peso = reversedItem.peso;
+      this.form3.naturalidade = reversedItem.naturalidade;
     },
   },
 };

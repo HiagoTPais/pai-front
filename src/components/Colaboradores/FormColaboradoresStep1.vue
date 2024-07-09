@@ -404,18 +404,14 @@ export default {
       );
 
       this.form1.nome_completo = reversedColaboradorLista.data[0].nome_completo;
-      this.form1.data_nascimento =
-        reversedColaboradorLista.data[0].data_nascimento;
+      this.form1.data_nascimento = reversedColaboradorLista.data[0].data_nascimento;
       this.form1.nacionalidade = reversedColaboradorLista.data[0].nacionalidade;
       this.form1.rg = reversedColaboradorLista.data[0].rg;
-      this.form1.orgao_expedicao =
-        reversedColaboradorLista.data[0].orgao_expedicao;
-      this.form1.data_expedicao =
-        reversedColaboradorLista.data[0].data_expedicao;
+      this.form1.orgao_expedicao = reversedColaboradorLista.data[0].orgao_expedicao;
+      this.form1.data_expedicao = reversedColaboradorLista.data[0].data_expedicao;
       this.form1.cpf = reversedColaboradorLista.data[0].cpf;
       this.form1.estado_civil = reversedColaboradorLista.data[0].estado_civil;
-      this.form1.grau_escolaridade =
-        reversedColaboradorLista.data[0].grau_escolaridade;
+      this.form1.grau_escolaridade = reversedColaboradorLista.data[0].grau_escolaridade;
       this.form1.ocupacao = reversedColaboradorLista.data[0].ocupacao;
       this.form1.religiao = reversedColaboradorLista.data[0].religiao;
       this.form1.cep = reversedColaboradorLista.data[0].cep;
@@ -425,14 +421,11 @@ export default {
       this.form1.cidade = reversedColaboradorLista.data[0].cidade;
       this.form1.uf = reversedColaboradorLista.data[0].uf;
       this.form1.complemento = reversedColaboradorLista.data[0].complemento;
-      this.form1.ponto_referencia =
-        reversedColaboradorLista.data[0].ponto_referencia;
+      this.form1.ponto_referencia = reversedColaboradorLista.data[0].ponto_referencia;
       this.form1.zona = reversedColaboradorLista.data[0].zona;
-      this.form1.whatsapp_1_num =
-        reversedColaboradorLista.data[0].whatsapp_1_num;
+      this.form1.whatsapp_1_num = reversedColaboradorLista.data[0].whatsapp_1_num;
       this.form1.whatsapp_1 = reversedColaboradorLista.data[0].whatsapp_1;
-      this.form1.whatsapp_2_num =
-        reversedColaboradorLista.data[0].whatsapp_2_num;
+      this.form1.whatsapp_2_num = reversedColaboradorLista.data[0].whatsapp_2_num;
       this.form1.whatsapp_2 = reversedColaboradorLista.data[0].whatsapp_2;
     },
   },

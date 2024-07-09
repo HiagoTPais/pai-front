@@ -1,6 +1,14 @@
 <template>
   <div v-if="showForm == 8">
-    <label class="form-title m-3">Dados do Sepultamento</label>
+    <div class="d-flex">
+      <label class="form-title m-3">Dados do Sepultamento</label>
+
+      <img
+        style="width: 41px; height: 40px; cursor: pointer; margin-top: 5px"
+        :src="require('../../assets/img/plus.png')"
+        @click="modalNovoLocal()"
+      />
+    </div>
 
     <div class="row">
       <div class="col">
@@ -8,9 +16,9 @@
 
         <input
           type="text"
-          v-model="form9"
+          v-model="form9.local"
           class="input-resp"
-          name="nome_completo"
+          name="local"
         />
       </div>
     </div>
@@ -20,10 +28,10 @@
           <span class="title-input-blue">Jazigo</span>
 
           <input
-            type="date"
-            v-model="form9"
+            type="text"
+            v-model="form9.jazigo"
             class="input-resp"
-            name="data_expedicao"
+            name="jazigo"
           />
         </div>
       </div>
@@ -34,10 +42,9 @@
 
           <input
             type="text"
-            v-model="form9"
+            v-model="form9.quadra"
             class="input-resp"
-            name="cpf"
-            v-mask="['###.###.###-##']"
+            name="quadra"
           />
         </div>
       </div>
@@ -47,57 +54,53 @@
           <span class="title-input-blue">Bloco</span>
           <input
             type="text"
-            v-model="form9"
+            v-model="form9.bloco"
             class="input-resp"
-            name="ocupacao"
+            name="bloco"
           />
         </div>
       </div>
 
       <div class="col">
         <div class="m5">
-          <span class="title-input-blue">Hora de Sepultamento</span>
+          <span class="title-input-blue">Data e Hora de Sepultamento</span>
 
           <input
-            type="text"
-            v-model="form9"
+            type="datetime-local"
+            v-model="form9.data_hora_sepultamento"
             class="input-resp"
-            name="ocupacao"
-          />
-        </div>
-      </div>
-
-      <div class="col">
-        <div class="m5">
-          <span class="title-input-blue">Data de Sepultamento</span>
-
-          <input
-            type="text"
-            v-model="form9"
-            class="input-resp"
-            name="ocupacao"
+            name="data_hora_sepultamento"
           />
         </div>
       </div>
     </div>
     <div class="d-flex m1">
-      <div class="m1">
-        <input type="checkbox" v-model="form9" name="particular" />
-        <span class="title-input-blue">Deseja Placa de Identificação Tumular</span>
+      <div class="checkbox-wrapper-13">
+        <input
+          class="c1-13"
+          type="checkbox"
+          v-model="form9.deseja_placa_identificacao_tumular"
+          name="deseja_placa_identificacao_tumular"
+        />
+        <span class="form-title">Deseja Placa de Identificação Tumular</span>
       </div>
-      <div class="m1">
-        <input type="checkbox" v-model="form9" name="particular" />
-        <span class="title-input-blue">Haverá Foto Colorida</span>
+      <div class="checkbox-wrapper-13">
+        <input
+          class="c1-13"
+          type="checkbox"
+          v-model="form9.havera_foto_colorida"
+          name="havera_foto_colorida"
+        />
+        <span class="form-title">Haverá Foto Colorida</span>
       </div>
     </div>
     <div class="row">
       <div class="col">
-        <span class="title-input-blue">Messagem para a Placa</span>
+        <span class="form-title">Messagem para a Placa</span>
 
         <textarea
-          disabled
-          v-model="form9"
-          name="observacoes"
+          v-model="form9.messagem_para_placa"
+          name="messagem_para_placa"
           class="textarea-resp"
           cols="124"
           rows="5"
@@ -105,11 +108,13 @@
       </div>
     </div>
   </div>
+  <NovoSalaoModal :msg="message" :visible="modalVisible" />
 </template>
 
 <script>
 // import axios from "axios";
 import { mask } from "vue-the-mask";
+import NovoSalaoModal from "../Modal/NovoSalaoModal";
 
 export default {
   name: "FormColaboradoresStep9",
@@ -119,10 +124,29 @@ export default {
     showView: String,
     colaboradorLista: Object,
   },
-  methods: {},
+  methods: {
+    modalNovoLocal() {
+      this.modalVisible = !this.modalVisible;
+      this.message = "Local de Seputamento";
+    },
+  },
+  components: {
+    NovoSalaoModal,
+  },
   data() {
     return {
-      form9: {},
+      modalVisible: false,
+      message: "",
+      form9: {
+        local: "",
+        jazigo: "",
+        quadra: "",
+        bloco: "",
+        data_hora_sepultamento: "",
+        deseja_placa_identificacao_tumular: "",
+        havera_foto_colorida: "",
+        messagem_para_placa: "",
+      },
     };
   },
   directives: { mask },

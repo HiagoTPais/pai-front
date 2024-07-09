@@ -1,22 +1,22 @@
 <template>
   <div class="form-assistencia">
     <div class="form-navbar-assistencia">
-       <DeleteModal
+      <DeleteModal
         :visible="this.visibleModal"
         :idBeneficiary="this.idBeneficiary"
         :nameBeneficiary="this.nameBeneficiary"
-        @set-beneficiaries-list="setcolaboradoresList"
+        @set-beneficiaries-list="setServicoList"
       />
 
       <div class="d-flex">
         <div class="d-flex">
           <img
             class="family-img"
-            :src="require('../../assets/img/colaboradores.png')"
+            :src="require('../../assets/img/funeraria.png')"
           />
           <div class="d-flex flex-column" style="margin-left: 10px">
-            <p class="form-title" style="width: 195%; margin-bottom: 7px">
-              CONSULTANDO COLABORADORES
+            <p class="form-title" style="width: 270%; margin-bottom: 7px">
+              CONSULTANDO SERVIÇOS FUNERARIOS
             </p>
             <img
               style="
@@ -60,13 +60,11 @@
             </thead>
             <tbody>
               <tr
-                v-for="item in colaboradoresList.value"
+                v-for="item in servicoList.value"
                 :key="item.id"
                 class="view-tr"
                 :style="
-                  'color: ' +
-                  this.statusColaborador['ATIVO'] +
-                  ' !important;'
+                  'color: ' + this.statusColaborador['ATIVO'] + ' !important;'
                 "
               >
                 <td>{{ item.protocolo_id }}</td>
@@ -137,7 +135,10 @@
                       "
                       :src="require('../../assets/img/eye.png')"
                       @click="
-                        $emit('setShowForm', ['form-colaboradores-edit', item.id])
+                        $emit('setShowForm', [
+                          'form-servico-edit',
+                          item.id,
+                        ])
                       "
                     />
                   </div>
@@ -147,30 +148,10 @@
           </table>
         </div>
 
-        <div class="d-flex justify-content-between">
-          <div class="d-flex">
-            <div class="m-2 d-flex">
-              <p style="margin-right: 5px" class="sphere blue"></p>
-              <p style="color: #21509f">Ativo</p>
-            </div>
-            <div class="m-2 d-flex">
-              <p style="margin-right: 5px" class="sphere black"></p>
-              <p style="color: #000000">Suspenso</p>
-            </div>
-            <div class="m-2 d-flex">
-              <p style="margin-right: 5px" class="sphere red"></p>
-              <p style="color: #e5081d">Cancelado</p>
-            </div>
-            <div class="m-2 d-flex">
-              <p style="margin-right: 5px" class="sphere orange"></p>
-              <p style="color: #c86014">Em Negociação</p>
-            </div>
-          </div>
-        </div>
         <div class="d-flex flex-row-reverse" style="margin-right: 18px">
           <paginate
             :page-count="Math.ceil(this.totalItens / 10)"
-            :click-handler="setColaboradoresList"
+            :click-handler="setServicoList"
             :prev-text="'Prev'"
             :next-text="'Next'"
             :container-class="'pagination'"
@@ -196,7 +177,7 @@ export default {
   },
   data() {
     return {
-      colaboradoresList: ref([]),
+      servicoList: ref([]),
       visibleModal: false,
       actionsBtn: false,
       idColaborador: null,
@@ -220,7 +201,7 @@ export default {
   emits: ["setShowForm"],
 
   beforeMount() {
-    this.setColaboradoresList();
+    this.setServicoList();
   },
 
   methods: {
@@ -233,8 +214,8 @@ export default {
     },
 
     showDeleteModal(id, nome_completo) {
-      this.idColaboradores = id;
-      this.nameColaboradores = nome_completo;
+      this.idservico = id;
+      this.nameservico = nome_completo;
       this.visibleModal = !this.visibleModal;
     },
 
@@ -251,28 +232,13 @@ export default {
       this.setNextView();
     },
 
-    setColaboradoresList(page = 1) {
+    setServicoList(page = 1) {
       axios
-        .get(`${process.env.VUE_APP_API_URL}/colaborador?page=${page}`)
+        .get(`${process.env.VUE_APP_API_URL}/servico-funerario?page=${page}`)
         .then((res) => {
-          this.colaboradoresList.value = res.data.data;
+          console.log(res);
+          this.servicoList.value = res.data.data;
           this.totalItens = res.data.total;
-        })
-        .catch((error) => {
-          console.log(error);
-        });
-    },
-
-    searchColaboradores() {
-      axios
-        .get(`${process.env.VUE_APP_API_URL}/colaborador`, {
-          params: {
-            search: this.search,
-          },
-        })
-        .then((res) => {
-          this.colaboradoresList.value = res.data.data;
-          this.totalItens = res.data.meta.total;
         })
         .catch((error) => {
           console.log(error);
