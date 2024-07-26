@@ -17,12 +17,11 @@
             type="checkbox"
             name="havera_uso_salao_homenagem"
             v-model="form4.havera_uso_salao_homenagem"
+            @click="getSalao()"
           />
-          <label class="form-title" for="c1-13"
-            >Haverá uso do Salão de Homenagem?</label
-          >
+          <label class="form-title" for="c1-13">Haverá uso do Salão de Homenagem?</label>
         </div>
-        <div>
+        <div v-if="form4.havera_uso_salao_homenagem">
           <span class="title-input-blue">Salão de Homenagem</span>
 
           <select
@@ -30,9 +29,13 @@
             name="salao_homenagem"
             class="select-resp"
           >
-            <option>Salão da Empresa</option>
-            <option>Salão de Terceiro</option>
-            <option>Residência</option>
+            <option
+              v-for="(item_salao_homenagem, index) in lista_salao_homenagem"
+              :key="index"
+              :value="item_salao_homenagem.nome"
+            >
+              {{ item_salao_homenagem.nome }}
+            </option>
           </select>
         </div>
       </div>
@@ -44,12 +47,13 @@
             type="checkbox"
             name="havera_assistencia_copa"
             v-model="form4.havera_assistencia_copa"
+            @click="getCopeira()"
           />
           <label class="form-title" for="c1-13"
             >Haverá Assistência de Copa?</label
           >
         </div>
-        <div>
+        <div v-if="form4.havera_assistencia_copa">
           <span class="title-input-blue">Colaborador</span>
 
           <select
@@ -57,7 +61,13 @@
             name="colaborador"
             class="select-resp"
           >
-            <option>Colaborador</option>
+            <option
+              v-for="(item_colaborador, index) in lista_colaborador"
+              :key="index"
+              :value="item_colaborador.nome"
+            >
+              {{ item_colaborador.nome }}
+            </option>
           </select>
         </div>
       </div>
@@ -322,7 +332,11 @@
       </div>
     </div>
   </div>
-  <NovoSalaoModal :msg="message" :visible="modalVisible" />
+  <NovoSalaoModal
+    :msg="message"
+    :visible="modalVisible"
+    @update-list="updateList(msg)"
+  />
 </template>
 
 <script>
@@ -350,9 +364,41 @@ export default {
           console.log(error);
         });
     },
+    
     modalNovoSalao() {
       this.modalVisible = !this.modalVisible;
       this.message = "Salão de Homenagem";
+    },
+
+    getSalao() {
+      axios
+        .get(`${process.env.VUE_APP_API_URL}/servico-funerario/salao`)
+        .then((res) => {
+          console.log(res.data);
+          this.lista_salao_homenagem = res.data;
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    },
+
+    getCopeira() {
+      axios
+        .get(`${process.env.VUE_APP_API_URL}/servico-funerario/copeira`)
+        .then((res) => {
+          this.lista_colaborador = res.data.nome;
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    },
+
+    updateList(msg) {
+      console.log("TESTE UPDATE LIST");
+
+      console.log(msg);
+
+      this.getSalao();
     },
   },
   components: {
@@ -362,6 +408,8 @@ export default {
     return {
       modalVisible: false,
       message: "",
+      lista_colaborador: [],
+      lista_salao_homenagem: [],
       form4: {
         havera_uso_salao_homenagem: false,
         havera_homenagem: false,

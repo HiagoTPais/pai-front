@@ -437,8 +437,10 @@ export default {
           console.log(error);
         });
     },
+    
     mudarStatusContratante() {
       let status = this.form1.status;
+
       axios
         .post(`${process.env.VUE_APP_API_URL}/contract/store`, { status })
         .then((res) => {

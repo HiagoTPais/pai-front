@@ -430,36 +430,43 @@ export default {
   directives: { mask },
   watch: {
     selectedResponsavel: function (item) {
-      console.log("BBBBBBBBBBBBBB");
-      console.log(item);
       const reversedItem = JSON.parse(JSON.stringify(item));
 
-      this.form2.nome_completo = reversedItem.nome_completo;
-      this.form2.data_nascimento = reversedItem.data_nascimento;
-      this.form2.nacionalidade = reversedItem.nacionalidade;
-      this.form2.rg = reversedItem.rg;
-      this.form2.orgao_expedicao = reversedItem.orgao_expedicao;
-      this.form2.data_expedicao = reversedItem.data_expedicao;
-      this.form2.cpf = reversedItem.cpf;
-      this.form2.estado_civil = reversedItem.estado_civil;
-      this.form2.grau_escolaridade = reversedItem.grau_escolaridade;
-      this.form2.ocupaçao = reversedItem.ocupaçao;
-      this.form2.religiao = reversedItem.religiao;
-      this.form2.apelido = reversedItem.apelido;
-      this.form2.rua = reversedItem.rua;
-      this.form2.numero = reversedItem.numero;
-      this.form2.bairro = reversedItem.bairro;
-      this.form2.cep = reversedItem.cep;
-      this.form2.cidade = reversedItem.cidade;
-      this.form2.uf = reversedItem.uf;
-      this.form2.complemento = reversedItem.complemento;
-      this.form2.ponto_referencia = reversedItem.ponto_referencia;
-      this.form2.zona = reversedItem.zona;
-      this.form2.whatsapp_1_num = reversedItem.whatsapp_1_num;
-      this.form2.whatsapp_1 = reversedItem.whatsapp_1;
-      this.form2.whatsapp_2_num = reversedItem.whatsapp_2_num;
-      this.form2.whatsapp_2 = reversedItem.whatsapp_2;
-      this.form2.status = reversedItem.status;
+      if (reversedItem.cpf_dependente) {
+        this.form2.cpf = reversedItem.cpf_dependente;
+        this.form2.data_nascimento = reversedItem.nascimento_dependente;
+        this.form2.nome_completo = reversedItem.nome_completo_dependente;
+        this.form2.sexo = reversedItem.sexo_dependente;
+        this.form2.whatsapp_1_num = reversedItem.telefone_dependente;
+        this.form2.whatsapp_1 = reversedItem.whatsapp_dependente;
+      } else {
+        this.form2.nome_completo = reversedItem.nome_completo;
+        this.form2.data_nascimento = reversedItem.data_nascimento;
+        this.form2.nacionalidade = reversedItem.nacionalidade;
+        this.form2.rg = reversedItem.rg;
+        this.form2.orgao_expedicao = reversedItem.orgao_expedicao;
+        this.form2.data_expedicao = reversedItem.data_expedicao;
+        this.form2.cpf = reversedItem.cpf;
+        this.form2.estado_civil = reversedItem.estado_civil;
+        this.form2.grau_escolaridade = reversedItem.grau_escolaridade;
+        this.form2.ocupaçao = reversedItem.ocupaçao;
+        this.form2.religiao = reversedItem.religiao;
+        this.form2.apelido = reversedItem.apelido;
+        this.form2.rua = reversedItem.rua;
+        this.form2.numero = reversedItem.numero;
+        this.form2.bairro = reversedItem.bairro;
+        this.form2.cep = reversedItem.cep;
+        this.form2.cidade = reversedItem.cidade;
+        this.form2.uf = reversedItem.uf;
+        this.form2.complemento = reversedItem.complemento;
+        this.form2.ponto_referencia = reversedItem.ponto_referencia;
+        this.form2.zona = reversedItem.zona;
+        this.form2.whatsapp_1_num = reversedItem.whatsapp_1_num;
+        this.form2.whatsapp_1 = reversedItem.whatsapp_1;
+        this.form2.whatsapp_2_num = reversedItem.whatsapp_2_num;
+        this.form2.whatsapp_2 = reversedItem.whatsapp_2;
+        this.form2.status = reversedItem.status;
+      }
     },
   },
 };

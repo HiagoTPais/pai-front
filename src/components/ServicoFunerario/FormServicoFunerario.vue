@@ -31,9 +31,6 @@
       </div>
     </div>
     <div class="form-input-assistencia">
-      <form style="height: 35px"></form>
-    </div>
-    <div class="form-input-assistencia">
       <form>
         <FormServicoFunerarioStep1
           :showForm="this.currentTabs"

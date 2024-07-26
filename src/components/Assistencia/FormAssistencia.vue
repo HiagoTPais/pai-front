@@ -327,9 +327,6 @@
   </div>
 </template>
 
-<style src='../../../src/assets/css/bootstrap.min.css'></style>
-<style src='../../../src/assets/css/style.css'></style>
-
 <script>
 import axios from "axios";
 

@@ -85,11 +85,14 @@
       <div class="square-link" @click="$emit('setShowForm', 'view-tanatorio')">
         <img class="beneficiario" :src="require('../assets/img/eye.png')" />
       </div>
+      <div class="square-link" @click="$emit('setShowForm', 'dashboard-tanatorio')">
+        <img class="beneficiario" :src="require('../assets/img/dashboard.png')" />
+      </div>
     </div>
     <div class="card-nav" @click="showLinks('tanatorio')" 
       :style="{ backgroundColor: cardBackgroundColor['tanatorio'], color: cardColor['tanatorio'] }">
-      <img v-if="!showCardLinks['tanatorio']" :src="require('../assets/img/tanatorio.png')" />
-      <img v-else :src="require('../assets/img/tanatorio-white.png')" />
+      <img class="tanatorio-icon" v-if="!showCardLinks['tanatorio']" :src="require('../assets/img/tanatorio.png')" />
+      <img class="tanatorio-icon" v-else :src="require('../assets/img/tanatorio-white.png')" />
       <p class="card-nav-title">Tanatório Tanatopraxia</p>
     </div>
   </div>

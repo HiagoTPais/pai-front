@@ -404,30 +404,37 @@ export default {
       console.log(item);
       const reversedItem = JSON.parse(JSON.stringify(item));
 
-      this.form3.nome_completo = reversedItem.nome_completo;
-      this.form3.data_nascimento = reversedItem.data_nascimento;
-      this.form3.nacionalidade = reversedItem.nacionalidade;
-      this.form3.rg = reversedItem.rg;
-      this.form3.status = reversedItem.status;
-      this.form3.sexo = reversedItem.sexo;
-      this.form3.data_expedicao = reversedItem.data_expedicao;
-      this.form3.cpf = reversedItem.cpf;
-      this.form3.estado_civil = reversedItem.estado_civil;
-      this.form3.grau_escolaridade = reversedItem.grau_escolaridade;
-      this.form3.ocupaçao = reversedItem.ocupaçao;
-      this.form3.religiao = reversedItem.religiao;
-      this.form3.apelido = reversedItem.apelido;
-      this.form3.data_hora_falecimento = reversedItem.data_hora_falecimento;
-      this.form3.local_falecimento = reversedItem.local_falecimento;
-      this.form3.n_decraracao_obito = reversedItem.n_decraracao_obito;
-      this.form3.medico_responsavel = reversedItem.medico_responsavel;
-      this.form3.situacao_falecimento = reversedItem.situacao_falecimento;
-      this.form3.causas_falecimento = reversedItem.causas_falecimento;
-      this.form3.idade = reversedItem.idade;
-      this.form3.etnia = reversedItem.etnia;
-      this.form3.altura = reversedItem.altura;
-      this.form3.peso = reversedItem.peso;
-      this.form3.naturalidade = reversedItem.naturalidade;
+      if (reversedItem.cpf_dependente) {
+        this.form3.cpf = reversedItem.cpf_dependente;
+        this.form3.data_nascimento = reversedItem.nascimento_dependente;
+        this.form3.nome_completo = reversedItem.nome_completo_dependente;
+        this.form3.sexo = reversedItem.sexo_dependente;
+      } else {
+        this.form3.nome_completo = reversedItem.nome_completo;
+        this.form3.data_nascimento = reversedItem.data_nascimento;
+        this.form3.nacionalidade = reversedItem.nacionalidade;
+        this.form3.rg = reversedItem.rg;
+        this.form3.status = reversedItem.status;
+        this.form3.sexo = reversedItem.sexo;
+        this.form3.data_expedicao = reversedItem.data_expedicao;
+        this.form3.cpf = reversedItem.cpf;
+        this.form3.estado_civil = reversedItem.estado_civil;
+        this.form3.grau_escolaridade = reversedItem.grau_escolaridade;
+        this.form3.ocupaçao = reversedItem.ocupaçao;
+        this.form3.religiao = reversedItem.religiao;
+        this.form3.apelido = reversedItem.apelido;
+        this.form3.data_hora_falecimento = reversedItem.data_hora_falecimento;
+        this.form3.local_falecimento = reversedItem.local_falecimento;
+        this.form3.n_decraracao_obito = reversedItem.n_decraracao_obito;
+        this.form3.medico_responsavel = reversedItem.medico_responsavel;
+        this.form3.situacao_falecimento = reversedItem.situacao_falecimento;
+        this.form3.causas_falecimento = reversedItem.causas_falecimento;
+        this.form3.idade = reversedItem.idade;
+        this.form3.etnia = reversedItem.etnia;
+        this.form3.altura = reversedItem.altura;
+        this.form3.peso = reversedItem.peso;
+        this.form3.naturalidade = reversedItem.naturalidade;
+      }
     },
   },
 };

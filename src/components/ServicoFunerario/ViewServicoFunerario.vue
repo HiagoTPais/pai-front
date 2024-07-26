@@ -49,97 +49,30 @@
             <thead>
               <tr>
                 <th>ID</th>
-                <th>Nome</th>
-                <th>CPF</th>
-                <th>Remuneração</th>
-                <th>Férias</th>
-                <th>Período</th>
-                <th>Outros</th>
+                <th>Falecido</th>
+                <th>Responsável</th>
+                <th>Cidade</th>
+                <th>Data e Hora</th>
                 <th></th>
               </tr>
             </thead>
             <tbody>
               <tr
-                v-for="item in servicoList.value"
+                v-for="(item, index) in servicoList.value"
                 :key="item.id"
                 class="view-tr"
-                :style="
-                  'color: ' + this.statusColaborador['ATIVO'] + ' !important;'
-                "
               >
-                <td>{{ item.protocolo_id }}</td>
-                <td>{{ item.nome_completo }}</td>
-                <td>{{ item.cpf }}</td>
-                <td>{{ item.remuneracao }}</td>
-                <td>{{ item.ferias }}</td>
-                <td>{{ item.periodo }}</td>
-                <td>{{ item.outros }}</td>
-                <td>
-                  <img
-                    class="icon-table"
-                    :src="
-                      item.status == 'CANCELADO'
-                        ? require('../../assets/img/wheelchair-cancelado.png')
-                        : require('../../assets/img/wheelchair.png')
-                    "
-                  />
-                  <img
-                    class="icon-table"
-                    :src="
-                      item.status == 'CANCELADO'
-                        ? require('../../assets/img/coffin-cancelado.png')
-                        : require('../../assets/img/coffin.png')
-                    "
-                  />
-                  <img
-                    class="icon-table"
-                    :src="
-                      item.status == 'CANCELADO'
-                        ? require('../../assets/img/cerimonial-cancelado.png')
-                        : require('../../assets/img/cerimonial.png')
-                    "
-                  />
-                  <img
-                    class="icon-table"
-                    :src="
-                      item.status == 'CANCELADO'
-                        ? require('../../assets/img/jazigo-cancelado.png')
-                        : require('../../assets/img/jazigo.png')
-                    "
-                  />
-                  <img
-                    class="icon-table"
-                    style="width: 55px; height: 30px"
-                    :src="require('../../assets/img/cadeado.png')"
-                  />
-                </td>
+                <td>{{ index + 1 }}</td>
+                <td>{{ item.falecido }}</td>
+                <td>{{ item.responsavel }}</td>
+                <td>{{ item.cidade }}</td>
+                <td>{{ item.data_hora_sepultamento }}</td>
                 <td style="text-align: right; width: 120px">
                   <div class="btn-action">
                     <img
                       class="eye-table"
-                      v-if="item.status == 'CANCELADO'"
-                      @click="showDeleteModal(item.id, item.nome_completo)"
-                      :style="
-                        item.status == 'CANCELADO'
-                          ? { backgroundColor: '#e5081d' }
-                          : {}
-                      "
-                      :src="require('../../assets/img/no.png')"
-                    />
-                    <img
-                      class="eye-table"
-                      :style="
-                        item.status == 'CANCELADO'
-                          ? { backgroundColor: '#e5081d' }
-                          : {}
-                      "
                       :src="require('../../assets/img/eye.png')"
-                      @click="
-                        $emit('setShowForm', [
-                          'form-servico-edit',
-                          item.id,
-                        ])
-                      "
+                      @click="$emit('setShowForm', ['form-servico-edit', item.id])"
                     />
                   </div>
                 </td>
@@ -180,15 +113,6 @@ export default {
       servicoList: ref([]),
       visibleModal: false,
       actionsBtn: false,
-      idColaborador: null,
-      nameColaborador: null,
-      statusColaborador: {
-        ATIVO: "#21509F",
-        SUSPENSO: "#000000",
-        CANCELADO: "#E5081D",
-        EMNEGOCIACAO: "#C86014",
-        ARENOVAR: "#FC6600",
-      },
       totalItens: null,
       search: null,
       currentView: 1,
@@ -199,26 +123,16 @@ export default {
     DeleteModal,
   },
   emits: ["setShowForm"],
-
   beforeMount() {
     this.setServicoList();
   },
-
   methods: {
     setCurrentView(idView) {
       this.currentView = idView;
     },
-
     showActionsBtn() {
       this.actionsBtn = !this.actionsBtn;
     },
-
-    showDeleteModal(id, nome_completo) {
-      this.idservico = id;
-      this.nameservico = nome_completo;
-      this.visibleModal = !this.visibleModal;
-    },
-
     setNextView() {
       this.currentView = this.currentView + 1;
 
@@ -226,19 +140,19 @@ export default {
         this.currentView = 1;
       }
     },
-
     closeView() {
       this.$emit("setShowViewOrCard");
       this.setNextView();
     },
-
     setServicoList(page = 1) {
       axios
         .get(`${process.env.VUE_APP_API_URL}/servico-funerario?page=${page}`)
         .then((res) => {
-          console.log(res);
+          // console.log(res);
           this.servicoList.value = res.data.data;
           this.totalItens = res.data.total;
+
+          console.log(this.servicoList.value);
         })
         .catch((error) => {
           console.log(error);

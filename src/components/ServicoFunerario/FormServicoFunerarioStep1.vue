@@ -62,6 +62,7 @@
             v-model="form1.cpf"
             class="input-resp"
             name="cpf"
+            v-mask="['###.###.###-##']"
           />
         </div>
       </div>
@@ -153,15 +154,18 @@
     <div class="row">
       <div class="col">
         <div class="form-input-assistencia">
-          <p class="form-title">Responsável</p>
           <div class="m-3" style="height: 300px">
             <table class="table table-striped">
               <thead>
                 <tr>
                   <th>ID</th>
                   <th>Nome</th>
+                  <th>Data de Nascimento</th>
+                  <th>Telefone</th>
                   <th>CPF</th>
-                  <th>Selecionar</th>
+                  <th>RG</th>
+                  <th>Responsavel</th>
+                  <th>Falecido</th>
                 </tr>
               </thead>
               <tbody>
@@ -171,43 +175,63 @@
                   :id="`main-row-${index}`"
                   class="view-tr"
                 >
-                  <td>{{ index + 1 }}</td>
-                  <td>{{ item.nome_completo }}</td>
-                  <td>{{ item.cpf }}</td>
+                  <td class="pt24">{{ index + 1 }}</td>
+                  <td class="pt24">{{ item.nome_completo }}</td>
+                  <td class="pt24">{{ item.data_nascimento }}</td>
+                  <td class="pt24">{{ item.whatsapp_1 }}</td>
+                  <td class="pt24">{{ item.cpf }}</td>
+                  <td class="pt24">{{ item.rg }}</td>
                   <td>
-                    <input type="radio" @click="selectResponsavel(item)" />
+                    <div class="checkbox-wrapper-13">
+                      <input
+                        id="c1-13"
+                        type="checkbox"
+                        @click="selectResponsavel(item)"
+                      />
+                    </div>
+                  </td>
+                  <td>
+                    <div class="checkbox-wrapper-13">
+                      <input
+                        id="c1-13"
+                        type="checkbox"
+                        @click="selectFalecido(item)"
+                      />
+                    </div>
                   </td>
                 </tr>
               </tbody>
-            </table>
-          </div>
-        </div>
-      </div>
-      <div class="col">
-        <div class="form-input-assistencia">
-          <p class="form-title">Falecido(a)</p>
-          <div class="m-3" style="height: 300px">
-            <table class="table table-striped">
-              <thead>
-                <tr>
-                  <th>ID</th>
-                  <th>Nome</th>
-                  <th>CPF</th>
-                  <th>Selecionar</th>
-                </tr>
-              </thead>
+              <br />
               <tbody>
                 <tr
-                  v-for="(item, index) in lista_beneficiarios"
+                  v-for="(item, index) in lista_beneficiarios_dependentes"
                   :key="index"
                   :id="`main-row-${index}`"
                   class="view-tr"
                 >
-                  <td>{{ index + 1 }}</td>
-                  <td>{{ item.nome_completo }}</td>
-                  <td>{{ item.cpf }}</td>
+                  <td class="pt24">{{ index + 1 }}</td>
+                  <td class="pt24">{{ item.nome_completo_dependente }}</td>
+                  <td class="pt24">{{ item.nascimento_dependente }}</td>
+                  <td class="pt24">{{ item.whatsapp_dependente }}</td>
+                  <td class="pt24">{{ item.cpf_dependente }}</td>
+                  <td class="pt24"></td>
                   <td>
-                    <input type="radio" @click="selectFalecido(item)" />
+                    <div class="checkbox-wrapper-13">
+                      <input
+                        id="c1-13"
+                        type="checkbox"
+                        @click="selectResponsavel(item)"
+                      />
+                    </div>
+                  </td>
+                  <td>
+                    <div class="checkbox-wrapper-13">
+                      <input
+                        id="c1-13"
+                        type="checkbox"
+                        @click="selectFalecido(item)"
+                      />
+                    </div>
                   </td>
                 </tr>
               </tbody>
@@ -246,18 +270,10 @@ export default {
           },
         })
         .then((res) => {
+          // console.log(res);
           this.lista_beneficiarios = res.data;
-
-          // this.lista_beneficiarios.forEach((item, index) => {
-          //   console.log(index);
-          //   var elem = document.getElementById("main-row-" + index);
-
-          //   item.beneficiarios_dependentes.forEach((i) => {
-          //     console.log(i);
-          //     console.log(elem);
-          //   });
-
-          // });
+          this.lista_beneficiarios_dependentes = res.data[0].dependentes;
+          console.log(this.lista_beneficiarios_dependentes);
         })
         .catch((error) => {
           console.log(error);
@@ -289,6 +305,7 @@ export default {
   data() {
     return {
       lista_beneficiarios: [],
+      lista_beneficiarios_dependentes: [],
       tem_particular: false,
       tem_seguradora: false,
       tem_pefeitura: false,

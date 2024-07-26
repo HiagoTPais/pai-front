@@ -26,6 +26,23 @@
     background-color: #00b456;
 }
 
+#file-upload {
+    display: none;
+}
+
+.custom-file-upload {
+    width: 90px;
+    height: 40px;
+    border-radius: 10px;
+    text-align: center;
+    border: none;
+    background-color: #21509f;
+    color: #ffffff;
+    font-weight: bold;
+    padding-top: 9px;
+    cursor: pointer;
+}
+
 .btn-blue {
     width: 120px;
     height: 40px;
@@ -146,6 +163,19 @@
     width: 100%;
 }
 
+.card-border {
+    border-radius: 10px;
+    border: 2px solid #21509f;
+    padding: 15px;
+    height: 222px;
+}
+
+.small-card-border {
+    border-radius: 10px;
+    border: 2px solid #21509f;
+    padding: 15px;
+}
+
 .area-pdf {
     border-radius: 10px;
     border: 4px solid #21509f;
@@ -233,6 +263,20 @@
     border: #e5081d solid 2px;
     border-radius: 15px;
     background-color: #21509f;
+    margin: 5px;
+}
+
+.modal-mask-img-upload {
+    position: fixed;
+    z-index: 9998;
+    top: 1%;
+    left: 35%;
+    display: table;
+    transition: opacity 0.3s ease;
+    width: 32%;
+    border: #21509f solid 2px;
+    background-color: #fff;
+    border-radius: 15px;
     margin: 5px;
 }
 
@@ -398,6 +442,10 @@
     border-bottom-left-radius: 8px;
 }
 
+.pt24 {
+    padding-top: 24px !important;
+}
+
 .brr15 {
     text-align: left;
     border-top-right-radius: 8px;
@@ -470,6 +518,14 @@ tr {
     border: none;
     border-bottom: 2px solid #21509f;
     width: 100%;
+}
+
+.input-resp-less {
+    outline: none;
+    border: none;
+    border-bottom: 2px solid #21509f;
+    margin-bottom: 2%;
+    margin-left: 15px
 }
 
 .select-resp {
@@ -790,7 +846,7 @@ tr {
     box-sizing: inherit;
 }
 
-/* .c1-13 {
-    margin-left: 10px;
-    margin-right: 10px;
-} */
+.tanatorio-icon {
+    height: 90%;
+    margin-top: 3px;
+}

@@ -14,8 +14,8 @@
       </div>
     </div>
 
-    <div class="row">
-      <div class="col">
+    <div class="row justify-content-start">
+      <div class="col-4">
         <div>
           <span class="title-input-blue">Forma de Pagamento</span>
 
@@ -32,8 +32,22 @@
           </select>
         </div>
       </div>
+      <div class="col-2">
+        <div>
+          <span class="title-input-blue">N Parcelas</span>
 
-      <div class="col">
+          <input
+            type="number"
+            v-model="form10.n_parcelas"
+            class="input-resp"
+            name="n_parcelas"
+          />
+        </div>
+      </div>
+    </div>
+
+    <div class="row justify-content-start">
+      <div class="col-4">
         <div>
           <span class="title-input-blue">Bandeira do Cartão</span>
 
@@ -50,39 +64,26 @@
           </select>
         </div>
       </div>
-      <div class="col">
+      <div class="col-2">
         <div>
-          <span class="title-input-blue">N Parcelas</span>
-
-          <input
-            type="number"
-            v-model="form10.n_parcelas"
-            class="input-resp"
-            name="n_parcelas"
-          />
-        </div>
-      </div>
-
-      <div class="col">
-        <div>
-          <span class="title-input-blue">Valor das Parcelas</span>
+          <span class="title-input-blue">R$ Valor das Parcelas</span>
 
           <input
             type="text"
             v-model="form10.valor_parcelas"
             class="input-resp"
             name="valor_parcelas"
+            v-money="money"
           />
         </div>
       </div>
     </div>
-     <br /><br /><br /><br /><br /><br /><br /><br /><br />
   </div>
- 
 </template>
 
 <script>
 // import axios from "axios";
+import { VMoney } from "v-money";
 import { mask } from "vue-the-mask";
 
 export default {
@@ -103,9 +104,17 @@ export default {
         n_parcelas: "",
         valor_parcelas: "",
       },
+      money: {
+        decimal: ",",
+        thousands: ".",
+        prefix: "R$ ",
+        suffix: " ",
+        precision: 2,
+        masked: false,
+      },
     };
   },
-  directives: { mask },
+  directives: { money: VMoney, mask },
   watch: {
     sendFormNow: function () {
       this.$emit("set-data-form", this.form10);
