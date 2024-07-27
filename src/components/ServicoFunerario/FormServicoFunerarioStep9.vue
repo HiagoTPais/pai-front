@@ -1,5 +1,5 @@
 <template>
-  <div v-if="showForm == 8">
+  <div v-if="showForm == 8" style="height: 400px;">
     <div class="d-flex">
       <label class="form-title m-3">Dados do Sepultamento</label>
 

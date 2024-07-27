@@ -1,5 +1,5 @@
 <template>
-  <div v-if="showForm == 6">
+  <div v-if="showForm == 6" style="height: 480px">
     <label class="form-title m-3">Dados do Funeral</label>
 
     <div class="row justify-content-end">
@@ -21,7 +21,7 @@
 
     <br />
 
-    <div class="scrollbar-y">
+    <div class="scrollbar-y" style="max-height: 300px">
       <div class="row" v-for="key in count" :key="key">
         <div class="col-10">
           <div>
@@ -100,7 +100,6 @@
       </div>
     </div>
   </div>
-
 </template>
 
 <script>

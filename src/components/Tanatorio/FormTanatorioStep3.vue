@@ -1,6 +1,6 @@
  <template>
-  <div v-if="showForm == 3">
-    <label class="form-title m-3">Estado do Corpo</label>
+  <div v-if="showForm == 3" style="height: 780px;">
+    <label class="form-title m-3">Causa da Morte</label>
 
     <div class="row">
       <div class="col">

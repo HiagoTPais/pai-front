@@ -242,32 +242,30 @@
     </div>
 
     <div class="row">
-      <div class="col">
-        <div class="m5">
-          <span class="title-input-blue">Situação do Falecimento</span>
+      <div class="col" style="margin: 1%;">
+        <span class="title-input-blue">Situação do Falecimento</span>
 
-          <input
-            type="text"
-            v-model="form3.situacao_falecimento"
-            class="input-resp"
-            name="situacao_falecimento"
-          />
-        </div>
+        <input
+          type="text"
+          v-model="form3.situacao_falecimento"
+          class="input-resp"
+          name="situacao_falecimento"
+        />
       </div>
 
-      <div class="col">
-        <div class="m5">
-          <span class="title-input-blue">Causas do Falecimento</span>
+      <div class="col" style="margin: 1%;">
+        <span class="title-input-blue">Causas do Falecimento</span>
 
-          <input
-            type="text"
-            v-model="form3.causas_falecimento"
-            class="input-resp"
-            name="causas_falecimento"
-          />
-        </div>
+        <input
+          type="text"
+          v-model="form3.causas_falecimento"
+          class="input-resp"
+          name="causas_falecimento"
+        />
       </div>
+    </div>
 
+    <div class="row">
       <div class="col">
         <div class="m5">
           <span class="title-input-blue">Idade</span>
@@ -280,9 +278,7 @@
           />
         </div>
       </div>
-    </div>
 
-    <div class="row">
       <div class="col">
         <div class="m5">
           <span class="title-input-blue">Etnia</span>

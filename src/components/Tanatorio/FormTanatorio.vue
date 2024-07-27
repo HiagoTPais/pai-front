@@ -33,8 +33,8 @@
       </div>
     </div>
     <div class="form-input-assistencia">
-      <form style="height: auto;">
-         <FormTanatorioStep0
+      <form style="height: auto">
+        <FormTanatorioStep0
           :showForm="this.currentTabs"
           :sendFormNow="this.sendForm"
           @set-data-form="setDataForm"
@@ -89,7 +89,6 @@
 </template>
 
 <script>
-
 import BtnNextTab from "../Btn/BtnNextTab";
 import FormTanatorioStep0 from "./FormTanatorioStep0.vue";
 import FormTanatorioStep1 from "./FormTanatorioStep1.vue";
@@ -114,8 +113,8 @@ export default {
       tabs: [
         "1. Buscar Falecido",
         "2. Dados do Óbito",
-        "3. Causa Morte",
-        "4. Estado do Corpo",
+        "3. Estado do Corpo",
+        "4. Causa Morte",
         "5. Tanatopraxia",
         "6. Somatoconservação",
         "7. Materiais",

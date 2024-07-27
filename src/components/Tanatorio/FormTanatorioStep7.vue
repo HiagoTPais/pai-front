@@ -1,5 +1,5 @@
  <template>
-  <div v-if="showForm == 7">
+  <div v-if="showForm == 7" style="height: 540px;">
     <label class="form-title m-3">Observações / Orientações</label>
 
     <div class="row">
