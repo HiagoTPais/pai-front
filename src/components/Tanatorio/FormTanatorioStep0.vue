@@ -9,7 +9,7 @@
 
           <input
             type="text"
-            v-model="form0.nome_completo"
+            v-model="nome_completo"
             class="input-resp"
             name="nome_completo"
           />
@@ -22,7 +22,7 @@
 
           <input
             type="text"
-            v-model="form0.cpf"
+            v-model="cpf"
             class="input-resp"
             name="cpf"
             v-mask="['###.###.###-##']"
@@ -33,11 +33,7 @@
 
     <div class="row" style="margin: 4px">
       <div class="col">
-        <button
-          type="button"
-          @click="searchBeneficiarios()"
-          class="btn btn-blue"
-        >
+        <button type="button" @click="searchServico()" class="btn btn-blue">
           Buscar
         </button>
       </div>
@@ -55,43 +51,34 @@
               <thead>
                 <tr>
                   <th>ID</th>
-                  <th>Nome</th>
-                  <th>Data de Nascimento</th>
-                  <th>Telefone</th>
-                  <th>CPF</th>
-                  <th>RG</th>
-                  <th>Responsavel</th>
+                  <th>Responssavel</th>
                   <th>Falecido</th>
+                  <th>Jazigo</th>
+                  <th>Local</th>
+                  <th>Data do Sepultamento</th>
+                  <th>Selecionar</th>
                 </tr>
               </thead>
               <tbody>
                 <tr
-                  v-for="(item, index) in lista_beneficiarios"
+                  v-for="(item, index) in lista_servicos"
                   :key="index"
                   :id="`main-row-${index}`"
                   class="view-tr"
                 >
                   <td class="pt24">{{ index + 1 }}</td>
-                  <td class="pt24">{{ item.nome_completo }}</td>
-                  <td class="pt24">{{ item.data_nascimento }}</td>
-                  <td class="pt24">{{ item.whatsapp_1 }}</td>
-                  <td class="pt24">{{ item.cpf }}</td>
-                  <td class="pt24">{{ item.rg }}</td>
+                  <td class="pt24">{{ item.responsavel }}</td>
+                  <td class="pt24">{{  }}</td>
+                  <td class="pt24">{{ item.local }}</td>
+                  <td class="pt24">{{ item.jazigo }}</td>
+                  <td class="pt24">{{ item.data_hora_sepultamento }}</td>
+
                   <td>
                     <div class="checkbox-wrapper-13">
                       <input
                         id="c1-13"
                         type="checkbox"
-                        @click="selectResponsavel(item)"
-                      />
-                    </div>
-                  </td>
-                  <td>
-                    <div class="checkbox-wrapper-13">
-                      <input
-                        id="c1-13"
-                        type="checkbox"
-                        @click="selectFalecido(item)"
+                        @click="selectServico(item)"
                       />
                     </div>
                   </td>
@@ -107,7 +94,7 @@
 
 
 <script>
-// import axios from "axios";
+import axios from "axios";
 import { mask } from "vue-the-mask";
 
 export default {
@@ -117,18 +104,35 @@ export default {
     sendFormNow: Boolean,
     showView: String,
   },
-  methods: {},
+  methods: {
+    searchServico() {
+      axios
+        .get(`${process.env.VUE_APP_API_URL}/servico-funerario/search`, {
+          params: {
+            nome_completo: this.nome_completo,
+            cpf: this.cpf,
+          },
+        })
+        .then((res) => {
+          this.lista_servicos = res.data;
+          console.log(this.lista_servicos);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    },
+    selectServico(item) {
+      console.log(item);
+    },
+  },
   components: {},
   data() {
     return {
-      form0: {},
+      lista_servicos: [],
+      nome_completo: "Josefa Maria dos Montes Fernandes",
+      cpf: "",
     };
   },
   directives: { mask },
-  watch: {
-    sendFormNow: function () {
-      this.$emit("set-data-form", this.form7);
-    },
-  },
 };
 </script>

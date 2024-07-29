@@ -26,7 +26,6 @@
               type="button"
               @click="removeImage()"
               class="btn-red btn-sm"
-              style="width: 70px"
             >
               Remover
             </button>

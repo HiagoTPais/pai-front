@@ -270,10 +270,8 @@ export default {
           },
         })
         .then((res) => {
-          // console.log(res);
           this.lista_beneficiarios = res.data;
           this.lista_beneficiarios_dependentes = res.data[0].dependentes;
-          console.log(this.lista_beneficiarios_dependentes);
         })
         .catch((error) => {
           console.log(error);

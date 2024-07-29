@@ -1,8 +1,6 @@
  <template>
-  <div v-if="showForm == 6">
+  <div v-if="showForm == 6" style="height: 600px">
     <label class="form-title m-3">Materiais</label>
-
-
   </div>
 </template>
 
