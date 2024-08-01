@@ -4,416 +4,256 @@
 
     <div class="row">
       <div class="col">
-        <div class="checkbox-wrapper-13" style="width: 98%;">
+        <div class="checkbox-wrapper-13" style="width: 98%">
           <div class="card-border">
             <label class="form-title">INJEÇÃO ARTERIAL</label>
 
             <div>
-              <samp class="title-input-blue">Tronco Braquiocefalico:</samp>
+              <span class="title-input-blue">Tronco Braquiocefalico:</span>
 
               <input
                 class="c1-13"
                 type="checkbox"
-                v-model="form1.havera_somatoconservacao_avancada"
+                v-model="form5.havera_somatoconservacao_avancada"
                 name="havera_somatoconservacao_avancada"
               />
             </div>
 
             <div>
-              <samp class="title-input-blue">Aorta Abdominal:</samp>
+              <span class="title-input-blue">Aorta Abdominal:</span>
 
               <input
                 class="c1-13"
                 type="checkbox"
-                v-model="form1.havera_somatoconservacao_avancada"
+                v-model="form5.havera_somatoconservacao_avancada"
                 name="havera_somatoconservacao_avancada"
               />
             </div>
 
             <div>
-              <samp class="title-input-blue">Carotida:</samp>
+              <span class="title-input-blue">Carotida:</span>
 
               <input
                 class="c1-13"
                 type="checkbox"
-                v-model="form1.havera_somatoconservacao_avancada"
+                v-model="form5.havera_somatoconservacao_avancada"
                 name="havera_somatoconservacao_avancada"
               />
 
-              <samp class="title-input-blue">Esquerda</samp>
+              <span class="title-input-blue">Esquerda</span>
 
               <input
                 class="c1-13"
                 type="checkbox"
-                v-model="form1.havera_somatoconservacao_avancada"
+                v-model="form5.havera_somatoconservacao_avancada"
                 name="havera_somatoconservacao_avancada"
               />
 
-              <samp class="title-input-blue">Direira</samp>
+              <span class="title-input-blue">Direira</span>
             </div>
 
             <div>
-              <samp class="title-input-blue">Subclavia:</samp>
+              <span class="title-input-blue">Subclavia:</span>
 
               <input
                 class="c1-13"
                 type="checkbox"
-                v-model="form1.havera_somatoconservacao_avancada"
+                v-model="form5.havera_somatoconservacao_avancada"
                 name="havera_somatoconservacao_avancada"
               />
 
-              <samp class="title-input-blue">Esquerda</samp>
+              <span class="title-input-blue">Esquerda</span>
 
               <input
                 class="c1-13"
                 type="checkbox"
-                v-model="form1.havera_somatoconservacao_avancada"
+                v-model="form5.havera_somatoconservacao_avancada"
                 name="havera_somatoconservacao_avancada"
               />
 
-              <samp class="title-input-blue">Direira</samp>
+              <span class="title-input-blue">Direira</span>
             </div>
 
             <div>
-              <samp class="title-input-blue">Braquial:</samp>
+              <span class="title-input-blue">Braquial:</span>
 
               <input
                 class="c1-13"
                 type="checkbox"
-                v-model="form1.havera_somatoconservacao_avancada"
+                v-model="form5.havera_somatoconservacao_avancada"
                 name="havera_somatoconservacao_avancada"
               />
 
-              <samp class="title-input-blue">Esquerda</samp>
+              <span class="title-input-blue">Esquerda</span>
 
               <input
                 class="c1-13"
                 type="checkbox"
-                v-model="form1.havera_somatoconservacao_avancada"
+                v-model="form5.havera_somatoconservacao_avancada"
                 name="havera_somatoconservacao_avancada"
               />
 
-              <samp class="title-input-blue">Direira</samp>
+              <span class="title-input-blue">Direira</span>
             </div>
 
             <div>
-              <samp class="title-input-blue">Iliaca Comum:</samp>
+              <span class="title-input-blue">Iliaca Comum:</span>
 
               <input
                 class="c1-13"
                 type="checkbox"
-                v-model="form1.havera_somatoconservacao_avancada"
+                v-model="form5.havera_somatoconservacao_avancada"
                 name="havera_somatoconservacao_avancada"
               />
 
-              <samp class="title-input-blue">Esquerda</samp>
+              <span class="title-input-blue">Esquerda</span>
 
               <input
                 class="c1-13"
                 type="checkbox"
-                v-model="form1.havera_somatoconservacao_avancada"
+                v-model="form5.havera_somatoconservacao_avancada"
                 name="havera_somatoconservacao_avancada"
               />
 
-              <samp class="title-input-blue">Direira</samp>
+              <span class="title-input-blue">Direira</span>
             </div>
 
             <div>
-              <samp class="title-input-blue">Femoral:</samp>
+              <span class="title-input-blue">Femoral:</span>
 
               <input
                 class="c1-13"
                 type="checkbox"
-                v-model="form1.havera_somatoconservacao_avancada"
+                v-model="form5.havera_somatoconservacao_avancada"
                 name="havera_somatoconservacao_avancada"
               />
 
-              <samp class="title-input-blue">Esquerda</samp>
+              <span class="title-input-blue">Esquerda</span>
 
               <input
                 class="c1-13"
                 type="checkbox"
-                v-model="form1.havera_somatoconservacao_avancada"
+                v-model="form5.havera_somatoconservacao_avancada"
                 name="havera_somatoconservacao_avancada"
               />
 
-              <samp class="title-input-blue">Direira</samp>
+              <span class="title-input-blue">Direira</span>
             </div>
           </div>
         </div>
       </div>
 
       <div class="col">
-        <div class="checkbox-wrapper-13" style="width: 98%; margin-left: 1%;">
+        <div class="checkbox-wrapper-13" style="width: 98%; margin-left: 1%">
           <div class="card-border">
             <label class="form-title">TRATAMENTO CAVITARIO</label>
 
             <div>
-              <samp class="title-input-blue">Aspiração Torax-Abdômen:</samp>
+              <span class="title-input-blue">Aspiração Torax-Abdômen:</span>
 
               <input
                 class="c1-13"
                 type="checkbox"
-                v-model="form1.havera_somatoconservacao_avancada"
+                v-model="form5.havera_somatoconservacao_avancada"
                 name="havera_somatoconservacao_avancada"
               />
 
-              <samp class="title-input-blue">Sim</samp>
+              <span class="title-input-blue">Sim</span>
 
               <input
                 class="c1-13"
                 type="checkbox"
-                v-model="form1.havera_somatoconservacao_avancada"
+                v-model="form5.havera_somatoconservacao_avancada"
                 name="havera_somatoconservacao_avancada"
               />
 
-              <samp class="title-input-blue">Não</samp>
+              <span class="title-input-blue">Não</span>
             </div>
             <div>
-              <samp class="title-input-blue">Embrulho de Visceras:</samp>
+              <span class="title-input-blue">Embrulho de Visceras:</span>
 
               <input
                 class="c1-13"
                 type="checkbox"
-                v-model="form1.havera_somatoconservacao_avancada"
+                v-model="form5.havera_somatoconservacao_avancada"
                 name="havera_somatoconservacao_avancada"
               />
 
-              <samp class="title-input-blue">Sim</samp>
+              <span class="title-input-blue">Sim</span>
 
               <input
                 class="c1-13"
                 type="checkbox"
-                v-model="form1.havera_somatoconservacao_avancada"
+                v-model="form5.havera_somatoconservacao_avancada"
                 name="havera_somatoconservacao_avancada"
               />
 
-              <samp class="title-input-blue">Não</samp>
+              <span class="title-input-blue">Não</span>
             </div>
           </div>
         </div>
       </div>
       <div class="col">
-        <div class="checkbox-wrapper-13" style="width: 98%; margin-left: -1%;">
+        <div class="checkbox-wrapper-13" style="width: 98%; margin-left: -1%">
           <div class="card-border">
             <label class="form-title">OUTROS</label>
 
             <div>
-              <samp class="title-input-blue">Pré Injeção de Fluido Solvente Descoagulante:</samp>
+              <span class="title-input-blue"
+                >Pré Injeção de Fluido Solvente Descoagulante:</span
+              >
             </div>
 
             <div>
               <input
                 class="c1-13"
                 type="checkbox"
-                v-model="form1.havera_somatoconservacao_avancada"
+                v-model="form5.havera_somatoconservacao_avancada"
                 name="havera_somatoconservacao_avancada"
               />
 
-              <samp class="title-input-blue">Sim</samp>
+              <span class="title-input-blue">Sim</span>
 
               <input
                 class="c1-13"
                 type="checkbox"
-                v-model="form1.havera_somatoconservacao_avancada"
+                v-model="form5.havera_somatoconservacao_avancada"
                 name="havera_somatoconservacao_avancada"
               />
 
-              <samp class="title-input-blue">Não</samp>
+              <span class="title-input-blue">Não</span>
             </div>
 
             <div>
-              <samp class="title-input-blue">Injeção Hipodermico em Areas Obstruidas:</samp>
+              <span class="title-input-blue"
+                >Injeção Hipodermico em Areas Obstruidas:</span
+              >
             </div>
 
             <div>
               <input
                 class="c1-13"
                 type="checkbox"
-                v-model="form1.havera_somatoconservacao_avancada"
+                v-model="form5.havera_somatoconservacao_avancada"
                 name="havera_somatoconservacao_avancada"
               />
 
-              <samp class="title-input-blue">Sim</samp>
+              <span class="title-input-blue">Sim</span>
 
               <input
                 class="c1-13"
                 type="checkbox"
-                v-model="form1.havera_somatoconservacao_avancada"
+                v-model="form5.havera_somatoconservacao_avancada"
                 name="havera_somatoconservacao_avancada"
               />
 
-              <samp class="title-input-blue">Não</samp>
+              <span class="title-input-blue">Não</span>
             </div>
           </div>
         </div>
       </div>
-
-      <!-- <div class="col">
-        <div class="checkbox-wrapper-13" style="width: 98%; margin-left: 1%;">
-          <div class="card-border">
-            <label class="form-title">OUTROS CONSERVANTES</label>
-
-            <div>
-              <samp class="title-input-blue">Pó Conservantes:</samp>
-
-              <input
-                class="c1-13"
-                type="checkbox"
-                v-model="form1.havera_somatoconservacao_avancada"
-                name="havera_somatoconservacao_avancada"
-              />
-
-              <samp class="title-input-blue">Sim</samp>
-
-              <input
-                class="c1-13"
-                type="checkbox"
-                v-model="form1.havera_somatoconservacao_avancada"
-                name="havera_somatoconservacao_avancada"
-              />
-
-              <samp class="title-input-blue">Não</samp>
-            </div>
-            <div>
-              <samp class="title-input-blue">Gel Conservantes:</samp>
-
-              <input
-                class="c1-13"
-                type="checkbox"
-                v-model="form1.havera_somatoconservacao_avancada"
-                name="havera_somatoconservacao_avancada"
-              />
-
-              <samp class="title-input-blue">Sim</samp>
-
-              <input
-                class="c1-13"
-                type="checkbox"
-                v-model="form1.havera_somatoconservacao_avancada"
-                name="havera_somatoconservacao_avancada"
-              />
-
-              <samp class="title-input-blue">Não</samp>
-            </div>
-            <div>
-              <samp class="title-input-blue">Cauterizante:</samp>
-
-              <input
-                class="c1-13"
-                type="checkbox"
-                v-model="form1.havera_somatoconservacao_avancada"
-                name="havera_somatoconservacao_avancada"
-              />
-
-              <samp class="title-input-blue">Sim</samp>
-
-              <input
-                class="c1-13"
-                type="checkbox"
-                v-model="form1.havera_somatoconservacao_avancada"
-                name="havera_somatoconservacao_avancada"
-              />
-
-              <samp class="title-input-blue">Não</samp>
-            </div>
-            <div>
-              <samp class="title-input-blue">Alcool 70:</samp>
-
-              <input
-                class="c1-13"
-                type="checkbox"
-                v-model="form1.havera_somatoconservacao_avancada"
-                name="havera_somatoconservacao_avancada"
-              />
-
-              <samp class="title-input-blue">Sim</samp>
-
-              <input
-                class="c1-13"
-                type="checkbox"
-                v-model="form1.havera_somatoconservacao_avancada"
-                name="havera_somatoconservacao_avancada"
-              />
-
-              <samp class="title-input-blue">Não</samp>
-            </div>
-            <div>
-              <samp class="title-input-blue">Glicerina:</samp>
-
-              <input
-                class="c1-13"
-                type="checkbox"
-                v-model="form1.havera_somatoconservacao_avancada"
-                name="havera_somatoconservacao_avancada"
-              />
-
-              <samp class="title-input-blue">Sim</samp>
-
-              <input
-                class="c1-13"
-                type="checkbox"
-                v-model="form1.havera_somatoconservacao_avancada"
-                name="havera_somatoconservacao_avancada"
-              />
-
-              <samp class="title-input-blue">Não</samp>
-            </div>
-            <div>
-              <samp class="title-input-blue">Hipoclorito:</samp>
-
-              <input
-                class="c1-13"
-                type="checkbox"
-                v-model="form1.havera_somatoconservacao_avancada"
-                name="havera_somatoconservacao_avancada"
-              />
-
-              <samp class="title-input-blue">Sim</samp>
-
-              <input
-                class="c1-13"
-                type="checkbox"
-                v-model="form1.havera_somatoconservacao_avancada"
-                name="havera_somatoconservacao_avancada"
-              />
-
-              <samp class="title-input-blue">Não</samp>
-            </div>
-          </div>
-        </div>
-      </div> -->
     </div>
 
-    <div class="row">
-      <!-- <div class="col-2">
-        <div class="checkbox-wrapper-13" style="width: 98%; margin-left: 1%;">
-          <div class="small-card-border">
-            <samp class="title-input-blue">Invalucro P/ Exumação:</samp>
-            <div>
-              <input
-                class="c1-13"
-                type="checkbox"
-                v-model="form1.havera_somatoconservacao_avancada"
-                name="havera_somatoconservacao_avancada"
-              />
-
-              <samp class="title-input-blue">Sim</samp>
-            </div>
-            <div>
-              <input
-                class="c1-13"
-                type="checkbox"
-                v-model="form1.havera_somatoconservacao_avancada"
-                name="havera_somatoconservacao_avancada"
-              />
-
-              <samp class="title-input-blue">Não</samp>
-            </div>
-          </div>
-        </div>
-      </div> -->
-    </div>
     <div class="row" style="margin: 4px">
       <div class="col">
         <div class="small-card-border">
@@ -423,7 +263,7 @@
             <input
               type="text"
               class="input-resp"
-              v-model="form1.nome_completo"
+              v-model="form5.nome_completo"
               name="nome_completo"
             />
           </div>
@@ -434,7 +274,7 @@
             <input
               type="text"
               class="input-resp"
-              v-model="form1.nome_completo"
+              v-model="form5.nome_completo"
               name="nome_completo"
             />
           </div>
@@ -445,7 +285,7 @@
             <input
               type="text"
               class="input-resp"
-              v-model="form1.nome_completo"
+              v-model="form5.nome_completo"
               name="nome_completo"
             />
           </div>
@@ -456,7 +296,7 @@
             <input
               type="text"
               class="input-resp"
-              v-model="form1.nome_completo"
+              v-model="form5.nome_completo"
               name="nome_completo"
             />
           </div>
@@ -471,7 +311,7 @@
             <input
               type="text"
               class="input-resp"
-              v-model="form1.nome_completo"
+              v-model="form5.nome_completo"
               name="nome_completo"
             />
           </div>
@@ -482,7 +322,7 @@
             <input
               type="text"
               class="input-resp"
-              v-model="form1.nome_completo"
+              v-model="form5.nome_completo"
               name="nome_completo"
             />
           </div>
@@ -493,7 +333,7 @@
             <input
               type="text"
               class="input-resp"
-              v-model="form1.nome_completo"
+              v-model="form5.nome_completo"
               name="nome_completo"
             />
           </div>
@@ -504,7 +344,7 @@
             <input
               type="text"
               class="input-resp"
-              v-model="form1.nome_completo"
+              v-model="form5.nome_completo"
               name="nome_completo"
             />
           </div>
@@ -519,7 +359,7 @@
             <input
               type="text"
               class="input-resp"
-              v-model="form1.nome_completo"
+              v-model="form5.nome_completo"
               name="nome_completo"
             />
           </div>
@@ -530,7 +370,7 @@
             <input
               type="text"
               class="input-resp"
-              v-model="form1.nome_completo"
+              v-model="form5.nome_completo"
               name="nome_completo"
             />
           </div>
@@ -541,7 +381,7 @@
             <input
               type="text"
               class="input-resp"
-              v-model="form1.nome_completo"
+              v-model="form5.nome_completo"
               name="nome_completo"
             />
           </div>
@@ -552,7 +392,7 @@
             <input
               type="text"
               class="input-resp"
-              v-model="form1.nome_completo"
+              v-model="form5.nome_completo"
               name="nome_completo"
             />
           </div>
@@ -578,23 +418,37 @@ export default {
   components: {},
   data() {
     return {
-      form1: {
-        nome: "",
-        idade: "",
-        peso: "",
-        altura: "",
-        data_hora_obito: "",
-        data_hora_atendimeto: "",
-        local_obito: "",
-        historico_pessoa: "",
-        antecedentes_saude: "",
+      form5: {
+        tronco_braquiocefalico: "",
+        aorta_abdominal: "",
+        carotida: "",
+        subclavia: "",
+        braquial: "",
+        iliaca_comum: "",
+        femoral: "",
+        aspiracao_torax_abdomen: "",
+        embrulho_visceras: "",
+        pre_injeção_fluido_solvente_descoagulante: "",
+        injecao_hipodermico_areas_obstruidas: "",
+        fluido_arterial: "",
+        volume_arterial: "",
+        n_aplicacoes_arterial: "",
+        marca_produto_arterial: "",
+        fluido_cavidade: "",
+        volume_cavidade: "",
+        n_aplicacoes_cavidade: "",
+        marca_produto_cavidade: "",
+        fluido_injecao: "",
+        volume_injecao: "",
+        n_aplicacoes_injecao: "",
+        marca_produto_injecao: "",
       },
     };
   },
   directives: { mask },
   watch: {
     sendFormNow: function () {
-      this.$emit("set-data-form", this.form1);
+      this.$emit("set-data-form", this.form5);
     },
   },
 };

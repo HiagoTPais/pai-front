@@ -1,5 +1,5 @@
  <template>
-  <div v-if="showForm == 3" style="height: 780px;">
+  <div v-if="showForm == 3" style="height: 780px">
     <label class="form-title m-3">Causa da Morte</label>
 
     <div class="row">
@@ -15,7 +15,7 @@
                 name="havera_somatoconservacao_avancada"
               />
 
-              <samp class="title-input-blue">Cardíaca</samp>
+              <span class="title-input-blue">Cardíaca</span>
 
               <input
                 class="c1-13"
@@ -24,7 +24,7 @@
                 name="havera_somatoconservacao_avancada"
               />
 
-              <samp class="title-input-blue">Neural</samp>
+              <span class="title-input-blue">Neural</span>
             </div>
             <div>
               <input
@@ -34,46 +34,7 @@
                 name="havera_somatoconservacao_avancada"
               />
 
-              <samp class="title-input-blue">Cerebro Vascular</samp>
-            </div>
-
-            <div>
-              <input
-                class="c1-13"
-                type="checkbox"
-                v-model="form3.havera_somatoconservacao_avancada"
-                name="havera_somatoconservacao_avancada"
-              />
-
-              <samp class="title-input-blue">Respiratoria</samp>
-            </div>
-            <div>
-              <input
-                class="c1-13"
-                type="checkbox"
-                v-model="form3.havera_somatoconservacao_avancada"
-                name="havera_somatoconservacao_avancada"
-              />
-
-              <samp class="title-input-blue">Intestinal</samp>
-
-              <input
-                class="c1-13"
-                type="checkbox"
-                v-model="form3.havera_somatoconservacao_avancada"
-                name="havera_somatoconservacao_avancada"
-              />
-
-              <samp class="title-input-blue">Hepatica</samp>
-
-              <input
-                class="c1-13"
-                type="checkbox"
-                v-model="form3.havera_somatoconservacao_avancada"
-                name="havera_somatoconservacao_avancada"
-              />
-
-              <samp class="title-input-blue">Renal</samp>
+              <span class="title-input-blue">Cerebro Vascular</span>
             </div>
 
             <div>
@@ -84,7 +45,7 @@
                 name="havera_somatoconservacao_avancada"
               />
 
-              <samp class="title-input-blue">Sexualmente Transmissivel</samp>
+              <span class="title-input-blue">Respiratoria</span>
             </div>
             <div>
               <input
@@ -94,7 +55,7 @@
                 name="havera_somatoconservacao_avancada"
               />
 
-              <samp class="title-input-blue">Neoplasica</samp>
+              <span class="title-input-blue">Intestinal</span>
 
               <input
                 class="c1-13"
@@ -103,7 +64,46 @@
                 name="havera_somatoconservacao_avancada"
               />
 
-              <samp class="title-input-blue">Viral</samp>
+              <span class="title-input-blue">Hepatica</span>
+
+              <input
+                class="c1-13"
+                type="checkbox"
+                v-model="form3.havera_somatoconservacao_avancada"
+                name="havera_somatoconservacao_avancada"
+              />
+
+              <span class="title-input-blue">Renal</span>
+            </div>
+
+            <div>
+              <input
+                class="c1-13"
+                type="checkbox"
+                v-model="form3.havera_somatoconservacao_avancada"
+                name="havera_somatoconservacao_avancada"
+              />
+
+              <span class="title-input-blue">Sexualmente Transmissivel</span>
+            </div>
+            <div>
+              <input
+                class="c1-13"
+                type="checkbox"
+                v-model="form3.havera_somatoconservacao_avancada"
+                name="havera_somatoconservacao_avancada"
+              />
+
+              <span class="title-input-blue">Neoplasica</span>
+
+              <input
+                class="c1-13"
+                type="checkbox"
+                v-model="form3.havera_somatoconservacao_avancada"
+                name="havera_somatoconservacao_avancada"
+              />
+
+              <span class="title-input-blue">Viral</span>
             </div>
             <br />
             <div>
@@ -132,7 +132,7 @@
                 name="havera_somatoconservacao_avancada"
               />
 
-              <samp class="title-input-blue">Trânsito</samp>
+              <span class="title-input-blue">Trânsito</span>
 
               <input
                 class="c1-13"
@@ -141,7 +141,7 @@
                 name="havera_somatoconservacao_avancada"
               />
 
-              <samp class="title-input-blue">Domicilio</samp>
+              <span class="title-input-blue">Domicilio</span>
             </div>
 
             <div>
@@ -152,7 +152,7 @@
                 name="havera_somatoconservacao_avancada"
               />
 
-              <samp class="title-input-blue">Trabalho</samp>
+              <span class="title-input-blue">Trabalho</span>
 
               <input
                 class="c1-13"
@@ -161,7 +161,7 @@
                 name="havera_somatoconservacao_avancada"
               />
 
-              <samp class="title-input-blue">Natural</samp>
+              <span class="title-input-blue">Natural</span>
             </div>
             <div>
               <input
@@ -171,7 +171,7 @@
                 name="havera_somatoconservacao_avancada"
               />
 
-              <samp class="title-input-blue">Esportivo</samp>
+              <span class="title-input-blue">Esportivo</span>
 
               <input
                 class="c1-13"
@@ -180,7 +180,7 @@
                 name="havera_somatoconservacao_avancada"
               />
 
-              <samp class="title-input-blue">Recreativo</samp>
+              <span class="title-input-blue">Recreativo</span>
             </div>
             <div>
               <input
@@ -190,7 +190,7 @@
                 name="havera_somatoconservacao_avancada"
               />
 
-              <samp class="title-input-blue">Aquatico</samp>
+              <span class="title-input-blue">Aquatico</span>
 
               <input
                 class="c1-13"
@@ -199,7 +199,7 @@
                 name="havera_somatoconservacao_avancada"
               />
 
-              <samp class="title-input-blue">Eletrico</samp>
+              <span class="title-input-blue">Eletrico</span>
             </div>
             <div>
               <input
@@ -209,7 +209,7 @@
                 name="havera_somatoconservacao_avancada"
               />
 
-              <samp class="title-input-blue">Quimico</samp>
+              <span class="title-input-blue">Quimico</span>
 
               <input
                 class="c1-13"
@@ -218,7 +218,7 @@
                 name="havera_somatoconservacao_avancada"
               />
 
-              <samp class="title-input-blue">Incêndio</samp>
+              <span class="title-input-blue">Incêndio</span>
             </div>
             <div>
               <input
@@ -228,7 +228,7 @@
                 name="havera_somatoconservacao_avancada"
               />
 
-              <samp class="title-input-blue">Alimentar</samp>
+              <span class="title-input-blue">Alimentar</span>
             </div>
             <br />
             <div>
@@ -256,7 +256,7 @@
                 name="havera_somatoconservacao_avancada"
               />
 
-              <samp class="title-input-blue">Homicidio</samp>
+              <span class="title-input-blue">Homicidio</span>
             </div>
             <div>
               <input
@@ -266,7 +266,7 @@
                 name="havera_somatoconservacao_avancada"
               />
 
-              <samp class="title-input-blue">Homicidio par Arma de Fogo</samp>
+              <span class="title-input-blue">Homicidio par Arma de Fogo</span>
             </div>
             <div>
               <input
@@ -276,7 +276,7 @@
                 name="havera_somatoconservacao_avancada"
               />
 
-              <samp class="title-input-blue">Suicidio</samp>
+              <span class="title-input-blue">Suicidio</span>
 
               <input
                 class="c1-13"
@@ -285,7 +285,7 @@
                 name="havera_somatoconservacao_avancada"
               />
 
-              <samp class="title-input-blue">Fratricidio</samp>
+              <span class="title-input-blue">Fratricidio</span>
             </div>
             <div>
               <input
@@ -295,7 +295,7 @@
                 name="havera_somatoconservacao_avancada"
               />
 
-              <samp class="title-input-blue">Patricidio</samp>
+              <span class="title-input-blue">Patricidio</span>
 
               <input
                 class="c1-13"
@@ -304,7 +304,7 @@
                 name="havera_somatoconservacao_avancada"
               />
 
-              <samp class="title-input-blue">Matricidio</samp>
+              <span class="title-input-blue">Matricidio</span>
             </div>
             <div>
               <input
@@ -314,7 +314,7 @@
                 name="havera_somatoconservacao_avancada"
               />
 
-              <samp class="title-input-blue">Filicidio Paterno</samp>
+              <span class="title-input-blue">Filicidio Paterno</span>
             </div>
 
             <div>
@@ -325,7 +325,7 @@
                 name="havera_somatoconservacao_avancada"
               />
 
-              <samp class="title-input-blue">Filicidio Materno</samp>
+              <span class="title-input-blue">Filicidio Materno</span>
             </div>
             <br />
             <div>
@@ -356,7 +356,7 @@
                   name="havera_somatoconservacao_avancada"
                 />
 
-                <samp class="title-input-blue">Natural</samp>
+                <span class="title-input-blue">Natural</span>
               </div>
 
               <br />
@@ -371,7 +371,7 @@
                   name="havera_somatoconservacao_avancada"
                 />
 
-                <samp class="title-input-blue">Alimentar</samp>
+                <span class="title-input-blue">Alimentar</span>
               </div>
 
               <div>
@@ -382,10 +382,10 @@
                   name="havera_somatoconservacao_avancada"
                 />
 
-                <samp class="title-input-blue">Quimica</samp>
+                <span class="title-input-blue">Quimica</span>
               </div>
-              
-              <br>
+
+              <br />
 
               <div>
                 <span class="title-input-blue">Declaração de Obito N</span>
@@ -422,15 +422,16 @@ export default {
   data() {
     return {
       form3: {
-        nome: "",
-        idade: "",
-        peso: "",
-        altura: "",
-        data_hora_obito: "",
-        data_hora_atendimeto: "",
-        local_obito: "",
-        historico_pessoa: "",
-        antecedentes_saude: "",
+        patologica: "",
+        acidental: "",
+        intensa: "",
+        natural: "",
+        intoxicação: "",
+        patologica_outros: "",
+        acidental_outros: "",
+        intensa_outros: "",
+        natural_outros: "",
+        intoxicação_outros: "",
       },
     };
   },

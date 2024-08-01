@@ -5,8 +5,8 @@
     <div class="row">
       <div class="col">
         <textarea
-          v-model="form7.antecedentes_saude"
-          name="antecedentes_saude"
+          v-model="form7.observacoes"
+          name="observacoes"
           class="textarea-resp"
           rows="10"
         ></textarea>
@@ -22,8 +22,8 @@
           <input
             type="datetime-local"
             class="input-resp"
-            v-model="form7.data_hora_obito"
-            name="data_hora_obito"
+            v-model="form7.hora_inicial_procedimento"
+            name="hora_inicial_procedimento"
           />
         </div>
       </div>
@@ -34,8 +34,8 @@
           <input
             type="datetime-local"
             class="input-resp"
-            v-model="form7.data_hora_procedimento"
-            name="data_hora_procedimento"
+            v-model="form7.hora_final_Procedimento"
+            name="hora_final_Procedimento"
           />
         </div>
       </div>
@@ -47,8 +47,8 @@
           <input
             type="text"
             class="input-resp"
-            v-model="form7.nome"
-            name="nome"
+            v-model="form7.agente_funerario_responsavel"
+            name="agente_funerario_responsavel"
           />
         </div>
       </div>
@@ -60,8 +60,8 @@
           <input
             type="text"
             class="input-resp"
-            v-model="form7.altura"
-            name="altura"
+            v-model="form7.auxiliar_agente_funerario"
+            name="auxiliar_agente_funerario"
           />
         </div>
       </div>
@@ -86,15 +86,11 @@ export default {
   data() {
     return {
       form7: {
-        nome: "",
-        idade: "",
-        peso: "",
-        altura: "",
-        data_hora_obito: "",
-        data_hora_procedimento: "",
-        local_obito: "",
-        historico_pessoa: "",
-        antecedentes_saude: "",
+        observacoes: "",
+        hora_inicial_procedimento: "",
+        hora_final_Procedimento: "",
+        agente_funerario_responsavel: "",
+        auxiliar_agente_funerario: "",
       },
     };
   },

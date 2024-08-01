@@ -1,18 +1,18 @@
 <template>
-  <div v-if="showForm == 8" style="height: 400px;">
+  <div v-if="showForm == 8" style="height: 400px">
     <div class="d-flex">
       <label class="form-title m-3">Dados do Sepultamento</label>
-
-      <img
-        style="width: 41px; height: 40px; cursor: pointer; margin-top: 5px"
-        :src="require('../../assets/img/plus.png')"
-        @click="modalNovoLocal()"
-      />
     </div>
 
     <div class="row">
       <div class="col">
         <span class="title-input-blue">Local</span>
+
+        <img
+          style="width: 30px; height: 30px; cursor: pointer; margin-left: 5px"
+          :src="require('../../assets/img/plus.png')"
+          @click="modalNovoLocal()"
+        />
 
         <select
           v-model="form9.local"

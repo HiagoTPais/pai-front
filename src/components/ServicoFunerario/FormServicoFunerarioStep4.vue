@@ -2,11 +2,6 @@
   <div v-if="showForm == 4">
     <div class="d-flex">
       <label class="form-title m-3">Dados da Cerimonia</label>
-      <img
-        style="width: 41px; height: 40px; cursor: pointer; margin-top: 5px"
-        :src="require('../../assets/img/plus.png')"
-        @click="modalNovoSalao()"
-      />
     </div>
 
     <div class="row">
@@ -19,10 +14,18 @@
             v-model="form4.havera_uso_salao_homenagem"
             @click="getSalao()"
           />
-          <label class="form-title" for="c1-13">Haverá uso do Salão de Homenagem?</label>
+          <label class="form-title" for="c1-13"
+            >Haverá uso do Salão de Homenagem?</label
+          >
         </div>
         <div v-if="form4.havera_uso_salao_homenagem">
           <span class="title-input-blue">Salão de Homenagem</span>
+
+          <img
+            style="width: 30px; height: 30px; cursor: pointer; margin-left: 5px"
+            :src="require('../../assets/img/plus.png')"
+            @click="modalNovoSalao()"
+          />
 
           <select
             v-model="form4.salao_homenagem"
@@ -364,7 +367,7 @@ export default {
           console.log(error);
         });
     },
-    
+
     modalNovoSalao() {
       this.modalVisible = !this.modalVisible;
       this.message = "Salão de Homenagem";

@@ -9,7 +9,7 @@
           <input
             type="text"
             class="input-resp"
-            v-model="form1.nome"
+            v-model="form1.nome_completo"
             name="nome"
           />
         </div>
@@ -120,7 +120,7 @@ export default {
     return {
 
       form1: {
-        nome: "",
+        nome_completo: "",
         idade: "",
         peso: "",
         altura: "",

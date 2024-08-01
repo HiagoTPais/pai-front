@@ -1,47 +1,6 @@
  <template>
-  <div v-if="showForm == 0" style="height: auto">
+  <div v-if="showForm == 0" style="height: 600px">
     <label class="form-title m-3">Buscar Serviço Funerario</label>
-
-    <div class="row">
-      <div class="col">
-        <div class="m5">
-          <span class="title-input-blue">Nome Falecido</span>
-
-          <input
-            type="text"
-            v-model="nome_completo"
-            class="input-resp"
-            name="nome_completo"
-          />
-        </div>
-      </div>
-
-      <div class="col">
-        <div class="m5">
-          <span class="title-input-blue">CPF</span>
-
-          <input
-            type="text"
-            v-model="cpf"
-            class="input-resp"
-            name="cpf"
-            v-mask="['###.###.###-##']"
-          />
-        </div>
-      </div>
-    </div>
-
-    <div class="row" style="margin: 4px">
-      <div class="col">
-        <button type="button" @click="searchServico()" class="btn btn-blue">
-          Buscar
-        </button>
-      </div>
-    </div>
-
-    <br />
-    <br />
-    <br />
 
     <div class="row">
       <div class="col">

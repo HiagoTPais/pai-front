@@ -103,7 +103,6 @@
 </template>
 
 <script>
-// import axios from "axios";
 import { VMoney } from "v-money";
 import { mask } from "vue-the-mask";
 

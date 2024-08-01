@@ -1,7 +1,7 @@
  <template>
-  <div v-if="showForm == 4" style="height: 600px;">
+  <div v-if="showForm == 4" style="height: 600px">
     <label class="form-title m-3">Tanatopraxia</label>
-    
+
     <div class="row">
       <div class="col">
         <div class="checkbox-wrapper-13">
@@ -14,7 +14,7 @@
             name="havera_somatoconservacao_avancada"
           />
 
-          <samp class="title-input-blue">Sim</samp>
+          <span class="title-input-blue">Sim</span>
 
           <input
             class="c1-13"
@@ -23,7 +23,7 @@
             name="havera_somatoconservacao_avancada"
           />
 
-          <samp class="title-input-blue">Não</samp>
+          <span class="title-input-blue">Não</span>
         </div>
       </div>
       <div class="col">
@@ -37,7 +37,7 @@
             name="havera_somatoconservacao_avancada"
           />
 
-          <samp class="title-input-blue">Sim</samp>
+          <span class="title-input-blue">Sim</span>
 
           <input
             class="c1-13"
@@ -46,7 +46,7 @@
             name="havera_somatoconservacao_avancada"
           />
 
-          <samp class="title-input-blue">Não</samp>
+          <span class="title-input-blue">Não</span>
         </div>
       </div>
     </div>
@@ -62,7 +62,7 @@
             name="havera_somatoconservacao_avancada"
           />
 
-          <samp class="title-input-blue">Sim</samp>
+          <span class="title-input-blue">Sim</span>
 
           <input
             class="c1-13"
@@ -71,7 +71,7 @@
             name="havera_somatoconservacao_avancada"
           />
 
-          <samp class="title-input-blue">Não</samp>
+          <span class="title-input-blue">Não</span>
         </div>
       </div>
       <div class="col">
@@ -85,7 +85,7 @@
             name="havera_somatoconservacao_avancada"
           />
 
-          <samp class="title-input-blue">Sutura</samp>
+          <span class="title-input-blue">Sutura</span>
 
           <input
             class="c1-13"
@@ -94,7 +94,7 @@
             name="havera_somatoconservacao_avancada"
           />
 
-          <samp class="title-input-blue">Colagem</samp>
+          <span class="title-input-blue">Colagem</span>
         </div>
       </div>
     </div>
@@ -110,7 +110,7 @@
             name="havera_somatoconservacao_avancada"
           />
 
-          <samp class="title-input-blue">Sim</samp>
+          <span class="title-input-blue">Sim</span>
 
           <input
             class="c1-13"
@@ -119,7 +119,7 @@
             name="havera_somatoconservacao_avancada"
           />
 
-          <samp class="title-input-blue">Não</samp>
+          <span class="title-input-blue">Não</span>
         </div>
       </div>
       <div class="col">
@@ -133,7 +133,7 @@
             name="havera_somatoconservacao_avancada"
           />
 
-          <samp class="title-input-blue">Simples</samp>
+          <span class="title-input-blue">Simples</span>
 
           <input
             class="c1-13"
@@ -142,7 +142,7 @@
             name="havera_somatoconservacao_avancada"
           />
 
-          <samp class="title-input-blue">Moderada</samp>
+          <span class="title-input-blue">Moderada</span>
           <input
             class="c1-13"
             type="checkbox"
@@ -150,7 +150,7 @@
             name="havera_somatoconservacao_avancada"
           />
 
-          <samp class="title-input-blue">Complexa</samp>
+          <span class="title-input-blue">Complexa</span>
         </div>
       </div>
     </div>
@@ -166,7 +166,7 @@
             name="havera_somatoconservacao_avancada"
           />
 
-          <samp class="title-input-blue">Simples</samp>
+          <span class="title-input-blue">Simples</span>
 
           <input
             class="c1-13"
@@ -175,7 +175,7 @@
             name="havera_somatoconservacao_avancada"
           />
 
-          <samp class="title-input-blue">Moderada</samp>
+          <span class="title-input-blue">Moderada</span>
           <input
             class="c1-13"
             type="checkbox"
@@ -183,7 +183,7 @@
             name="havera_somatoconservacao_avancada"
           />
 
-          <samp class="title-input-blue">Complexa</samp>
+          <span class="title-input-blue">Complexa</span>
         </div>
       </div>
       <div class="col">
@@ -197,7 +197,7 @@
             name="havera_somatoconservacao_avancada"
           />
 
-          <samp class="title-input-blue">Aparar</samp>
+          <span class="title-input-blue">Aparar</span>
 
           <input
             class="c1-13"
@@ -206,7 +206,7 @@
             name="havera_somatoconservacao_avancada"
           />
 
-          <samp class="title-input-blue">Raspar</samp>
+          <span class="title-input-blue">Raspar</span>
         </div>
       </div>
     </div>
@@ -222,7 +222,7 @@
             name="havera_somatoconservacao_avancada"
           />
 
-          <samp class="title-input-blue">Aparar</samp>
+          <span class="title-input-blue">Aparar</span>
 
           <input
             class="c1-13"
@@ -231,7 +231,7 @@
             name="havera_somatoconservacao_avancada"
           />
 
-          <samp class="title-input-blue">Raspar</samp>
+          <span class="title-input-blue">Raspar</span>
         </div>
       </div>
       <div class="col">
@@ -245,7 +245,7 @@
             name="havera_somatoconservacao_avancada"
           />
 
-          <samp class="title-input-blue">Aparar</samp>
+          <span class="title-input-blue">Aparar</span>
 
           <input
             class="c1-13"
@@ -254,7 +254,7 @@
             name="havera_somatoconservacao_avancada"
           />
 
-          <samp class="title-input-blue">Raspar</samp>
+          <span class="title-input-blue">Raspar</span>
         </div>
       </div>
     </div>
@@ -270,7 +270,7 @@
             name="havera_somatoconservacao_avancada"
           />
 
-          <samp class="title-input-blue">Sim</samp>
+          <span class="title-input-blue">Sim</span>
 
           <input
             class="c1-13"
@@ -279,7 +279,7 @@
             name="havera_somatoconservacao_avancada"
           />
 
-          <samp class="title-input-blue">Não</samp>
+          <span class="title-input-blue">Não</span>
         </div>
       </div>
       <div class="col">
@@ -293,7 +293,7 @@
             name="havera_somatoconservacao_avancada"
           />
 
-          <samp class="title-input-blue">Sim</samp>
+          <span class="title-input-blue">Sim</span>
 
           <input
             class="c1-13"
@@ -302,7 +302,7 @@
             name="havera_somatoconservacao_avancada"
           />
 
-          <samp class="title-input-blue">Não</samp>
+          <span class="title-input-blue">Não</span>
         </div>
       </div>
     </div>
@@ -318,7 +318,7 @@
             name="havera_somatoconservacao_avancada"
           />
 
-          <samp class="title-input-blue">Sim</samp>
+          <span class="title-input-blue">Sim</span>
 
           <input
             class="c1-13"
@@ -327,7 +327,7 @@
             name="havera_somatoconservacao_avancada"
           />
 
-          <samp class="title-input-blue">Não</samp>
+          <span class="title-input-blue">Não</span>
         </div>
       </div>
       <div class="col">
@@ -341,7 +341,7 @@
             name="havera_somatoconservacao_avancada"
           />
 
-          <samp class="title-input-blue">Natural</samp>
+          <span class="title-input-blue">Natural</span>
 
           <input
             class="c1-13"
@@ -350,7 +350,7 @@
             name="havera_somatoconservacao_avancada"
           />
 
-          <samp class="title-input-blue">Artificial</samp>
+          <span class="title-input-blue">Artificial</span>
         </div>
       </div>
     </div>
@@ -366,7 +366,7 @@
             name="havera_somatoconservacao_avancada"
           />
 
-          <samp class="title-input-blue">Padrão</samp>
+          <span class="title-input-blue">Padrão</span>
 
           <input
             class="c1-13"
@@ -375,7 +375,7 @@
             name="havera_somatoconservacao_avancada"
           />
 
-          <samp class="title-input-blue">Medio</samp>
+          <span class="title-input-blue">Medio</span>
 
           <input
             class="c1-13"
@@ -384,7 +384,7 @@
             name="havera_somatoconservacao_avancada"
           />
 
-          <samp class="title-input-blue">Luxo</samp>
+          <span class="title-input-blue">Luxo</span>
         </div>
       </div>
       <div class="col">
@@ -398,7 +398,7 @@
             name="havera_somatoconservacao_avancada"
           />
 
-          <samp class="title-input-blue">Padrão</samp>
+          <span class="title-input-blue">Padrão</span>
 
           <input
             class="c1-13"
@@ -407,7 +407,7 @@
             name="havera_somatoconservacao_avancada"
           />
 
-          <samp class="title-input-blue">Medio</samp>
+          <span class="title-input-blue">Medio</span>
 
           <input
             class="c1-13"
@@ -416,11 +416,10 @@
             name="havera_somatoconservacao_avancada"
           />
 
-          <samp class="title-input-blue">Luxo</samp>
+          <span class="title-input-blue">Luxo</span>
         </div>
       </div>
     </div>
-    
   </div>
 </template>
 
@@ -440,7 +439,24 @@ export default {
   components: {},
   data() {
     return {
-      form4: {},
+      form4: {
+        higienizacao_corporal: "",
+        somatoconservação: "",
+        tamponamento: "",
+        fechamento_buco_maxilo: "",
+        secagem_fechamento_ocular: "",
+        reparação_corporal: "",
+        reparação_facial: "",
+        cabelo: "",
+        barba: "",
+        bigode: "",
+        corte_unhas: "",
+        limpeza_hidratação_facial: "",
+        maquiagem: "",
+        ornamentação: "",
+        veu: "",
+        veste: "",
+      },
     };
   },
   directives: { mask },

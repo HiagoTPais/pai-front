@@ -1,5 +1,5 @@
  <template>
-  <div v-if="showForm == 2" style="height: 800px">
+  <div v-if="showForm == 2" style="height: auto;">
     <label class="form-title m-3">Estado Geral do Corpo</label>
 
     <div class="row">
@@ -15,7 +15,7 @@
               name="havera_somatoconservacao_avancada"
             />
 
-            <samp class="title-input-blue">Sim</samp>
+            <span class="title-input-blue">Sim</span>
 
             <input
               class="c1-13"
@@ -24,7 +24,7 @@
               name="havera_somatoconservacao_avancada"
             />
 
-            <samp class="title-input-blue">Não</samp>
+            <span class="title-input-blue">Não</span>
           </div>
         </div>
       </div>
@@ -41,7 +41,7 @@
               name="havera_somatoconservacao_avancada"
             />
 
-            <samp class="title-input-blue">Comum</samp>
+            <span class="title-input-blue">Comum</span>
 
             <input
               class="c1-13"
@@ -50,7 +50,7 @@
               name="havera_somatoconservacao_avancada"
             />
 
-            <samp class="title-input-blue">Incomum</samp>
+            <span class="title-input-blue">Incomum</span>
           </div>
         </div>
       </div>
@@ -78,7 +78,7 @@
                 name="havera_somatoconservacao_avancada"
               />
 
-              <samp class="title-input-blue">Sim</samp>
+              <span class="title-input-blue">Sim</span>
             </div>
             <div>
               <input
@@ -88,7 +88,7 @@
                 name="havera_somatoconservacao_avancada"
               />
 
-              <samp class="title-input-blue">Não</samp>
+              <span class="title-input-blue">Não</span>
             </div>
             <div>
               <input
@@ -98,7 +98,7 @@
                 name="havera_somatoconservacao_avancada"
               />
 
-              <samp class="title-input-blue">Leve</samp>
+              <span class="title-input-blue">Leve</span>
             </div>
 
             <div>
@@ -109,7 +109,7 @@
                 name="havera_somatoconservacao_avancada"
               />
 
-              <samp class="title-input-blue">Moderado</samp>
+              <span class="title-input-blue">Moderado</span>
             </div>
             <div>
               <input
@@ -119,7 +119,7 @@
                 name="havera_somatoconservacao_avancada"
               />
 
-              <samp class="title-input-blue">Grave</samp>
+              <span class="title-input-blue">Grave</span>
             </div>
             <div>
               <input
@@ -129,7 +129,7 @@
                 name="havera_somatoconservacao_avancada"
               />
 
-              <samp class="title-input-blue">Local</samp>
+              <span class="title-input-blue">Local</span>
             </div>
             <div>
               <input
@@ -139,7 +139,7 @@
                 name="havera_somatoconservacao_avancada"
               />
 
-              <samp class="title-input-blue">Multilocal</samp>
+              <span class="title-input-blue">Multilocal</span>
             </div>
           </div>
         </div>
@@ -167,7 +167,7 @@
                 name="havera_somatoconservacao_avancada"
               />
 
-              <samp class="title-input-blue">Ausente</samp>
+              <span class="title-input-blue">Ausente</span>
             </div>
 
             <div>
@@ -178,7 +178,7 @@
                 name="havera_somatoconservacao_avancada"
               />
 
-              <samp class="title-input-blue">Presente</samp>
+              <span class="title-input-blue">Presente</span>
             </div>
 
             <div>
@@ -189,7 +189,7 @@
                 name="havera_somatoconservacao_avancada"
               />
 
-              <samp class="title-input-blue">Leve</samp>
+              <span class="title-input-blue">Leve</span>
             </div>
             <div>
               <input
@@ -199,7 +199,7 @@
                 name="havera_somatoconservacao_avancada"
               />
 
-              <samp class="title-input-blue">Moderado</samp>
+              <span class="title-input-blue">Moderado</span>
             </div>
             <div>
               <input
@@ -209,7 +209,7 @@
                 name="havera_somatoconservacao_avancada"
               />
 
-              <samp class="title-input-blue">Avançada</samp>
+              <span class="title-input-blue">Avançada</span>
             </div>
           </div>
         </div>
@@ -237,7 +237,7 @@
                 name="havera_somatoconservacao_avancada"
               />
 
-              <samp class="title-input-blue">Ausente</samp>
+              <span class="title-input-blue">Ausente</span>
             </div>
             <div>
               <input
@@ -247,7 +247,7 @@
                 name="havera_somatoconservacao_avancada"
               />
 
-              <samp class="title-input-blue">Presente</samp>
+              <span class="title-input-blue">Presente</span>
             </div>
             <div>
               <input
@@ -257,7 +257,7 @@
                 name="havera_somatoconservacao_avancada"
               />
 
-              <samp class="title-input-blue">Leve</samp>
+              <span class="title-input-blue">Leve</span>
             </div>
             <div>
               <input
@@ -267,7 +267,7 @@
                 name="havera_somatoconservacao_avancada"
               />
 
-              <samp class="title-input-blue">Moderado</samp>
+              <span class="title-input-blue">Moderado</span>
             </div>
             <div>
               <input
@@ -277,14 +277,21 @@
                 name="havera_somatoconservacao_avancada"
               />
 
-              <samp class="title-input-blue">Forte</samp>
+              <span class="title-input-blue">Forte</span>
             </div>
           </div>
         </div>
       </div>
     </div>
+    <div class="d-flex">
+      <label class="form-title m-3">Regiões Especificas do Corpo</label>
 
-    <label class="form-title m-3">Regiões Especificas do Corpo</label>
+      <img
+        style="width: 41px; height: 40px; cursor: pointer; margin-top: 5px"
+        :src="require('../../assets/img/plus.png')"
+        @click="novoCard()"
+      />
+    </div>
 
     <div class="row">
       <div class="col">
@@ -309,7 +316,7 @@
                 name="havera_somatoconservacao_avancada"
               />
 
-              <samp class="title-input-blue">Presença de Secreção</samp>
+              <span class="title-input-blue">Presença de Secreção</span>
             </div>
             <div>
               <input
@@ -319,7 +326,7 @@
                 name="havera_somatoconservacao_avancada"
               />
 
-              <samp class="title-input-blue">Deterioração</samp>
+              <span class="title-input-blue">Deterioração</span>
             </div>
             <div>
               <input
@@ -329,7 +336,7 @@
                 name="havera_somatoconservacao_avancada"
               />
 
-              <samp class="title-input-blue">Dilaceração</samp>
+              <span class="title-input-blue">Dilaceração</span>
             </div>
             <div>
               <input
@@ -339,7 +346,7 @@
                 name="havera_somatoconservacao_avancada"
               />
 
-              <samp class="title-input-blue">Amputado</samp>
+              <span class="title-input-blue">Amputado</span>
             </div>
             <div>
               <input
@@ -349,7 +356,7 @@
                 name="havera_somatoconservacao_avancada"
               />
 
-              <samp class="title-input-blue">Inchaço</samp>
+              <span class="title-input-blue">Inchaço</span>
             </div>
             <div>
               <input
@@ -359,7 +366,7 @@
                 name="havera_somatoconservacao_avancada"
               />
 
-              <samp class="title-input-blue">Tecido Mole</samp>
+              <span class="title-input-blue">Tecido Mole</span>
             </div>
             <div>
               <input
@@ -369,7 +376,7 @@
                 name="havera_somatoconservacao_avancada"
               />
 
-              <samp class="title-input-blue">Odor</samp>
+              <span class="title-input-blue">Odor</span>
             </div>
           </div>
         </div>
@@ -397,7 +404,7 @@
                 name="havera_somatoconservacao_avancada"
               />
 
-              <samp class="title-input-blue">Presença de Secreção</samp>
+              <span class="title-input-blue">Presença de Secreção</span>
             </div>
             <div>
               <input
@@ -407,7 +414,7 @@
                 name="havera_somatoconservacao_avancada"
               />
 
-              <samp class="title-input-blue">Deterioração</samp>
+              <span class="title-input-blue">Deterioração</span>
             </div>
             <div>
               <input
@@ -417,7 +424,7 @@
                 name="havera_somatoconservacao_avancada"
               />
 
-              <samp class="title-input-blue">Dilaceração</samp>
+              <span class="title-input-blue">Dilaceração</span>
             </div>
             <div>
               <input
@@ -427,7 +434,7 @@
                 name="havera_somatoconservacao_avancada"
               />
 
-              <samp class="title-input-blue">Amputado</samp>
+              <span class="title-input-blue">Amputado</span>
             </div>
             <div>
               <input
@@ -437,7 +444,7 @@
                 name="havera_somatoconservacao_avancada"
               />
 
-              <samp class="title-input-blue">Inchaço</samp>
+              <span class="title-input-blue">Inchaço</span>
             </div>
             <div>
               <input
@@ -447,7 +454,7 @@
                 name="havera_somatoconservacao_avancada"
               />
 
-              <samp class="title-input-blue">Tecido Mole</samp>
+              <span class="title-input-blue">Tecido Mole</span>
             </div>
             <div>
               <input
@@ -457,7 +464,7 @@
                 name="havera_somatoconservacao_avancada"
               />
 
-              <samp class="title-input-blue">Odor</samp>
+              <span class="title-input-blue">Odor</span>
             </div>
           </div>
         </div>
@@ -485,7 +492,7 @@
                 name="havera_somatoconservacao_avancada"
               />
 
-              <samp class="title-input-blue">Presença de Secreção</samp>
+              <span class="title-input-blue">Presença de Secreção</span>
             </div>
             <div>
               <input
@@ -495,7 +502,7 @@
                 name="havera_somatoconservacao_avancada"
               />
 
-              <samp class="title-input-blue">Deterioração</samp>
+              <span class="title-input-blue">Deterioração</span>
             </div>
             <div>
               <input
@@ -505,7 +512,7 @@
                 name="havera_somatoconservacao_avancada"
               />
 
-              <samp class="title-input-blue">Dilaceração</samp>
+              <span class="title-input-blue">Dilaceração</span>
             </div>
             <div>
               <input
@@ -515,7 +522,7 @@
                 name="havera_somatoconservacao_avancada"
               />
 
-              <samp class="title-input-blue">Amputado</samp>
+              <span class="title-input-blue">Amputado</span>
             </div>
             <div>
               <input
@@ -525,7 +532,7 @@
                 name="havera_somatoconservacao_avancada"
               />
 
-              <samp class="title-input-blue">Inchaço</samp>
+              <span class="title-input-blue">Inchaço</span>
             </div>
             <div>
               <input
@@ -535,7 +542,7 @@
                 name="havera_somatoconservacao_avancada"
               />
 
-              <samp class="title-input-blue">Tecido Mole</samp>
+              <span class="title-input-blue">Tecido Mole</span>
             </div>
             <div>
               <input
@@ -545,7 +552,7 @@
                 name="havera_somatoconservacao_avancada"
               />
 
-              <samp class="title-input-blue">Odor</samp>
+              <span class="title-input-blue">Odor</span>
             </div>
           </div>
         </div>
@@ -573,7 +580,7 @@
                 name="havera_somatoconservacao_avancada"
               />
 
-              <samp class="title-input-blue">Presença de Secreção</samp>
+              <span class="title-input-blue">Presença de Secreção</span>
             </div>
             <div>
               <input
@@ -583,7 +590,7 @@
                 name="havera_somatoconservacao_avancada"
               />
 
-              <samp class="title-input-blue">Deterioração</samp>
+              <span class="title-input-blue">Deterioração</span>
             </div>
             <div>
               <input
@@ -593,7 +600,7 @@
                 name="havera_somatoconservacao_avancada"
               />
 
-              <samp class="title-input-blue">Dilaceração</samp>
+              <span class="title-input-blue">Dilaceração</span>
             </div>
             <div>
               <input
@@ -603,7 +610,7 @@
                 name="havera_somatoconservacao_avancada"
               />
 
-              <samp class="title-input-blue">Amputado</samp>
+              <span class="title-input-blue">Amputado</span>
             </div>
             <div>
               <input
@@ -613,7 +620,7 @@
                 name="havera_somatoconservacao_avancada"
               />
 
-              <samp class="title-input-blue">Inchaço</samp>
+              <span class="title-input-blue">Inchaço</span>
             </div>
             <div>
               <input
@@ -623,7 +630,7 @@
                 name="havera_somatoconservacao_avancada"
               />
 
-              <samp class="title-input-blue">Tecido Mole</samp>
+              <span class="title-input-blue">Tecido Mole</span>
             </div>
             <div>
               <input
@@ -633,7 +640,109 @@
                 name="havera_somatoconservacao_avancada"
               />
 
-              <samp class="title-input-blue">Odor</samp>
+              <span class="title-input-blue">Odor</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-3" v-for="key in count" :key="key">
+        <div class="checkbox-wrapper-13">
+          <div class="small-card-border">
+            <div class="d-flex">
+              <input
+                name="nome_completo_dependente"
+                type="text"
+                class="input-resp"
+              />
+              <img
+                style="
+                  width: 25px;
+                  height: 25px;
+                  cursor: pointer;
+                  margin-left: 5px;
+                "
+                :src="require('../../assets/img/images-icon.png')"
+                @click="showModalSelectImagen('toracoabdominal')"
+              />
+
+              <img
+                style="width: 25px; height: 25px; cursor: pointer"
+                :src="require('../../assets/img/less.png')"
+                @click="removerCard()"
+              />
+            </div>
+            <div>
+              <input
+                class="c1-13"
+                type="checkbox"
+                v-model="form2.havera_somatoconservacao_avancada"
+                name="havera_somatoconservacao_avancada"
+              />
+
+              <span class="title-input-blue">Presença de Secreção</span>
+            </div>
+            <div>
+              <input
+                class="c1-13"
+                type="checkbox"
+                v-model="form2.havera_somatoconservacao_avancada"
+                name="havera_somatoconservacao_avancada"
+              />
+
+              <span class="title-input-blue">Deterioração</span>
+            </div>
+            <div>
+              <input
+                class="c1-13"
+                type="checkbox"
+                v-model="form2.havera_somatoconservacao_avancada"
+                name="havera_somatoconservacao_avancada"
+              />
+
+              <span class="title-input-blue">Dilaceração</span>
+            </div>
+            <div>
+              <input
+                class="c1-13"
+                type="checkbox"
+                v-model="form2.havera_somatoconservacao_avancada"
+                name="havera_somatoconservacao_avancada"
+              />
+
+              <span class="title-input-blue">Amputado</span>
+            </div>
+            <div>
+              <input
+                class="c1-13"
+                type="checkbox"
+                v-model="form2.havera_somatoconservacao_avancada"
+                name="havera_somatoconservacao_avancada"
+              />
+
+              <span class="title-input-blue">Inchaço</span>
+            </div>
+            <div>
+              <input
+                class="c1-13"
+                type="checkbox"
+                v-model="form2.havera_somatoconservacao_avancada"
+                name="havera_somatoconservacao_avancada"
+              />
+
+              <span class="title-input-blue">Tecido Mole</span>
+            </div>
+            <div>
+              <input
+                class="c1-13"
+                type="checkbox"
+                v-model="form2.havera_somatoconservacao_avancada"
+                name="havera_somatoconservacao_avancada"
+              />
+
+              <span class="title-input-blue">Odor</span>
             </div>
           </div>
         </div>
@@ -662,28 +771,46 @@ export default {
       this.modalVisible = !this.modalVisible;
       this.campoImagem = campo;
     },
+
+    novoCard() {
+      this.count++;
+    },
+
+    removerCard() {
+      this.count--;
+    },
   },
+
   components: {
     ShowImage,
   },
+
   data() {
     return {
       modalVisible: false,
       campoImagem: "",
+      count: 0,
       form2: {
-        nome: "",
-        idade: "",
-        peso: "",
-        altura: "",
-        data_hora_obito: "",
-        data_hora_atendimeto: "",
-        local_obito: "",
-        historico_pessoa: "",
-        antecedentes_saude: "",
+        necropsiado: "",
+        postura_corpo: "",
+        sinais_decomposição: "",
+        sinais_decomposição_local: "",
+        sinais_decomposição_grau: "",
+        rigidez: "",
+        rigidez_grau: "",
+        odor: "",
+        odor_grau: "",
+        olhos: "",
+        boca: "",
+        ouvido: "",
+        toracoabdominal: "",
+        regioes_extras: "",
       },
     };
   },
+
   directives: { mask },
+
   watch: {
     sendFormNow: function () {
       this.$emit("set-data-form", this.form2);
