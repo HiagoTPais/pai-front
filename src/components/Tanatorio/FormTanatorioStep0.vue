@@ -10,7 +10,7 @@
               <thead>
                 <tr>
                   <th>ID</th>
-                  <th>Responssavel</th>
+                  <th>Responsável</th>
                   <th>Falecido</th>
                   <th>Jazigo</th>
                   <th>Local</th>
@@ -25,22 +25,23 @@
                   :id="`main-row-${index}`"
                   class="view-tr"
                 >
-                  <td class="pt24">{{ index + 1 }}</td>
-                  <td class="pt24">{{ item.responsavel }}</td>
-                  <td class="pt24">{{  }}</td>
-                  <td class="pt24">{{ item.local }}</td>
-                  <td class="pt24">{{ item.jazigo }}</td>
-                  <td class="pt24">{{ item.data_hora_sepultamento }}</td>
+                  <td>{{ index + 1 }}</td>
+                  <td>{{ item.responsavel }}</td>
+                  <td>{{ item.felecido}}</td>
+                  <td>{{ item.local }}</td>
+                  <td>{{ item.jazigo }}</td>
+                  <td>{{ item.data_hora_sepultamento }}</td>
 
                   <td>
-                    <div class="checkbox-wrapper-13">
+                    <div class="checkbox-wrapper-13" style="margin: 0">
                       <input
                         id="c1-13"
                         type="checkbox"
-                        @click="selectServico(item)"
+                        @click="selectTanato(item)"
                       />
                     </div>
                   </td>
+
                 </tr>
               </tbody>
             </table>
@@ -58,20 +59,17 @@ import { mask } from "vue-the-mask";
 
 export default {
   name: "FormTanatorioStep1",
+
   props: {
     showForm: Number,
     sendFormNow: Boolean,
     showView: String,
   },
+
   methods: {
     searchServico() {
       axios
-        .get(`${process.env.VUE_APP_API_URL}/servico-funerario/search`, {
-          params: {
-            nome_completo: this.nome_completo,
-            cpf: this.cpf,
-          },
-        })
+        .get(`${process.env.VUE_APP_API_URL}/servico-funerario`)
         .then((res) => {
           this.lista_servicos = res.data;
           console.log(this.lista_servicos);
@@ -80,11 +78,14 @@ export default {
           console.log(error);
         });
     },
-    selectServico(item) {
-      console.log(item);
+
+    selectTanato(item) {
+        this.$emit("select-tanato", item);
     },
   },
+
   components: {},
+
   data() {
     return {
       lista_servicos: [],
@@ -92,6 +93,11 @@ export default {
       cpf: "",
     };
   },
+
+  beforeMount() {
+    this.searchServico();
+  },
+
   directives: { mask },
 };
 </script>

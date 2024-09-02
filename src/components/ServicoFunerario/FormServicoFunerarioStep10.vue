@@ -1,5 +1,5 @@
 <template>
-  <div v-if="showForm == 9">
+  <div v-if="showForm == 9" style="height: 350px">
     <label class="form-title m-3">Pagamento</label>
 
     <div class="row">
@@ -15,7 +15,7 @@
     </div>
 
     <div class="row justify-content-start">
-      <div class="col-4">
+      <div class="col-2">
         <div>
           <span class="title-input-blue">Forma de Pagamento</span>
 
@@ -44,10 +44,8 @@
           />
         </div>
       </div>
-    </div>
 
-    <div class="row justify-content-start">
-      <div class="col-4">
+      <div class="col-2">
         <div>
           <span class="title-input-blue">Bandeira do Cartão</span>
 
@@ -73,6 +71,19 @@
             v-model="form10.valor_parcelas"
             class="input-resp"
             name="valor_parcelas"
+            v-money="money"
+          />
+        </div>
+      </div>
+      <div class="col-2">
+        <div>
+          <span class="title-input-blue">R$ Valor Total</span>
+
+          <input
+            type="text"
+            v-model="form10.valor_total"
+            class="input-resp"
+            name="valor_total"
             v-money="money"
           />
         </div>
@@ -103,6 +114,7 @@ export default {
         bandeira_cartao: "",
         n_parcelas: "",
         valor_parcelas: "",
+        valor_total: "",
       },
       money: {
         decimal: ",",
@@ -117,6 +129,19 @@ export default {
   directives: { money: VMoney, mask },
   watch: {
     sendFormNow: function () {
+      this.form10.valor_parcelas = parseFloat(
+        this.form10.valor_parcelas
+          .replace(".", "")
+          .replace(",", ".")
+          .replace("R$", "")
+      );
+      this.form10.valor_total = parseFloat(
+        this.form10.valor_total
+          .replace(".", "")
+          .replace(",", ".")
+          .replace("R$", "")
+      );
+
       this.$emit("set-data-form", this.form10);
     },
   },

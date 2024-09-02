@@ -1,16 +1,15 @@
 <template>
   <div class="form-assistencia">
     <div class="form-navbar-assistencia">
-
       <div class="d-flex">
         <div class="d-flex">
           <img
             class="family-img"
-            :src="require('../../assets/img/colaboradores.png')"
+            :src="require('../../assets/img/tanatorio.png')"
           />
           <div class="d-flex flex-column" style="margin-left: 10px">
             <p class="form-title" style="width: 195%; margin-bottom: 7px">
-              CONSULTANDO COLABORADORES
+              CONSULTANDO TANATORIO
             </p>
             <img
               style="
@@ -23,7 +22,7 @@
             />
           </div>
 
-          <div class="d-flex" style="margin-left: 90%">
+          <div class="d-flex" style="margin-left: 107%">
             <input
               class="search-input"
               placeholder="Pesquisar por NOME ou CPF ou ID"
@@ -39,47 +38,65 @@
       </div>
       <div class="form-input-assistencia">
         <div class="m-3" style="height: 577px">
-          <table class="table table-striped"></table>
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Nome Do Obito</th>
+                <th>Causa Morte</th>
+                <th>Idade</th>
+                <th>Agente Funerario</th>
+                <th>Axiliar de Funerario</th>
+                <th>Data</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr
+                v-for="(item, index) in tanatorioList"
+                :key="index"
+                :id="`main-row-${index}`"
+                class="view-tr"
+              >
+                <td>{{ index + 1 }}</td>
+                <td>{{ item.nome_completo }}</td>
+                <td>{{ item.idade }} Anos</td>
+                <td>{{ item.nome_completo }}</td>
+                <td>{{ item.idade }} Anos</td>
+                <td>{{ item.peso }} Kg</td>
+                <td>{{ item.altura }} Cm</td>
+                <td>
+                  <img
+                    class="eye-table"
+                    :src="require('../../assets/img/eye.png')"
+                    @click="
+                      $emit('setShowForm', ['form-tanatorio-edit', item.id])
+                    "
+                  />
+                </td>
+              </tr>
+            </tbody>
+          </table>
         </div>
 
-        <div class="d-flex justify-content-between">
-          <div class="d-flex">
-            <div class="m-2 d-flex">
-              <p style="margin-right: 5px" class="sphere blue"></p>
-              <p style="color: #21509f">Ativo</p>
-            </div>
-            <div class="m-2 d-flex">
-              <p style="margin-right: 5px" class="sphere black"></p>
-              <p style="color: #000000">Suspenso</p>
-            </div>
-            <div class="m-2 d-flex">
-              <p style="margin-right: 5px" class="sphere red"></p>
-              <p style="color: #e5081d">Cancelado</p>
-            </div>
-            <div class="m-2 d-flex">
-              <p style="margin-right: 5px" class="sphere orange"></p>
-              <p style="color: #c86014">Em Negociação</p>
-            </div>
-          </div>
-        </div>
-        <!-- <div class="d-flex flex-row-reverse" style="margin-right: 18px">
+        <div class="d-flex flex-row-reverse" style="margin-right: 18px">
           <paginate
             :page-count="Math.ceil(this.totalItens / 10)"
-            :click-handler="setColaboradoresList"
+            :click-handler="searchServico"
             :prev-text="'Prev'"
             :next-text="'Next'"
             :container-class="'pagination'"
           >
           </paginate>
-        </div> -->
+        </div>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-// import Paginate from "vuejs-paginate-next";
-// import axios from "axios";
+import paginate from "vuejs-paginate-next";
+import axios from "axios";
 import { ref } from "vue";
 
 export default {
@@ -99,11 +116,26 @@ export default {
       currentView: 1,
     };
   },
-  components: {},
+
+  components: {
+    paginate,
+  },
 
   emits: ["setShowForm"],
-  
+
   methods: {
+    searchServico(page = 1) {
+      axios
+        .get(`${process.env.VUE_APP_API_URL}/tanatorio?page=${page}`)
+        .then((res) => {
+          this.tanatorioList = res.data.data;
+          this.totalItens = res.data.total;
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    },
+
     setCurrentView(idView) {
       this.currentView = idView;
     },
@@ -111,6 +143,10 @@ export default {
     showActionsBtn() {
       this.actionsBtn = !this.actionsBtn;
     },
+  },
+
+  beforeMount() {
+    this.searchServico();
   },
 };
 </script>

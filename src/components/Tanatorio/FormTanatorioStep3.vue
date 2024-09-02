@@ -11,8 +11,8 @@
               <input
                 class="c1-13"
                 type="checkbox"
-                v-model="form3.havera_somatoconservacao_avancada"
-                name="havera_somatoconservacao_avancada"
+                v-model="form3.patologica"
+                value="Cardíaca"
               />
 
               <span class="title-input-blue">Cardíaca</span>
@@ -20,8 +20,8 @@
               <input
                 class="c1-13"
                 type="checkbox"
-                v-model="form3.havera_somatoconservacao_avancada"
-                name="havera_somatoconservacao_avancada"
+                v-model="form3.patologica"
+                value="Neural"
               />
 
               <span class="title-input-blue">Neural</span>
@@ -30,8 +30,8 @@
               <input
                 class="c1-13"
                 type="checkbox"
-                v-model="form3.havera_somatoconservacao_avancada"
-                name="havera_somatoconservacao_avancada"
+                v-model="form3.patologica"
+                value="Cerebro Vascular"
               />
 
               <span class="title-input-blue">Cerebro Vascular</span>
@@ -41,8 +41,8 @@
               <input
                 class="c1-13"
                 type="checkbox"
-                v-model="form3.havera_somatoconservacao_avancada"
-                name="havera_somatoconservacao_avancada"
+                v-model="form3.patologica"
+                value="Respiratoria"
               />
 
               <span class="title-input-blue">Respiratoria</span>
@@ -51,8 +51,8 @@
               <input
                 class="c1-13"
                 type="checkbox"
-                v-model="form3.havera_somatoconservacao_avancada"
-                name="havera_somatoconservacao_avancada"
+                v-model="form3.patologica"
+                value="Intestinal"
               />
 
               <span class="title-input-blue">Intestinal</span>
@@ -60,8 +60,8 @@
               <input
                 class="c1-13"
                 type="checkbox"
-                v-model="form3.havera_somatoconservacao_avancada"
-                name="havera_somatoconservacao_avancada"
+                v-model="form3.patologica"
+                value="Hepatica"
               />
 
               <span class="title-input-blue">Hepatica</span>
@@ -69,8 +69,8 @@
               <input
                 class="c1-13"
                 type="checkbox"
-                v-model="form3.havera_somatoconservacao_avancada"
-                name="havera_somatoconservacao_avancada"
+                v-model="form3.patologica"
+                value="Renal"
               />
 
               <span class="title-input-blue">Renal</span>
@@ -80,8 +80,8 @@
               <input
                 class="c1-13"
                 type="checkbox"
-                v-model="form3.havera_somatoconservacao_avancada"
-                name="havera_somatoconservacao_avancada"
+                v-model="form3.patologica"
+                value="Sexualmente Transmissivel"
               />
 
               <span class="title-input-blue">Sexualmente Transmissivel</span>
@@ -90,8 +90,8 @@
               <input
                 class="c1-13"
                 type="checkbox"
-                v-model="form3.havera_somatoconservacao_avancada"
-                name="havera_somatoconservacao_avancada"
+                v-model="form3.patologica"
+                value="Neoplasica"
               />
 
               <span class="title-input-blue">Neoplasica</span>
@@ -99,8 +99,8 @@
               <input
                 class="c1-13"
                 type="checkbox"
-                v-model="form3.havera_somatoconservacao_avancada"
-                name="havera_somatoconservacao_avancada"
+                v-model="form3.patologica"
+                value="Viral"
               />
 
               <span class="title-input-blue">Viral</span>
@@ -111,9 +111,9 @@
 
               <input
                 type="text"
-                v-model="form3.nome_completo"
+                v-model="form3.patologica_outros"
                 class="input-resp"
-                name="nome_completo"
+                name="patologica_outros"
               />
             </div>
           </div>
@@ -128,8 +128,8 @@
               <input
                 class="c1-13"
                 type="checkbox"
-                v-model="form3.havera_somatoconservacao_avancada"
-                name="havera_somatoconservacao_avancada"
+                v-model="form3.acidental"
+                value="Trânsito"
               />
 
               <span class="title-input-blue">Trânsito</span>
@@ -137,8 +137,8 @@
               <input
                 class="c1-13"
                 type="checkbox"
-                v-model="form3.havera_somatoconservacao_avancada"
-                name="havera_somatoconservacao_avancada"
+                v-model="form3.acidental"
+                value="Domicilio"
               />
 
               <span class="title-input-blue">Domicilio</span>
@@ -148,8 +148,8 @@
               <input
                 class="c1-13"
                 type="checkbox"
-                v-model="form3.havera_somatoconservacao_avancada"
-                name="havera_somatoconservacao_avancada"
+                v-model="form3.acidental"
+                value="Trabalho"
               />
 
               <span class="title-input-blue">Trabalho</span>
@@ -157,8 +157,8 @@
               <input
                 class="c1-13"
                 type="checkbox"
-                v-model="form3.havera_somatoconservacao_avancada"
-                name="havera_somatoconservacao_avancada"
+                v-model="form3.acidental"
+                value="Natural"
               />
 
               <span class="title-input-blue">Natural</span>
@@ -167,8 +167,8 @@
               <input
                 class="c1-13"
                 type="checkbox"
-                v-model="form3.havera_somatoconservacao_avancada"
-                name="havera_somatoconservacao_avancada"
+                v-model="form3.acidental"
+                value="Esportivo"
               />
 
               <span class="title-input-blue">Esportivo</span>
@@ -176,8 +176,8 @@
               <input
                 class="c1-13"
                 type="checkbox"
-                v-model="form3.havera_somatoconservacao_avancada"
-                name="havera_somatoconservacao_avancada"
+                v-model="form3.acidental"
+                value="Recreativo"
               />
 
               <span class="title-input-blue">Recreativo</span>
@@ -186,8 +186,8 @@
               <input
                 class="c1-13"
                 type="checkbox"
-                v-model="form3.havera_somatoconservacao_avancada"
-                name="havera_somatoconservacao_avancada"
+                v-model="form3.acidental"
+                value="Aquatico"
               />
 
               <span class="title-input-blue">Aquatico</span>
@@ -195,8 +195,8 @@
               <input
                 class="c1-13"
                 type="checkbox"
-                v-model="form3.havera_somatoconservacao_avancada"
-                name="havera_somatoconservacao_avancada"
+                v-model="form3.acidental"
+                value="Eletrico"
               />
 
               <span class="title-input-blue">Eletrico</span>
@@ -205,8 +205,8 @@
               <input
                 class="c1-13"
                 type="checkbox"
-                v-model="form3.havera_somatoconservacao_avancada"
-                name="havera_somatoconservacao_avancada"
+                v-model="form3.acidental"
+                value="Quimico"
               />
 
               <span class="title-input-blue">Quimico</span>
@@ -214,8 +214,8 @@
               <input
                 class="c1-13"
                 type="checkbox"
-                v-model="form3.havera_somatoconservacao_avancada"
-                name="havera_somatoconservacao_avancada"
+                v-model="form3.acidental"
+                value="Incêndio"
               />
 
               <span class="title-input-blue">Incêndio</span>
@@ -224,8 +224,8 @@
               <input
                 class="c1-13"
                 type="checkbox"
-                v-model="form3.havera_somatoconservacao_avancada"
-                name="havera_somatoconservacao_avancada"
+                v-model="form3.acidental"
+                value="Alimentar"
               />
 
               <span class="title-input-blue">Alimentar</span>
@@ -236,9 +236,9 @@
 
               <input
                 type="text"
-                v-model="form3.nome_completo"
+                v-model="form3.acidental_outros"
                 class="input-resp"
-                name="nome_completo"
+                name="acidental_outros"
               />
             </div>
           </div>
@@ -252,28 +252,19 @@
               <input
                 class="c1-13"
                 type="checkbox"
-                v-model="form3.havera_somatoconservacao_avancada"
-                name="havera_somatoconservacao_avancada"
+                v-model="form3.intensa"
+                value="Homicidio"
               />
 
               <span class="title-input-blue">Homicidio</span>
             </div>
-            <div>
-              <input
-                class="c1-13"
-                type="checkbox"
-                v-model="form3.havera_somatoconservacao_avancada"
-                name="havera_somatoconservacao_avancada"
-              />
 
-              <span class="title-input-blue">Homicidio par Arma de Fogo</span>
-            </div>
             <div>
               <input
                 class="c1-13"
                 type="checkbox"
-                v-model="form3.havera_somatoconservacao_avancada"
-                name="havera_somatoconservacao_avancada"
+                v-model="form3.intensa"
+                value="Suicidio"
               />
 
               <span class="title-input-blue">Suicidio</span>
@@ -281,8 +272,8 @@
               <input
                 class="c1-13"
                 type="checkbox"
-                v-model="form3.havera_somatoconservacao_avancada"
-                name="havera_somatoconservacao_avancada"
+                v-model="form3.intensa"
+                value="Fratricidio"
               />
 
               <span class="title-input-blue">Fratricidio</span>
@@ -291,8 +282,8 @@
               <input
                 class="c1-13"
                 type="checkbox"
-                v-model="form3.havera_somatoconservacao_avancada"
-                name="havera_somatoconservacao_avancada"
+                v-model="form3.intensa"
+                value="Patricidio"
               />
 
               <span class="title-input-blue">Patricidio</span>
@@ -300,8 +291,8 @@
               <input
                 class="c1-13"
                 type="checkbox"
-                v-model="form3.havera_somatoconservacao_avancada"
-                name="havera_somatoconservacao_avancada"
+                v-model="form3.intensa"
+                value="Matricidio"
               />
 
               <span class="title-input-blue">Matricidio</span>
@@ -310,8 +301,8 @@
               <input
                 class="c1-13"
                 type="checkbox"
-                v-model="form3.havera_somatoconservacao_avancada"
-                name="havera_somatoconservacao_avancada"
+                v-model="form3.intensa"
+                value="Filicidio Paterno"
               />
 
               <span class="title-input-blue">Filicidio Paterno</span>
@@ -321,8 +312,8 @@
               <input
                 class="c1-13"
                 type="checkbox"
-                v-model="form3.havera_somatoconservacao_avancada"
-                name="havera_somatoconservacao_avancada"
+                v-model="form3.intensa"
+                value="Filicidio Materno"
               />
 
               <span class="title-input-blue">Filicidio Materno</span>
@@ -333,9 +324,9 @@
 
               <input
                 type="text"
-                v-model="form3.nome_completo"
+                v-model="form3.intensa_outros"
                 class="input-resp"
-                name="nome_completo"
+                name="intensa_outros"
               />
             </div>
           </div>
@@ -352,8 +343,8 @@
                 <input
                   class="c1-13"
                   type="checkbox"
-                  v-model="form3.havera_somatoconservacao_avancada"
-                  name="havera_somatoconservacao_avancada"
+                  v-model="form3.natural"
+                  value="natural"
                 />
 
                 <span class="title-input-blue">Natural</span>
@@ -361,14 +352,14 @@
 
               <br />
 
-              <label class="form-title">INTOXICAÇÃO</label>
+              <label class="form-title">INTOXICACÃO</label>
 
               <div>
                 <input
                   class="c1-13"
                   type="checkbox"
-                  v-model="form3.havera_somatoconservacao_avancada"
-                  name="havera_somatoconservacao_avancada"
+                  v-model="form3.intoxicacao"
+                  value="Alimentar"
                 />
 
                 <span class="title-input-blue">Alimentar</span>
@@ -378,8 +369,8 @@
                 <input
                   class="c1-13"
                   type="checkbox"
-                  v-model="form3.havera_somatoconservacao_avancada"
-                  name="havera_somatoconservacao_avancada"
+                  v-model="form3.intoxicacao"
+                  value="Quimica"
                 />
 
                 <span class="title-input-blue">Quimica</span>
@@ -392,9 +383,9 @@
 
                 <input
                   type="text"
-                  v-model="form3.nome_completo"
+                  v-model="form3.n_declaracao_obito"
                   class="input-resp"
-                  name="nome_completo"
+                  name="n_declaracao_obito"
                 />
               </div>
             </div>
@@ -407,7 +398,7 @@
 
 
 <script>
-// import axios from "axios";
+import { ref } from "vue";
 import { mask } from "vue-the-mask";
 
 export default {
@@ -416,22 +407,23 @@ export default {
     showForm: Number,
     sendFormNow: Boolean,
     showView: String,
+    infoTanato: Object,
   },
   methods: {},
   components: {},
   data() {
     return {
       form3: {
-        patologica: "",
-        acidental: "",
-        intensa: "",
-        natural: "",
-        intoxicação: "",
+        patologica: ref([]),
+        acidental: ref([]),
+        intensa: ref([]),
+        natural: ref([]),
+        intoxicacao: ref([]),
         patologica_outros: "",
         acidental_outros: "",
         intensa_outros: "",
-        natural_outros: "",
-        intoxicação_outros: "",
+        intoxicacao_outros: "",
+        n_declaracao_obito: "",
       },
     };
   },
@@ -439,6 +431,23 @@ export default {
   watch: {
     sendFormNow: function () {
       this.$emit("set-data-form", this.form3);
+    },
+
+    infoTanato: function (item) {
+      const tanato = JSON.parse(JSON.stringify(item));
+
+      if (tanato) {
+        this.form3.patologica.push(tanato.data[0].patologica);
+        this.form3.acidental.push(tanato.data[0].acidental);
+        this.form3.intensa.push(tanato.data[0].intensa);
+        this.form3.natural.push(tanato.data[0].natural);
+        this.form3.intoxicacao.push(tanato.data[0].intoxicacao);
+        this.form3.patologica_outros = tanato.data[0].patologica_outros;
+        this.form3.acidental_outros = tanato.data[0].acidental_outros;
+        this.form3.intensa_outros = tanato.data[0].intensa_outros;
+        this.form3.intoxicacao_outros = tanato.data[0].intoxicacao_outros;
+        this.form3.n_declaracao_obito = tanato.data[0].n_declaracao_obito;
+      }
     },
   },
 };

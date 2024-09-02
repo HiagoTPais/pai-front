@@ -10,8 +10,8 @@
           <input
             class="c1-13"
             type="checkbox"
-            v-model="form4.havera_somatoconservacao_avancada"
-            name="havera_somatoconservacao_avancada"
+            v-model="form4.higienizacao_corporal"
+            value="Sim"
           />
 
           <span class="title-input-blue">Sim</span>
@@ -19,8 +19,8 @@
           <input
             class="c1-13"
             type="checkbox"
-            v-model="form4.havera_somatoconservacao_avancada"
-            name="havera_somatoconservacao_avancada"
+            v-model="form4.higienizacao_corporal"
+            value="Não"
           />
 
           <span class="title-input-blue">Não</span>
@@ -33,8 +33,8 @@
           <input
             class="c1-13"
             type="checkbox"
-            v-model="form4.havera_somatoconservacao_avancada"
-            name="havera_somatoconservacao_avancada"
+            v-model="form4.somatoconservacao"
+            value="Sim"
           />
 
           <span class="title-input-blue">Sim</span>
@@ -42,8 +42,8 @@
           <input
             class="c1-13"
             type="checkbox"
-            v-model="form4.havera_somatoconservacao_avancada"
-            name="havera_somatoconservacao_avancada"
+            v-model="form4.somatoconservacao"
+            value="Não"
           />
 
           <span class="title-input-blue">Não</span>
@@ -58,8 +58,8 @@
           <input
             class="c1-13"
             type="checkbox"
-            v-model="form4.havera_somatoconservacao_avancada"
-            name="havera_somatoconservacao_avancada"
+            v-model="form4.tamponamento"
+            value="Sim"
           />
 
           <span class="title-input-blue">Sim</span>
@@ -67,8 +67,8 @@
           <input
             class="c1-13"
             type="checkbox"
-            v-model="form4.havera_somatoconservacao_avancada"
-            name="havera_somatoconservacao_avancada"
+            v-model="form4.tamponamento"
+            value="Não"
           />
 
           <span class="title-input-blue">Não</span>
@@ -81,8 +81,8 @@
           <input
             class="c1-13"
             type="checkbox"
-            v-model="form4.havera_somatoconservacao_avancada"
-            name="havera_somatoconservacao_avancada"
+            v-model="form4.fechamento_buco_maxilo"
+            value="Sutura"
           />
 
           <span class="title-input-blue">Sutura</span>
@@ -90,8 +90,8 @@
           <input
             class="c1-13"
             type="checkbox"
-            v-model="form4.havera_somatoconservacao_avancada"
-            name="havera_somatoconservacao_avancada"
+            v-model="form4.fechamento_buco_maxilo"
+            value="Colagem"
           />
 
           <span class="title-input-blue">Colagem</span>
@@ -106,8 +106,8 @@
           <input
             class="c1-13"
             type="checkbox"
-            v-model="form4.havera_somatoconservacao_avancada"
-            name="havera_somatoconservacao_avancada"
+            v-model="form4.secagem_fechamento_ocular"
+            value="Sim"
           />
 
           <span class="title-input-blue">Sim</span>
@@ -115,8 +115,8 @@
           <input
             class="c1-13"
             type="checkbox"
-            v-model="form4.havera_somatoconservacao_avancada"
-            name="havera_somatoconservacao_avancada"
+            v-model="form4.secagem_fechamento_ocular"
+            value="Não"
           />
 
           <span class="title-input-blue">Não</span>
@@ -129,8 +129,8 @@
           <input
             class="c1-13"
             type="checkbox"
-            v-model="form4.havera_somatoconservacao_avancada"
-            name="havera_somatoconservacao_avancada"
+            v-model="form4.reparacao_corporal"
+            value="Simples"
           />
 
           <span class="title-input-blue">Simples</span>
@@ -138,16 +138,16 @@
           <input
             class="c1-13"
             type="checkbox"
-            v-model="form4.havera_somatoconservacao_avancada"
-            name="havera_somatoconservacao_avancada"
+            v-model="form4.reparacao_corporal"
+            value="Moderada"
           />
 
           <span class="title-input-blue">Moderada</span>
           <input
             class="c1-13"
             type="checkbox"
-            v-model="form4.havera_somatoconservacao_avancada"
-            name="havera_somatoconservacao_avancada"
+            v-model="form4.reparacao_corporal"
+            value="Complexa"
           />
 
           <span class="title-input-blue">Complexa</span>
@@ -162,8 +162,8 @@
           <input
             class="c1-13"
             type="checkbox"
-            v-model="form4.havera_somatoconservacao_avancada"
-            name="havera_somatoconservacao_avancada"
+            v-model="form4.reparacao_facial"
+            value="Simples"
           />
 
           <span class="title-input-blue">Simples</span>
@@ -171,16 +171,16 @@
           <input
             class="c1-13"
             type="checkbox"
-            v-model="form4.havera_somatoconservacao_avancada"
-            name="havera_somatoconservacao_avancada"
+            v-model="form4.reparacao_facial"
+            value="Moderada"
           />
 
           <span class="title-input-blue">Moderada</span>
           <input
             class="c1-13"
             type="checkbox"
-            v-model="form4.havera_somatoconservacao_avancada"
-            name="havera_somatoconservacao_avancada"
+            v-model="form4.reparacao_facial"
+            value="Complexa"
           />
 
           <span class="title-input-blue">Complexa</span>
@@ -193,8 +193,8 @@
           <input
             class="c1-13"
             type="checkbox"
-            v-model="form4.havera_somatoconservacao_avancada"
-            name="havera_somatoconservacao_avancada"
+            v-model="form4.cabelo"
+            value="Aparar"
           />
 
           <span class="title-input-blue">Aparar</span>
@@ -202,8 +202,8 @@
           <input
             class="c1-13"
             type="checkbox"
-            v-model="form4.havera_somatoconservacao_avancada"
-            name="havera_somatoconservacao_avancada"
+            v-model="form4.cabelo"
+            value="Raspar"
           />
 
           <span class="title-input-blue">Raspar</span>
@@ -218,8 +218,8 @@
           <input
             class="c1-13"
             type="checkbox"
-            v-model="form4.havera_somatoconservacao_avancada"
-            name="havera_somatoconservacao_avancada"
+            v-model="form4.barba"
+            value="Aparar"
           />
 
           <span class="title-input-blue">Aparar</span>
@@ -227,8 +227,8 @@
           <input
             class="c1-13"
             type="checkbox"
-            v-model="form4.havera_somatoconservacao_avancada"
-            name="havera_somatoconservacao_avancada"
+            v-model="form4.barba"
+            value="Raspar"
           />
 
           <span class="title-input-blue">Raspar</span>
@@ -241,8 +241,8 @@
           <input
             class="c1-13"
             type="checkbox"
-            v-model="form4.havera_somatoconservacao_avancada"
-            name="havera_somatoconservacao_avancada"
+            v-model="form4.bigode"
+            value="Aparar"
           />
 
           <span class="title-input-blue">Aparar</span>
@@ -250,8 +250,8 @@
           <input
             class="c1-13"
             type="checkbox"
-            v-model="form4.havera_somatoconservacao_avancada"
-            name="havera_somatoconservacao_avancada"
+            v-model="form4.bigode"
+            value="Raspar"
           />
 
           <span class="title-input-blue">Raspar</span>
@@ -266,8 +266,8 @@
           <input
             class="c1-13"
             type="checkbox"
-            v-model="form4.havera_somatoconservacao_avancada"
-            name="havera_somatoconservacao_avancada"
+            v-model="form4.corte_unhas"
+            value="Sim"
           />
 
           <span class="title-input-blue">Sim</span>
@@ -275,8 +275,8 @@
           <input
             class="c1-13"
             type="checkbox"
-            v-model="form4.havera_somatoconservacao_avancada"
-            name="havera_somatoconservacao_avancada"
+            v-model="form4.corte_unhas"
+            value="Não"
           />
 
           <span class="title-input-blue">Não</span>
@@ -289,8 +289,8 @@
           <input
             class="c1-13"
             type="checkbox"
-            v-model="form4.havera_somatoconservacao_avancada"
-            name="havera_somatoconservacao_avancada"
+            v-model="form4.limpeza_hidratacao_facial"
+            value="Sim"
           />
 
           <span class="title-input-blue">Sim</span>
@@ -298,8 +298,8 @@
           <input
             class="c1-13"
             type="checkbox"
-            v-model="form4.havera_somatoconservacao_avancada"
-            name="havera_somatoconservacao_avancada"
+            v-model="form4.limpeza_hidratacao_facial"
+            value="Não"
           />
 
           <span class="title-input-blue">Não</span>
@@ -314,8 +314,8 @@
           <input
             class="c1-13"
             type="checkbox"
-            v-model="form4.havera_somatoconservacao_avancada"
-            name="havera_somatoconservacao_avancada"
+            v-model="form4.maquiagem"
+            value="Sim"
           />
 
           <span class="title-input-blue">Sim</span>
@@ -323,8 +323,8 @@
           <input
             class="c1-13"
             type="checkbox"
-            v-model="form4.havera_somatoconservacao_avancada"
-            name="havera_somatoconservacao_avancada"
+            v-model="form4.maquiagem"
+            value="Não"
           />
 
           <span class="title-input-blue">Não</span>
@@ -337,8 +337,8 @@
           <input
             class="c1-13"
             type="checkbox"
-            v-model="form4.havera_somatoconservacao_avancada"
-            name="havera_somatoconservacao_avancada"
+            v-model="form4.ornamentacao"
+            value="Natural"
           />
 
           <span class="title-input-blue">Natural</span>
@@ -346,8 +346,8 @@
           <input
             class="c1-13"
             type="checkbox"
-            v-model="form4.havera_somatoconservacao_avancada"
-            name="havera_somatoconservacao_avancada"
+            v-model="form4.ornamentacao"
+            value="Artificial"
           />
 
           <span class="title-input-blue">Artificial</span>
@@ -362,8 +362,8 @@
           <input
             class="c1-13"
             type="checkbox"
-            v-model="form4.havera_somatoconservacao_avancada"
-            name="havera_somatoconservacao_avancada"
+            v-model="form4.veu"
+            value="Padrão"
           />
 
           <span class="title-input-blue">Padrão</span>
@@ -371,8 +371,8 @@
           <input
             class="c1-13"
             type="checkbox"
-            v-model="form4.havera_somatoconservacao_avancada"
-            name="havera_somatoconservacao_avancada"
+            v-model="form4.veu"
+            value="Medio"
           />
 
           <span class="title-input-blue">Medio</span>
@@ -380,8 +380,8 @@
           <input
             class="c1-13"
             type="checkbox"
-            v-model="form4.havera_somatoconservacao_avancada"
-            name="havera_somatoconservacao_avancada"
+            v-model="form4.veu"
+            value="Luxo"
           />
 
           <span class="title-input-blue">Luxo</span>
@@ -394,8 +394,8 @@
           <input
             class="c1-13"
             type="checkbox"
-            v-model="form4.havera_somatoconservacao_avancada"
-            name="havera_somatoconservacao_avancada"
+            v-model="form4.veste"
+            value="Padrão"
           />
 
           <span class="title-input-blue">Padrão</span>
@@ -403,8 +403,8 @@
           <input
             class="c1-13"
             type="checkbox"
-            v-model="form4.havera_somatoconservacao_avancada"
-            name="havera_somatoconservacao_avancada"
+            v-model="form4.veste"
+            value="Medio"
           />
 
           <span class="title-input-blue">Medio</span>
@@ -412,8 +412,8 @@
           <input
             class="c1-13"
             type="checkbox"
-            v-model="form4.havera_somatoconservacao_avancada"
-            name="havera_somatoconservacao_avancada"
+            v-model="form4.veste"
+            value="Luxo"
           />
 
           <span class="title-input-blue">Luxo</span>
@@ -425,7 +425,7 @@
 
 
 <script>
-// import axios from "axios";
+import { ref } from "vue";
 import { mask } from "vue-the-mask";
 
 export default {
@@ -434,28 +434,29 @@ export default {
     showForm: Number,
     sendFormNow: Boolean,
     showView: String,
+    infoTanato: Object,
   },
   methods: {},
   components: {},
   data() {
     return {
       form4: {
-        higienizacao_corporal: "",
-        somatoconservação: "",
-        tamponamento: "",
-        fechamento_buco_maxilo: "",
-        secagem_fechamento_ocular: "",
-        reparação_corporal: "",
-        reparação_facial: "",
-        cabelo: "",
-        barba: "",
-        bigode: "",
-        corte_unhas: "",
-        limpeza_hidratação_facial: "",
-        maquiagem: "",
-        ornamentação: "",
-        veu: "",
-        veste: "",
+        higienizacao_corporal: ref([]),
+        somatoconservacao: ref([]),
+        tamponamento: ref([]),
+        fechamento_buco_maxilo: ref([]),
+        secagem_fechamento_ocular: ref([]),
+        reparacao_corporal: ref([]),
+        reparacao_facial: ref([]),
+        cabelo: ref([]),
+        barba: ref([]),
+        bigode: ref([]),
+        corte_unhas: ref([]),
+        limpeza_hidratacao_facial: ref([]),
+        maquiagem: ref([]),
+        ornamentacao: ref([]),
+        veu: ref([]),
+        veste: ref([]),
       },
     };
   },
@@ -463,6 +464,29 @@ export default {
   watch: {
     sendFormNow: function () {
       this.$emit("set-data-form", this.form4);
+    },
+
+    infoTanato: function (item) {
+      const tanato = JSON.parse(JSON.stringify(item));
+
+      if (tanato) {
+        this.form4.higienizacao_corporal.push(tanato.data[0].higienizacao_corporal);
+        this.form4.somatoconservacao.push(tanato.data[0].somatoconservacao);
+        this.form4.tamponamento.push(tanato.data[0].tamponamento);
+        this.form4.fechamento_buco_maxilo.push(tanato.data[0].fechamento_buco_maxilo);
+        this.form4.secagem_fechamento_ocular.push(tanato.data[0].secagem_fechamento_ocular);
+        this.form4.reparacao_corporal.push(tanato.data[0].reparacao_corporal);
+        this.form4.reparacao_facial.push(tanato.data[0].reparacao_facial);
+        this.form4.cabelo.push(tanato.data[0].cabelo);
+        this.form4.barba.push(tanato.data[0].barba);
+        this.form4.bigode.push(tanato.data[0].bigode);
+        this.form4.corte_unhas.push(tanato.data[0].corte_unhas);
+        this.form4.limpeza_hidratacao_facial.push(tanato.data[0].limpeza_hidratacao_facial);
+        this.form4.maquiagem.push(tanato.data[0].maquiagem);
+        this.form4.ornamentacao.push(tanato.data[0].ornamentacao);
+        this.form4.veu.push(tanato.data[0].veu);
+        this.form4.veste.push(tanato.data[0].veste);
+      }
     },
   },
 };

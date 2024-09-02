@@ -181,11 +181,13 @@ export default {
     addInput() {
       this.count++;
     },
+
     removeInput() {
       if (this.count != 1) {
         this.count--;
       }
     },
+
     setForm3() {
       this.form3 = this.values;
     },
@@ -194,6 +196,7 @@ export default {
     sendFormNow: function () {
       this.$emit("set-data-form", this.form3);
     },
+    
     dependentList: function () {
       if (this.showCurrentView == "form-assistencia-edit") {
         const reversedDependentList = JSON.parse(

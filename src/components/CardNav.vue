@@ -62,9 +62,6 @@
       <div class="square-link" @click="$emit('setShowForm', 'payment-servico-funerario')">
           <img class="beneficiario" :src="require('../assets/img/pagar.png')" />
       </div>
-      <div class="square-link" @click="$emit('setShowForm', 'heart-servico-funerario')">
-         <img class="beneficiario" :src="require('../assets/img/heart.png')" />
-      </div>
       <div class="square-link" @click="$emit('setShowForm', 'dashboard-servico-funerario')">
          <img class="beneficiario" :src="require('../assets/img/dashboard.png')" />
       </div>

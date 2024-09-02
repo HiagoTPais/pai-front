@@ -92,6 +92,8 @@
       </div>
     </div>
 
+    <br>
+
     <div class="row">
       <div class="col">
         <span class="title-input-blue">Descrição do Plano</span>
@@ -106,7 +108,9 @@
       </div>
     </div>
 
-    <div class="row m-3">
+    <br>
+
+    <div class="row">
       <BeneficiosAdicionais :valuesBen="form2.beneficio_adicional" />
 
       <div class="col">
@@ -259,6 +263,7 @@ export default {
       }
     },
   },
+  
   directives: { mask, money: VMoney },
 };
 </script>

@@ -209,6 +209,7 @@ export default {
       this.form4.valor_base_plano = planoValor;
       this.form4.valor_final = planoValor;
     },
+
     dadosContatos: function (dadosContatos) {
       const reversedDadosContatos = JSON.parse(JSON.stringify(dadosContatos));
 
@@ -226,17 +227,10 @@ export default {
     sendFormNow: function () {
       this.$emit("set-data-form", this.form4);
     },
+
     contractData: function () {
       if (this.showCurrentView == "form-assistencia-edit") {
-        // console.log("this.contractData");
-        // console.log(this.contractData);
-
-        const reversedContractData = JSON.parse(
-          JSON.stringify(this.contractData)
-        );
-
-        // console.log('reversedContractData');
-        // console.log(reversedContractData);
+        const reversedContractData = JSON.parse(JSON.stringify(this.contractData));
 
         this.form4.valor_base_plano = reversedContractData.data.data[0].valor_base_plano;
         this.form4.periodo = reversedContractData.data.data[0].periodo;
@@ -267,9 +261,11 @@ export default {
           console.log(error);
         });
     },
+
     setDadosContatos() {
       this.$emit("get-dados-contatos");
     },
+
     setValorFinal() {
       // console.log('IIIIIIIIIIIIII');
       console.log(Number(this.form4.valor_adicional.replace("R$ ", "")));

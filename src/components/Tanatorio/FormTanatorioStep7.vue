@@ -1,5 +1,5 @@
  <template>
-  <div v-if="showForm == 7" style="height: 540px;">
+  <div v-if="showForm == 7" style="height: 540px">
     <label class="form-title m-3">Observações / Orientações</label>
 
     <div class="row">
@@ -75,11 +75,12 @@
 import { mask } from "vue-the-mask";
 
 export default {
-  name: "FormTanatorioStep1",
+  name: "FormTanatorioStep7",
   props: {
     showForm: Number,
     sendFormNow: Boolean,
     showView: String,
+    infoTanato: Object,
   },
   methods: {},
   components: {},
@@ -98,6 +99,16 @@ export default {
   watch: {
     sendFormNow: function () {
       this.$emit("set-data-form", this.form7);
+    },
+
+    infoTanato: function (item) {
+      const tanato = JSON.parse(JSON.stringify(item));
+
+      this.form7.observacoes = tanato.data[0].observacoes;
+      this.form7.hora_inicial_procedimento = tanato.data[0].hora_inicial_procedimento;
+      this.form7.hora_final_Procedimento = tanato.data[0].hora_final_Procedimento;
+      this.form7.agente_funerario_responsavel = tanato.data[0].agente_funerario_responsavel;
+      this.form7.auxiliar_agente_funerario = tanato.data[0].auxiliar_agente_funerario;
     },
   },
 };

@@ -22,13 +22,18 @@
     <br />
 
     <div class="scrollbar-y" style="max-height: 600px">
-      <div class="row" v-for="key in count" :key="key">
+      <div
+        class="row small-card-border"
+        style="margin: 15px"
+        v-for="key in count"
+        :key="key"
+      >
         <div class="col-11">
           <div>
             <span class="title-input-blue">Produto/Serviço</span>
 
             <input
-              @blur="setForm7()"
+              @blur="setForm6()"
               type="text"
               v-model="values['produto_servico_' + (key - 1)]"
               class="input-resp"
@@ -42,7 +47,7 @@
             <span class="title-input-blue">Quantidade</span>
 
             <input
-              @blur="setForm7()"
+              @blur="setForm6()"
               type="number"
               v-model="values['quantidade_' + (key - 1)]"
               class="input-resp"
@@ -57,37 +62,65 @@
 
 
 <script>
+import axios from "axios";
 import { VMoney } from "v-money";
 import { mask } from "vue-the-mask";
 
 export default {
-  name: "FormTanatorioStep1",
+  name: "FormTanatorioStep6",
+
   props: {
     showForm: Number,
     sendFormNow: Boolean,
     showView: String,
+    infoTanato: Object,
   },
+
   methods: {
     addInput() {
       this.count++;
     },
+
     removeInput() {
       if (this.count != 1) {
         this.count--;
       }
     },
-    setForm7() {
-      this.form7 = this.values;
+
+    setForm6() {
+      this.form6 = this.values;
+    },
+
+    getMaterias(id) {
+      axios
+        .get(`${process.env.VUE_APP_API_URL}/tanatorio/get-materias/${id}`)
+        .then((res) => {
+          this.materias = res.data;
+
+          console.log("LISTA DE MATERIAIS");
+          console.log(this.materias);
+
+          this.count = this.materias.length;
+
+          this.materias.forEach((item, key) => {
+            this.values["produto_servico_" + key] = item["produto"] ? item["produto"] : "";
+            this.values["quantidade_" + key] = item["quantidade"] ? item["quantidade"] : "";
+          });
+        })
+        .catch((error) => {
+          console.log(error);
+        });
     },
   },
-  components: {},
+
   data() {
     return {
-      form7: {
+      form6: {
         produto_servico: "",
         quantidade: "",
         valor: "",
       },
+      idTanator: null,
       count: 1,
       values: {},
       money: {
@@ -100,10 +133,22 @@ export default {
       },
     };
   },
+
   directives: { money: VMoney, mask },
+
   watch: {
     sendFormNow: function () {
-      this.$emit("set-data-form", this.form1);
+      this.$emit("set-data-form", this.form6);
+    },
+
+    infoTanato: function (item) {
+      const tanato = JSON.parse(JSON.stringify(item));
+
+      if (tanato) {
+        this.idTanator = tanato.data[0].id;
+
+        this.getMaterias(this.idTanator);
+      }
     },
   },
 };

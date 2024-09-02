@@ -108,8 +108,10 @@ export default {
 
   props: {
     showForm: Number,
+    infoTanato: Object,
     sendFormNow: Boolean,
     showView: String,
+    selectedTanato: Object,
   },
 
   methods: {},
@@ -118,7 +120,6 @@ export default {
 
   data() {
     return {
-
       form1: {
         nome_completo: "",
         idade: "",
@@ -137,6 +138,35 @@ export default {
   watch: {
     sendFormNow: function () {
       this.$emit("set-data-form", this.form1);
+    },
+
+    selectedTanato: function (item) {
+      const tanato = JSON.parse(JSON.stringify(item));
+
+      if (tanato) {
+        this.form1.nome_completo = tanato.felecido;
+        this.form1.idade = tanato.idade;
+        this.form1.peso = tanato.peso;
+        this.form1.altura = tanato.altura;
+        this.form1.data_hora_obito = tanato.data_hora_obito;
+        this.form1.data_hora_atendimeto = tanato.data_hora_atendimeto;
+        this.form1.local_obito = tanato.local_obito;
+      }
+    },
+
+    infoTanato: function (item) {
+      const tanato = JSON.parse(JSON.stringify(item));
+
+      if (tanato) {
+        this.form1.nome_completo = tanato.data[0].nome_completo;
+        this.form1.idade = tanato.data[0].idade;
+        this.form1.peso = tanato.data[0].peso;
+        this.form1.altura = tanato.data[0].altura;
+        this.form1.data_hora_obito = tanato.data[0].data_hora_obito;
+        this.form1.data_hora_atendimeto = tanato.data[0].data_hora_atendimeto;
+        this.form1.local_obito = tanato.data[0].local_obito;
+        this.form1.historico_pessoa = tanato.data[0].historico_pessoa;
+      }
     },
   },
 };

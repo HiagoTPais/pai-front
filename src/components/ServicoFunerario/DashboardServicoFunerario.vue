@@ -103,18 +103,6 @@
           <Bar :data="dadosfachetariaBeneficiarios" :options="chartOptions" />
         </div>
       </div>
-      <br />
-      <div class="d-flex justify-content-center"></div>
-      <!-- <div class="d-flex justify-content-between">
-        <div>
-          <p class="form-title m-3">Mensalidades Pagas</p>
-          <Bar id="my-chart-id-8" :options="chartOptions" :data="chartData" />
-        </div>
-        <div>
-          <p class="form-title m-3">Ticket Medio Valor dos Planos</p>
-          <Bar id="my-chart-id-9" :options="chartOptions" :data="chartData" />
-        </div>
-      </div> -->
     </div>
   </div>
 </template>

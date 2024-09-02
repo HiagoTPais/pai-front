@@ -1,5 +1,5 @@
 <template>
-  <div class="form-assistencia">
+  <div class="form-assistencia" style="height: 680px">
     <div class="form-navbar-assistencia">
       <DeleteModal
         :visible="this.visibleModal"
@@ -44,7 +44,7 @@
         </div>
       </div>
       <div class="form-input-assistencia">
-        <div class="m-3" style="height: 577px">
+        <div class="m-3">
           <table class="table table-striped">
             <thead>
               <tr>
@@ -58,12 +58,12 @@
             </thead>
             <tbody>
               <tr
-                v-for="(item, index) in servicoList.value"
+                v-for="(item, index) in servicoList"
                 :key="item.id"
                 class="view-tr"
               >
                 <td>{{ index + 1 }}</td>
-                <td>{{ item.falecido }}</td>
+                <td>{{ item.felecido }}</td>
                 <td>{{ item.responsavel }}</td>
                 <td>{{ item.cidade }}</td>
                 <td>{{ item.data_hora_sepultamento }}</td>
@@ -72,7 +72,12 @@
                     <img
                       class="eye-table"
                       :src="require('../../assets/img/eye.png')"
-                      @click="$emit('setShowForm', ['form-servico-edit', item.id])"
+                      @click="
+                        $emit('setShowForm', [
+                          'form-servico-funerario-edit',
+                          item.id,
+                        ])
+                      "
                     />
                   </div>
                 </td>
@@ -123,16 +128,20 @@ export default {
     DeleteModal,
   },
   emits: ["setShowForm"],
+
   beforeMount() {
     this.setServicoList();
   },
+
   methods: {
     setCurrentView(idView) {
       this.currentView = idView;
     },
+
     showActionsBtn() {
       this.actionsBtn = !this.actionsBtn;
     },
+
     setNextView() {
       this.currentView = this.currentView + 1;
 
@@ -140,19 +149,19 @@ export default {
         this.currentView = 1;
       }
     },
+
     closeView() {
       this.$emit("setShowViewOrCard");
       this.setNextView();
     },
+
     setServicoList(page = 1) {
       axios
         .get(`${process.env.VUE_APP_API_URL}/servico-funerario?page=${page}`)
         .then((res) => {
-          // console.log(res);
-          this.servicoList.value = res.data.data;
-          this.totalItens = res.data.total;
+          this.servicoList = res.data;
 
-          console.log(this.servicoList.value);
+          this.totalItens = res.data.total;
         })
         .catch((error) => {
           console.log(error);

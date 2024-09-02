@@ -5,7 +5,6 @@
         <div class="modal-container">
           <div class="modal-header"></div>
           <div class="modal-body">
-            <!-- <div style="width: 400px; margin: 0 auto"></div> -->
             <img
               v-if="listImg[this.campoImagem]"
               :src="listImg[this.campoImagem]"
@@ -22,11 +21,7 @@
               Fechar
             </button>
 
-            <button
-              type="button"
-              @click="removeImage()"
-              class="btn-red btn-sm"
-            >
+            <button type="button" @click="removeImage()" class="btn-red">
               Remover
             </button>
 
@@ -45,8 +40,6 @@
 </template>
   
 <script>
-// import axios from "axios";
-
 export default {
   name: "ShowImage",
 
@@ -55,21 +48,25 @@ export default {
     showView: String,
     deleteMode: Boolean,
     msg: String,
+    sendForm: Boolean,
   },
 
   data() {
     return {
       OpenClose: this.visible,
+
       ShowButtonDelete: this.showView,
+
       campoImagem: "",
+
       listImg: {
-        decomposicao: false,
-        rigidez: false,
-        odor: false,
-        olhos: false,
-        boca: false,
-        ouvido: false,
-        toracoabdominal: false,
+        decomposicao: "",
+        rigidez: "",
+        odor: "",
+        olhos: "",
+        boca: "",
+        ouvido: "",
+        toracoabdominal: "",
       },
     };
   },
@@ -95,6 +92,8 @@ export default {
       };
 
       reader.readAsDataURL(file);
+
+      console.log(this.listImg);
     },
 
     removeImage() {
@@ -102,9 +101,11 @@ export default {
     },
   },
 
-  components: {},
-
   watch: {
+    sendForm: function () {
+      this.$emit("set-imagens", this.listImg);
+    },
+
     visible: function (newVal, oldVal) {
       this.OpenClose = newVal;
       console.log("new " + newVal + "==" + oldVal);
@@ -112,7 +113,6 @@ export default {
 
     msg: function (msg) {
       this.campoImagem = msg;
-      console.log(this.campoImagem);
     },
   },
 };

@@ -149,13 +149,13 @@ export default {
       selectedFalecido: [],
     };
   },
+
   // beforeMount() {
   //   if (this.showView == "form-servico-funerario-edit") {
-  //     this.getDataForm();
-  //     this.getDependentes();
-  //     this.getContratoColaborador();
+  //     this.getDataForm(this.colaboradorId);
   //   }
   // },
+
   components: {
     BtnSend,
     BtnNextTab,
@@ -183,8 +183,6 @@ export default {
     },
 
     setDataForm(formData) {
-      console.log(formData);
-
       this.dataForm.push(formData);
 
       if (this.dataForm.length == 7) {
@@ -236,6 +234,14 @@ export default {
         })
         .catch((res) => {
           console.error(res);
+        });
+    },
+
+    getDataForm(id) {
+      axios
+        .get(`${process.env.VUE_APP_API_URL}/servico-funerario/get/${id}`)
+        .then((res) => {
+          console.log(res);
         });
     },
   },

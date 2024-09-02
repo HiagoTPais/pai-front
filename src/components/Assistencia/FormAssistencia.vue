@@ -345,7 +345,7 @@ export default {
   name: "FormAssistencia",
   props: {
     showView: String,
-    beneficiaryId: Number,
+    beneficiaryId: String,
   },
   data() {
     return {

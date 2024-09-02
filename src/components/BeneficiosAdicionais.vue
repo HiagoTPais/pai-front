@@ -17,7 +17,7 @@
           <option>Salão de Homenagens 24Hrs</option>
           <option>Somatoconservação</option>
           <option>Traslado Nacional</option>
-          <option>Seguro Titular</option>
+          <option>Seguro Titular</option  >
         </select>
 
         <input

@@ -1,6 +1,7 @@
 <template>
   <div class="form-assistencia">
     <div class="form-navbar-assistencia">
+      <AlertForm :show="showAlert" :msg="msgAlert" :type="typeAlert" />
       <div class="d-flex">
         <img
           class="family-img"
@@ -11,7 +12,11 @@
             class="form-title"
             style="width: 140%; margin-bottom: 7px; text-align: left"
           >
-            CADASTRANDO TANATORIO
+            {{
+              showView == "form-assistencia-edit"
+                ? "CONSULTANDO TANATORIO"
+                : "CADASTRANDO TANATORIO"
+            }}
           </p>
           <img
             class="beneficiario-icon"
@@ -33,63 +38,86 @@
       </div>
     </div>
     <div class="form-input-assistencia">
-      <form style="height: auto">
+      <form>
         <FormTanatorioStep0
           :showForm="this.currentTabs"
           :sendFormNow="this.sendForm"
           @set-data-form="setDataForm"
+          @select-tanato="selectTanato"
         />
         <FormTanatorioStep1
+          :infoTanato="this.infoTanato"
           :showForm="this.currentTabs"
           :sendFormNow="this.sendForm"
           @set-data-form="setDataForm"
+          :selectedTanato="this.selectedTanato"
         />
         <FormTanatorioStep2
+          :infoTanato="this.infoTanato"
           :showForm="this.currentTabs"
           :sendFormNow="this.sendForm"
           @set-data-form="setDataForm"
         />
         <FormTanatorioStep3
+          :infoTanato="this.infoTanato"
           :showForm="this.currentTabs"
           :sendFormNow="this.sendForm"
           @set-data-form="setDataForm"
         />
         <FormTanatorioStep4
+          :infoTanato="this.infoTanato"
           :showForm="this.currentTabs"
           :sendFormNow="this.sendForm"
           @set-data-form="setDataForm"
         />
         <FormTanatorioStep5
+          :infoTanato="this.infoTanato"
           :showForm="this.currentTabs"
           :sendFormNow="this.sendForm"
           @set-data-form="setDataForm"
         />
         <FormTanatorioStep6
+          :infoTanato="this.infoTanato"
           :showForm="this.currentTabs"
           :sendFormNow="this.sendForm"
           @set-data-form="setDataForm"
         />
         <FormTanatorioStep7
+          :infoTanato="this.infoTanato"
           :showForm="this.currentTabs"
           :sendFormNow="this.sendForm"
           @set-data-form="setDataForm"
         />
+
+        <FormTanatorioStep8
+          :infoTanato="this.infoTanato"
+          :showForm="this.currentTabs"
+          :srcPdf="this.srcPdf"
+        />
       </form>
     </div>
     <div class="form-input-assistencia">
-      <form>
+      <div v-if="this.currentTabs != 7">
         <BtnNextTab
           @click="setNextForm()"
-          :currentTabs="currentTabs"
+          :currentForm="currentTabs"
           :hideButton="hideButton"
         />
-      </form>
+      </div>
+
+      <div v-else>
+        <BtnSend @send-form-now="sendFormNow()" />
+      </div>
     </div>
   </div>
 </template>
 
 <script>
+import axios from "axios";
+
 import BtnNextTab from "../Btn/BtnNextTab";
+import BtnSend from "../Btn/BtnSend";
+import AlertForm from "../AlertForm.vue";
 import FormTanatorioStep0 from "./FormTanatorioStep0.vue";
 import FormTanatorioStep1 from "./FormTanatorioStep1.vue";
 import FormTanatorioStep2 from "./FormTanatorioStep2.vue";
@@ -98,18 +126,26 @@ import FormTanatorioStep4 from "./FormTanatorioStep4.vue";
 import FormTanatorioStep5 from "./FormTanatorioStep5.vue";
 import FormTanatorioStep6 from "./FormTanatorioStep6.vue";
 import FormTanatorioStep7 from "./FormTanatorioStep7.vue";
+import FormTanatorioStep8 from "./FormTanatorioStep8.vue";
 
 export default {
   name: "FormTanatorio",
   props: {
     showView: String,
-    colaboradorId: Number,
+    tanatorioId: String,
   },
   data() {
     return {
+      relatorioTanatorioId: null,
       currentTabs: 0,
       sendForm: false,
       hideButton: false,
+      infoTanato: [],
+      selectedTanato: [],
+      dataForm: [],
+      showAlert: false,
+      msgAlert: "O relatorio esta sendo gerado, aguarde...",
+      typeAlert: "alert-info",
       tabs: [
         "1. Buscar Falecido",
         "2. Dados do Óbito",
@@ -122,6 +158,7 @@ export default {
       ],
     };
   },
+
   components: {
     FormTanatorioStep0,
     FormTanatorioStep1,
@@ -131,38 +168,30 @@ export default {
     FormTanatorioStep5,
     FormTanatorioStep6,
     FormTanatorioStep7,
+    FormTanatorioStep8,
+    AlertForm,
     BtnNextTab,
+    BtnSend,
   },
+
   emits: ["sendFormNow"],
+
+  beforeMount() {
+    if (this.showView == "form-tanatorio-edit") {
+      this.getDataForm(this.tanatorioId);
+    }
+  },
+
   methods: {
+    selectTanato(item) {
+      this.selectedTanato = item;
+    },
+
     setDataForm(formData) {
       this.dataForm.push(formData);
 
-      let values = [];
-      let keys = [];
-      let obj = {};
-
-      let dependentes = this.dataForm[1];
-
-      // delete this.dataForm[1];
-
-      if (this.dataForm.length == 4) {
-        this.dataForm.forEach((element) => {
-          for (let key in element) {
-            values.push(element[key]);
-            keys.push(key);
-          }
-        });
-
-        for (let i = 0; i < keys.length && i < values.length; i++) {
-          obj[keys[i]] = values[i];
-        }
-
-        obj["dependentes"] = dependentes;
-
-        this.dataForm = obj;
-
-        if (this.showView == "form-colaboradores-edit") {
+      if (this.dataForm.length == 7) {
+        if (this.showView == "form-tanatorio-edit") {
           this.updateDateForm(this.dataForm);
         } else {
           this.storeDateForm(this.dataForm);
@@ -184,6 +213,73 @@ export default {
 
     sendFormNow() {
       this.sendForm = !this.sendForm;
+    },
+
+    storeDateForm(dataForm) {
+      this.showAlert = true;
+
+      axios
+        .post(`${process.env.VUE_APP_API_URL}/tanatorio/store`, { dataForm })
+        .then((res) => {
+          this.relatorioTanatorioId = res.data.id;
+          this.currentTabs = 8;
+          this.msgAlert = "O relatorio foi gerado com sucesso.";
+          this.typeAlert = "alert-success";
+
+          // this.downloadAfterCreate(this.relatorioTanatorioId);
+
+          setTimeout(() => {
+            this.showAlert = false;
+          }, 4000);
+        })
+        .catch((res) => {
+          console.error(res);
+        });
+    },
+
+    updateDateForm(dataForm) {
+      this.showAlert = true;
+
+      axios
+        .put(`${process.env.VUE_APP_API_URL}/tanatorio/update/${this.tanatorioId}`, { dataForm })
+        .then((res) => {
+          this.relatorioTanatorioId = res.data.id;
+          this.currentTabs = 8;
+          this.msgAlert = "O relatorio foi atualizado com sucesso.";
+          this.typeAlert = "alert-success";
+
+          // this.downloadAfterCreate(this.relatorioTanatorioId);
+
+          setTimeout(() => {
+            this.showAlert = false;
+          }, 4000);
+        })
+        .catch((res) => {
+          console.error(res);
+        });
+    },
+
+    downloadAfterCreate(id) {
+      axios
+        .get(`${process.env.VUE_APP_API_URL}/tanatorio/download/${id}`, {
+          responseType: "arraybuffer",
+        })
+        .then((res) => {
+          const blob = new Blob([res.data], { type: "application/pdf" });
+
+          const url = window.URL.createObjectURL(blob);
+
+          this.srcPdf = url;
+        });
+    },
+
+    getDataForm(id) {
+      axios
+        .get(`${process.env.VUE_APP_API_URL}/tanatorio/get/${id}`)
+        .then((res) => {
+          console.log(res);
+          this.infoTanato = res;
+        });
     },
   },
 };

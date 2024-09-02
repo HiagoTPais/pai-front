@@ -14,8 +14,8 @@
               <input
                 class="c1-13"
                 type="checkbox"
-                v-model="form5.havera_somatoconservacao_avancada"
-                name="havera_somatoconservacao_avancada"
+                v-model="form5.tronco_braquiocefalico"
+                value="Sim"
               />
             </div>
 
@@ -25,8 +25,8 @@
               <input
                 class="c1-13"
                 type="checkbox"
-                v-model="form5.havera_somatoconservacao_avancada"
-                name="havera_somatoconservacao_avancada"
+                v-model="form5.aorta_abdominal"
+                value="Sim"
               />
             </div>
 
@@ -36,8 +36,8 @@
               <input
                 class="c1-13"
                 type="checkbox"
-                v-model="form5.havera_somatoconservacao_avancada"
-                name="havera_somatoconservacao_avancada"
+                v-model="form5.carotida"
+                value="Esquerda"
               />
 
               <span class="title-input-blue">Esquerda</span>
@@ -45,8 +45,8 @@
               <input
                 class="c1-13"
                 type="checkbox"
-                v-model="form5.havera_somatoconservacao_avancada"
-                name="havera_somatoconservacao_avancada"
+                v-model="form5.carotida"
+                value="Direira"
               />
 
               <span class="title-input-blue">Direira</span>
@@ -58,8 +58,8 @@
               <input
                 class="c1-13"
                 type="checkbox"
-                v-model="form5.havera_somatoconservacao_avancada"
-                name="havera_somatoconservacao_avancada"
+                v-model="form5.subclavia"
+                value="Esquerda"
               />
 
               <span class="title-input-blue">Esquerda</span>
@@ -67,8 +67,8 @@
               <input
                 class="c1-13"
                 type="checkbox"
-                v-model="form5.havera_somatoconservacao_avancada"
-                name="havera_somatoconservacao_avancada"
+                v-model="form5.subclavia"
+                value="Direira"
               />
 
               <span class="title-input-blue">Direira</span>
@@ -80,8 +80,8 @@
               <input
                 class="c1-13"
                 type="checkbox"
-                v-model="form5.havera_somatoconservacao_avancada"
-                name="havera_somatoconservacao_avancada"
+                v-model="form5.braquial"
+                value="Esquerda"
               />
 
               <span class="title-input-blue">Esquerda</span>
@@ -89,8 +89,8 @@
               <input
                 class="c1-13"
                 type="checkbox"
-                v-model="form5.havera_somatoconservacao_avancada"
-                name="havera_somatoconservacao_avancada"
+                v-model="form5.braquial"
+                value="Direira"
               />
 
               <span class="title-input-blue">Direira</span>
@@ -102,8 +102,8 @@
               <input
                 class="c1-13"
                 type="checkbox"
-                v-model="form5.havera_somatoconservacao_avancada"
-                name="havera_somatoconservacao_avancada"
+                v-model="form5.iliaca_comum"
+                value="Esquerda"
               />
 
               <span class="title-input-blue">Esquerda</span>
@@ -111,8 +111,8 @@
               <input
                 class="c1-13"
                 type="checkbox"
-                v-model="form5.havera_somatoconservacao_avancada"
-                name="havera_somatoconservacao_avancada"
+                v-model="form5.iliaca_comum"
+                value="Direira"
               />
 
               <span class="title-input-blue">Direira</span>
@@ -124,8 +124,8 @@
               <input
                 class="c1-13"
                 type="checkbox"
-                v-model="form5.havera_somatoconservacao_avancada"
-                name="havera_somatoconservacao_avancada"
+                v-model="form5.femoral"
+                value="Esquerda"
               />
 
               <span class="title-input-blue">Esquerda</span>
@@ -133,8 +133,8 @@
               <input
                 class="c1-13"
                 type="checkbox"
-                v-model="form5.havera_somatoconservacao_avancada"
-                name="havera_somatoconservacao_avancada"
+                v-model="form5.femoral"
+                value="Direira"
               />
 
               <span class="title-input-blue">Direira</span>
@@ -149,13 +149,14 @@
             <label class="form-title">TRATAMENTO CAVITARIO</label>
 
             <div>
-              <span class="title-input-blue">Aspiração Torax-Abdômen:</span>
-
+              <div>
+                <span class="title-input-blue">Aspiração Torax-Abdômen:</span>
+              </div>
               <input
                 class="c1-13"
                 type="checkbox"
-                v-model="form5.havera_somatoconservacao_avancada"
-                name="havera_somatoconservacao_avancada"
+                v-model="form5.aspiracao_torax_abdomen"
+                value="Sim"
               />
 
               <span class="title-input-blue">Sim</span>
@@ -163,20 +164,22 @@
               <input
                 class="c1-13"
                 type="checkbox"
-                v-model="form5.havera_somatoconservacao_avancada"
-                name="havera_somatoconservacao_avancada"
+                v-model="form5.aspiracao_torax_abdomen"
+                value="Não"
               />
 
               <span class="title-input-blue">Não</span>
             </div>
             <div>
-              <span class="title-input-blue">Embrulho de Visceras:</span>
+              <div>
+                <span class="title-input-blue">Embrulho de Visceras:</span>
+              </div>
 
               <input
                 class="c1-13"
                 type="checkbox"
-                v-model="form5.havera_somatoconservacao_avancada"
-                name="havera_somatoconservacao_avancada"
+                v-model="form5.embrulho_visceras"
+                value="Sim"
               />
 
               <span class="title-input-blue">Sim</span>
@@ -184,8 +187,8 @@
               <input
                 class="c1-13"
                 type="checkbox"
-                v-model="form5.havera_somatoconservacao_avancada"
-                name="havera_somatoconservacao_avancada"
+                v-model="form5.embrulho_visceras"
+                value="Não"
               />
 
               <span class="title-input-blue">Não</span>
@@ -199,17 +202,17 @@
             <label class="form-title">OUTROS</label>
 
             <div>
-              <span class="title-input-blue"
-                >Pré Injeção de Fluido Solvente Descoagulante:</span
-              >
+              <span class="title-input-blue">
+                Pré Injeção de Fluido Solvente Descoagulante:
+              </span>
             </div>
 
             <div>
               <input
                 class="c1-13"
                 type="checkbox"
-                v-model="form5.havera_somatoconservacao_avancada"
-                name="havera_somatoconservacao_avancada"
+                v-model="form5.pre_injecao_fluido_solvente_descoagulante"
+                value="Sim"
               />
 
               <span class="title-input-blue">Sim</span>
@@ -217,8 +220,8 @@
               <input
                 class="c1-13"
                 type="checkbox"
-                v-model="form5.havera_somatoconservacao_avancada"
-                name="havera_somatoconservacao_avancada"
+                v-model="form5.pre_injecao_fluido_solvente_descoagulante"
+                value="Não"
               />
 
               <span class="title-input-blue">Não</span>
@@ -234,8 +237,8 @@
               <input
                 class="c1-13"
                 type="checkbox"
-                v-model="form5.havera_somatoconservacao_avancada"
-                name="havera_somatoconservacao_avancada"
+                v-model="form5.injecao_hipodermico_areas_obstruidas"
+                value="Sim"
               />
 
               <span class="title-input-blue">Sim</span>
@@ -243,8 +246,8 @@
               <input
                 class="c1-13"
                 type="checkbox"
-                v-model="form5.havera_somatoconservacao_avancada"
-                name="havera_somatoconservacao_avancada"
+                v-model="form5.injecao_hipodermico_areas_obstruidas"
+                value="Não"
               />
 
               <span class="title-input-blue">Não</span>
@@ -263,8 +266,7 @@
             <input
               type="text"
               class="input-resp"
-              v-model="form5.nome_completo"
-              name="nome_completo"
+              v-model="form5.fluido_arterial"
             />
           </div>
 
@@ -274,8 +276,7 @@
             <input
               type="text"
               class="input-resp"
-              v-model="form5.nome_completo"
-              name="nome_completo"
+              v-model="form5.volume_arterial"
             />
           </div>
 
@@ -285,8 +286,7 @@
             <input
               type="text"
               class="input-resp"
-              v-model="form5.nome_completo"
-              name="nome_completo"
+              v-model="form5.n_aplicacoes_arterial"
             />
           </div>
 
@@ -296,8 +296,7 @@
             <input
               type="text"
               class="input-resp"
-              v-model="form5.nome_completo"
-              name="nome_completo"
+              v-model="form5.marca_produto_arterial"
             />
           </div>
         </div>
@@ -311,8 +310,7 @@
             <input
               type="text"
               class="input-resp"
-              v-model="form5.nome_completo"
-              name="nome_completo"
+              v-model="form5.fluido_cavidade"
             />
           </div>
 
@@ -322,8 +320,7 @@
             <input
               type="text"
               class="input-resp"
-              v-model="form5.nome_completo"
-              name="nome_completo"
+              v-model="form5.volume_cavidade"
             />
           </div>
 
@@ -333,8 +330,7 @@
             <input
               type="text"
               class="input-resp"
-              v-model="form5.nome_completo"
-              name="nome_completo"
+              v-model="form5.n_aplicacoes_cavidade"
             />
           </div>
 
@@ -344,8 +340,7 @@
             <input
               type="text"
               class="input-resp"
-              v-model="form5.nome_completo"
-              name="nome_completo"
+              v-model="form5.marca_produto_cavidade"
             />
           </div>
         </div>
@@ -359,8 +354,7 @@
             <input
               type="text"
               class="input-resp"
-              v-model="form5.nome_completo"
-              name="nome_completo"
+              v-model="form5.fluido_injecao"
             />
           </div>
 
@@ -370,8 +364,7 @@
             <input
               type="text"
               class="input-resp"
-              v-model="form5.nome_completo"
-              name="nome_completo"
+              v-model="form5.volume_injecao"
             />
           </div>
 
@@ -381,8 +374,7 @@
             <input
               type="text"
               class="input-resp"
-              v-model="form5.nome_completo"
-              name="nome_completo"
+              v-model="form5.n_aplicacoes_injecao"
             />
           </div>
 
@@ -392,8 +384,7 @@
             <input
               type="text"
               class="input-resp"
-              v-model="form5.nome_completo"
-              name="nome_completo"
+              v-model="form5.marca_produto_injecao"
             />
           </div>
         </div>
@@ -404,32 +395,33 @@
 
 
 <script>
-// import axios from "axios";
+import { ref } from "vue";
 import { mask } from "vue-the-mask";
 
 export default {
-  name: "FormTanatorioStep1",
+  name: "FormTanatorioStep5",
   props: {
     showForm: Number,
     sendFormNow: Boolean,
     showView: String,
+    infoTanato: Object,
   },
   methods: {},
   components: {},
   data() {
     return {
       form5: {
-        tronco_braquiocefalico: "",
-        aorta_abdominal: "",
-        carotida: "",
-        subclavia: "",
-        braquial: "",
-        iliaca_comum: "",
-        femoral: "",
-        aspiracao_torax_abdomen: "",
-        embrulho_visceras: "",
-        pre_injeção_fluido_solvente_descoagulante: "",
-        injecao_hipodermico_areas_obstruidas: "",
+        tronco_braquiocefalico: ref([]),
+        aorta_abdominal: ref([]),
+        carotida: ref([]),
+        subclavia: ref([]),
+        braquial: ref([]),
+        iliaca_comum: ref([]),
+        femoral: ref([]),
+        aspiracao_torax_abdomen: ref([]),
+        embrulho_visceras: ref([]),
+        pre_injecao_fluido_solvente_descoagulante: ref([]),
+        injecao_hipodermico_areas_obstruidas: ref([]),
         fluido_arterial: "",
         volume_arterial: "",
         n_aplicacoes_arterial: "",
@@ -449,6 +441,47 @@ export default {
   watch: {
     sendFormNow: function () {
       this.$emit("set-data-form", this.form5);
+    },
+
+    infoTanato: function (item) {
+      const tanato = JSON.parse(JSON.stringify(item));
+
+      if (tanato) {
+        this.form5.tronco_braquiocefalico.push(
+          tanato.data[0].tronco_braquiocefalico
+        );
+        this.form5.aorta_abdominal.push(tanato.data[0].aorta_abdominal);
+        this.form5.carotida.push(tanato.data[0].carotida);
+        this.form5.subclavia.push(tanato.data[0].subclavia);
+        this.form5.braquial.push(tanato.data[0].braquial);
+        this.form5.iliaca_comum.push(tanato.data[0].iliaca_comum);
+        this.form5.femoral.push(tanato.data[0].femoral);
+        this.form5.aspiracao_torax_abdomen.push(
+          tanato.data[0].aspiracao_torax_abdomen
+        );
+        this.form5.embrulho_visceras.push(tanato.data[0].embrulho_visceras);
+        this.form5.pre_injecao_fluido_solvente_descoagulante.push(
+          tanato.data[0].pre_injecao_fluido_solvente_descoagulante
+        );
+        this.form5.injecao_hipodermico_areas_obstruidas.push(
+          tanato.data[0].injecao_hipodermico_areas_obstruidas
+        );
+
+        this.form5.fluido_arterial = tanato.data[0].fluido_arterial;
+        this.form5.volume_arterial = tanato.data[0].volume_arterial;
+        this.form5.n_aplicacoes_arterial = tanato.data[0].n_aplicacoes_arterial;
+        this.form5.marca_produto_arterial =
+          tanato.data[0].marca_produto_arterial;
+        this.form5.fluido_cavidade = tanato.data[0].fluido_cavidade;
+        this.form5.volume_cavidade = tanato.data[0].volume_cavidade;
+        this.form5.n_aplicacoes_cavidade = tanato.data[0].n_aplicacoes_cavidade;
+        this.form5.marca_produto_cavidade =
+          tanato.data[0].marca_produto_cavidade;
+        this.form5.fluido_injecao = tanato.data[0].fluido_injecao;
+        this.form5.volume_injecao = tanato.data[0].volume_injecao;
+        this.form5.n_aplicacoes_injecao = tanato.data[0].n_aplicacoes_injecao;
+        this.form5.marca_produto_injecao = tanato.data[0].marca_produto_injecao;
+      }
     },
   },
 };

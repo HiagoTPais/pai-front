@@ -136,9 +136,7 @@
                           : {}
                       "
                       :src="require('../../assets/img/eye.png')"
-                      @click="
-                        $emit('setShowForm', ['form-colaboradores-edit', item.id])
-                      "
+                      @click="$emit('setShowForm', ['form-colaboradores-edit', item.id])"
                     />
                   </div>
                 </td>

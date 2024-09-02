@@ -23,7 +23,6 @@
     v-if="showForm == 'dashboard-assistencia'"
   />
 
-
   <FormColaboradores
     @set-show-form="updateShowForm"
     v-if="
@@ -49,12 +48,9 @@
     v-if="showForm == 'dashboard-colaboradores'"
   />
 
-
   <FormServicoFunerario
     @set-show-form="updateShowForm"
-    v-if="
-      showForm == 'form-servico-funerario' || showForm == 'form-servico-funerario-edit'
-    "
+    v-if="showForm == 'form-servico-funerario' ||showForm == 'form-servico-funerario-edit'"
     :showView="this.showForm"
     :colaboradorId="this.colaboradorId"
   />
@@ -75,12 +71,17 @@
     v-if="showForm == 'dashboard-servico-funerario'"
   />
 
-
   <FormTanatorio
-   v-if="showForm == 'form-tanatorio'"
+    v-if="showForm == 'form-tanatorio' || showForm == 'form-tanatorio-edit'"
+    :showView="this.showForm"
+    :tanatorioId="this.tanatorioId"
   />
   <ViewTanatorio
-   v-if="showForm == 'view-tanatorio'"
+    v-if="showForm == 'view-tanatorio'"
+    @set-show-form="updateShowForm"
+  />
+   <DashboardTanatorio
+    v-if="showForm == 'dashboard-tanatorio'"
   />
 </template>
 
@@ -99,14 +100,15 @@ import PaymentColaboradores from "./Colaboradores/PaymentColaboradores.vue";
 import HeartColaboradores from "./Colaboradores/HeartColaboradores.vue";
 import DashboardColaboradores from "./Colaboradores/DashboardColaboradores.vue";
 
-import FormServicoFunerario from "./ServicoFunerario/FormServicoFunerario.vue"
-import ViewServicoFunerario from "./ServicoFunerario/ViewServicoFunerario.vue"
-import PaymentServicoFunerario from "./ServicoFunerario/PaymentServicoFunerario.vue"
-import HeartServicoFunerario from "./ServicoFunerario/HeartServicoFunerario.vue"
-import DashboardServicoFunerario from "./ServicoFunerario/DashboardServicoFunerario.vue"
+import FormServicoFunerario from "./ServicoFunerario/FormServicoFunerario.vue";
+import ViewServicoFunerario from "./ServicoFunerario/ViewServicoFunerario.vue";
+import PaymentServicoFunerario from "./ServicoFunerario/PaymentServicoFunerario.vue";
+import HeartServicoFunerario from "./ServicoFunerario/HeartServicoFunerario.vue";
+import DashboardServicoFunerario from "./ServicoFunerario/DashboardServicoFunerario.vue";
 
-import FormTanatorio from "./Tanatorio/FormTanatorio.vue"
-import ViewTanatorio from "./Tanatorio/ViewTanatorio.vue"
+import FormTanatorio from "./Tanatorio/FormTanatorio.vue";
+import ViewTanatorio from "./Tanatorio/ViewTanatorio.vue";
+import DashboardTanatorio from "./Tanatorio/DashboardTanatorio.vue";
 
 export default {
   name: "WorkSpace",
@@ -129,12 +131,14 @@ export default {
     DashboardServicoFunerario,
     FormTanatorio,
     ViewTanatorio,
+    DashboardTanatorio
   },
   data() {
     return {
       showForm: "card-nav",
       beneficiaryId: null,
       colaboradorId: null,
+      tanatorioId: null,
     };
   },
   methods: {
@@ -147,13 +151,17 @@ export default {
           case "form-colaboradores-edit":
             this.colaboradorId = idForm[1];
             break;
+          case "form-tanatorio-edit":
+            this.tanatorioId = idForm[1];
+            break;
+          case "form-servico-funerario-edit":
+            this.tanatorioId = idForm[1];
+            break;
         }
         this.showForm = idForm[0];
       } else {
         this.showForm = idForm;
       }
-
-      // console.log(this.colaboradorId, this.showForm);
     },
   },
 };
